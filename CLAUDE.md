@@ -47,5 +47,4 @@ Klantsite van Build with Blocks (Tim) voor Brück Dak en Zinkwerk (Nicky, Ooij).
 
 ## Nog open
 - Placeholders voor Nicky: garantie "[X] jaar" (FAQ homepage), duur "[X] dagen" (dienstpagina's), "[X]+ jaar ervaring".
-- Contactformulier (contact.html) heeft nog de oude stijl (ronde hoeken, grijze velden).
 - Stap-meting per dakscan-stap (Vercel custom events vragen Pro; anders Plausible).
