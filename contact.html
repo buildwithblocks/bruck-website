@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact | Brück Dak en Zinkwerk</title>
+<link rel="icon" href="img/2eb862934a76df52611f70dd21ad94cc.png">
+</head>
+<body>
+<style>
+@font-face{font-family:'Saira';src:url('fonts/21b08f477a757457909366217a804c99.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Saira';src:url('fonts/e99f43a7a5ac5eb9a54dad87d8edd3bf.woff2') format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:'Saira';src:url('fonts/116ed0f5962fa7d35a9da45087ab7989.woff2') format('woff2');font-weight:600;font-display:swap}
+@font-face{font-family:'Saira';src:url('fonts/c8549dc2d8515a94f5b9a74ae85ab075.woff2') format('woff2');font-weight:700;font-display:swap}
+.st{display:inline-flex;overflow:hidden;line-height:1.2;vertical-align:middle}.st .ch{display:inline-block;white-space:pre;text-shadow:0 1.2em currentColor;transition:transform .5s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--i) * 16ms)}a:hover .st .ch,button:hover .st .ch,a:focus-visible .st .ch{transform:translateY(-1.2em);transition-delay:calc(140ms + var(--i) * 16ms)}
+.btn-s:hover .nav-sec{border-bottom-color:currentColor !important}
+.dd-item{color:#FFFFFF;transition:background-color .25s ease,color .25s ease}.dd-item:hover{color:#DFA701}
+@font-face{font-family:'Factory Sans';src:url('fonts/4a303439bbeb7caa9ff4438ee0277bae.woff2') format('woff2');font-weight:600;font-display:swap}
+@font-face{font-family:'Helvetica Neue';src:url('fonts/afd134272efce17d29e82288d60fdeaa.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Helvetica Neue';src:url('fonts/07a0c519c15c4f5b5b6a38b9af94d1e9.woff2') format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:'Helvetica Neue';src:url('fonts/89f7133a6628e15ac275e14d274e501a.woff2') format('woff2');font-weight:700;font-display:swap}
+body{margin:0;background:#161616}
+a{color:#FFFFFF;transition:color .35s ease}a:hover{color:#DFA701}
+input::placeholder{color:#9A9A9A}
+.btn-p,.btn-s{transition:background-color .35s ease,border-color .35s ease,color .35s ease}
+.btn-t{color:inherit;display:inline-block;transform:translateY(1px)}
+.btn-ar{display:inline-flex;overflow:hidden;padding:0 8px;margin:0 -8px}
+.btn-p svg{transition:transform .3s ease}
+.btn-p:hover{background-color:#C99600 !important;color:#0B0B0B !important}
+.btn-p:hover svg{transform:translateX(4px)}
+.btn-s:hover{background-color:transparent !important;border-color:#DFA701 !important;color:#DFA701 !important}
+.btn-pd{transition:background-color .3s ease,color .3s ease}
+.btn-pd:hover{background-color:#000000 !important;color:#DFA701 !important}
+.btn-od{transition:background-color .3s ease,color .3s ease}
+.btn-od:hover{background-color:#0B0B0B !important;color:#DFA701 !important}
+.crow{transition:background-color .3s ease,border-color .3s ease}.crow *{transition:none}.crow span:not(:has(*)){transition:color .3s ease}
+.crow:hover,.crow:focus-visible{background-color:#DFA701 !important;border-color:#DFA701 !important;color:#0B0B0B !important}.crow:hover *,.crow:focus-visible *{color:#0B0B0B !important}
+.pcard img{transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+.pcard:hover img{transform:scale(1.05)}
+</style>
+
+<style>:root{color-scheme:dark}html,body{background:#161616;color:#FFFFFF}body{margin:0}#dc-root{font-family:'Saira','Helvetica Neue','Helvetica',Arial,sans-serif;color:#FFFFFF}</style>
+<div id="dc-root"></div>
+<template id="dc-tpl">
+
+<div style="background: #161616; color: #FFFFFF; font-family: 'Saira', 'Helvetica Neue', 'Helvetica', Arial, system-ui, sans-serif; letter-spacing: 0; overflow-x: clip">
+<div data-floating-nav style="position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: {{ navBg }}; border-bottom: 1px solid {{ navLine }}; transition: background-color 0.35s ease, border-color 0.35s ease, padding-top 0.35s ease; padding: {{ navPadTop }} clamp(16px, 3.6vw, 52px) 0; box-sizing: border-box; pointer-events: none"><header onMouseLeave="{{ closeMenu }}" style="pointer-events: auto; position: relative; max-width: 1240px; margin: 0 auto; box-sizing: border-box; height: 72px; padding: 0; display: flex; align-items: center; gap: 64px">
+    <a href="index.html" aria-label="Brück Dak en Zinkwerk, naar home" style="display: block; line-height: 0; justify-self: start"><img src="img/2eb862934a76df52611f70dd21ad94cc.png" alt="Brück Dak en Zinkwerk" style="width: 88px; height: auto; display: block"></a>
+    <nav aria-label="Hoofdmenu" style="display: flex; align-items: center; gap: 32px; font-size: 16px; font-weight: 400">
+      <div style="position: relative; display: flex"><button type="button" aria-expanded="{{ ariaOpen }}" aria-controls="menu-diensten" onClick="{{ toggleMenu }}" onMouseEnter="{{ openMenu }}" style="position: relative; display: flex; align-items: center; gap: 6px; padding: 8px 0; background: none; border: 0; color: #FFFFFF; font-family: 'Saira', 'Helvetica Neue', 'Helvetica', Arial, sans-serif; font-size: 16px; font-weight: 400; letter-spacing: 0; cursor: pointer">Diensten<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="transform: rotate({{ chevron }}); transition: transform 0.4s ease"><path d="m6 9 6 6 6-6"></path></svg><span aria-hidden="true" style="position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: #DFA701; transform: scaleX({{ ulScale }}); transform-origin: {{ ulOrigin }}; transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1)"></span></button><div id="menu-diensten" style="position: fixed; top: 72px; left: 0; right: 0; opacity: {{ panelOpacity }}; transform: translateY({{ panelShift }}); visibility: {{ panelVisibility }}; pointer-events: {{ panelEvents }}; transition: opacity 0.35s ease, transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1), visibility 0.45s; background: #161616; border-top: 1px solid rgba(255,255,255,0.12); border-bottom: 1px solid rgba(255,255,255,0.12); box-shadow: 0 30px 60px rgba(0,0,0,0.45)"><div style="max-width: 1240px; margin: 0 auto; padding: 40px clamp(16px, 3.6vw, 52px) 48px; box-sizing: content-box; display: flex; gap: 48px; align-items: stretch"><ul style="flex: 1 1 0; min-width: 0; list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-flow: column; grid-template-rows: repeat(3, auto); gap: 8px 32px; align-content: center"><sc-for list="{{ menuItems }}" as="m" hint-placeholder-count="6"><li><a class="dd-item" href="{{ m.href }}" onMouseEnter="{{ m.enter }}" onMouseLeave="{{ m.leave }}" style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 22px 0; text-decoration: none"><span style="min-width: 0"><span style="display: block; font-size: 18px; font-weight: 700">{{ m.title }}</span><span style="display: block; margin-top: 4px; font-size: 14px; font-weight: 400; color: rgba(255,255,255,0.6)">{{ m.short }}</span></span><span aria-hidden="true" style="flex: none; display: inline-flex; color: #DFA701; opacity: {{ m.arrowOpacity }}; transform: translateX({{ m.arrowShift }}); transition: opacity 0.3s ease, transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></li></sc-for></ul><a href="{{ menuHref }}" style="position: relative; flex: 0 0 44%; min-height: 360px; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; padding: 40px; box-sizing: border-box; background: #222222; text-decoration: none; isolation: isolate"><sc-for list="{{ menuItems }}" as="m" hint-placeholder-count="6"><img src="{{ m.img }}" alt="" style="position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; display: block; opacity: {{ m.imgOpacity }}; transform: scale({{ m.imgScale }}); transition: opacity 0.5s ease, transform 1s cubic-bezier(0.2, 0.8, 0.2, 1)"></sc-for><span aria-hidden="true" style="position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(11,11,11,0) 35%, rgba(11,11,11,0.85) 100%)"></span><span style="display: block; font-family: 'Factory Sans', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 32px; line-height: 1.1; letter-spacing: -0.03em; text-transform: uppercase; color: #FFFFFF">{{ menuTitle }}</span><span style="display: block; margin-top: 10px; max-width: 420px; font-size: 15px; font-weight: 400; line-height: 1.55; color: rgba(255,255,255,0.85)">{{ menuText }}</span></a></div></div></div>
+      <sc-for list="{{ navLinks }}" as="l" hint-placeholder-count="3"><a href="{{ l.href }}" onMouseEnter="{{ l.enter }}" onMouseLeave="{{ l.leave }}" style="position: relative; padding: 8px 0; text-decoration: none">{{ l.label }}<span aria-hidden="true" style="position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: #DFA701; transform: scaleX({{ l.scale }}); transform-origin: {{ l.origin }}; transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1)"></span></a></sc-for>
+    </nav>
+    <div onMouseEnter="{{ closeMenu }}" style="display: flex; align-items: center; justify-content: flex-end; gap: 10px; margin-left: auto">
+      <a class="btn-s" href="subsidiecheck.html" style="text-transform: uppercase; display: inline-flex; align-items: center; height: 44px; padding: 0 20px; box-sizing: border-box; border: 1.5px solid rgba(255,255,255,0.85); font-weight: 700; font-size: 14px; text-decoration: none"><span class="btn-t st" aria-label="Subsidiecheck"><span class="ch" aria-hidden="true" style="--i: 0">S</span><span class="ch" aria-hidden="true" style="--i: 1">u</span><span class="ch" aria-hidden="true" style="--i: 2">b</span><span class="ch" aria-hidden="true" style="--i: 3">s</span><span class="ch" aria-hidden="true" style="--i: 4">i</span><span class="ch" aria-hidden="true" style="--i: 5">d</span><span class="ch" aria-hidden="true" style="--i: 6">i</span><span class="ch" aria-hidden="true" style="--i: 7">e</span><span class="ch" aria-hidden="true" style="--i: 8">c</span><span class="ch" aria-hidden="true" style="--i: 9">h</span><span class="ch" aria-hidden="true" style="--i: 10">e</span><span class="ch" aria-hidden="true" style="--i: 11">c</span><span class="ch" aria-hidden="true" style="--i: 12">k</span></span></a>
+      <a href="dakscan.html" class="btn-p" style="text-transform: uppercase; display: inline-flex; align-items: center; gap: 0; height: 44px; padding: 0 20px; box-sizing: border-box; border-radius: 0; background: #DFA701; color: #0B0B0B; font-weight: 700; font-size: 14px; text-decoration: none"><span class="btn-t st" aria-label="Start dakscan"><span class="ch" aria-hidden="true" style="--i: 0">S</span><span class="ch" aria-hidden="true" style="--i: 1">t</span><span class="ch" aria-hidden="true" style="--i: 2">a</span><span class="ch" aria-hidden="true" style="--i: 3">r</span><span class="ch" aria-hidden="true" style="--i: 4">t</span><span class="ch" aria-hidden="true" style="--i: 5"> </span><span class="ch" aria-hidden="true" style="--i: 6">d</span><span class="ch" aria-hidden="true" style="--i: 7">a</span><span class="ch" aria-hidden="true" style="--i: 8">k</span><span class="ch" aria-hidden="true" style="--i: 9">s</span><span class="ch" aria-hidden="true" style="--i: 10">c</span><span class="ch" aria-hidden="true" style="--i: 11">a</span><span class="ch" aria-hidden="true" style="--i: 12">n</span></span></a>
+    </div>
+
+    </header></div>
+<section style="background: #161616">
+  <div aria-hidden="true" style="height: 96px"></div>
+  
+</section>
+
+<!-- CONTACT -->
+<section style="padding: 110px clamp(16px, 3.6vw, 52px) 160px">
+  <div style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 48px 64px">
+    <div style="flex: 1 1 340px; min-width: 0; max-width: 520px">
+      <h3 style="margin: 0; font-family: 'Factory Sans', 'Helvetica Neue', 'Helvetica', Arial, sans-serif; font-weight: 600; font-size: clamp(36px, 4.4vw, 58px); line-height: 1.05; letter-spacing: -0.03em; text-transform: uppercase; color: #FFFFFF">Uw dak begint bij<br>goed contact.</h3>
+      <div style="max-width: 440px; margin-top: 64px; padding: 0 0 24px; border-bottom: 1px solid rgba(255,255,255,0.15)">
+        <h2 style="margin: 0; font-family: 'Saira', 'Helvetica Neue', 'Helvetica', Arial, sans-serif; font-weight: 500; font-size: 16px; line-height: 1.4; letter-spacing: 0; color: #FFFFFF">Bel Nicky</h2>
+        <a href="tel:+31619623366" style="display: inline-block; margin-top: 12px; font-size: 15px; color: rgba(255,255,255,0.75); text-decoration: underline; text-underline-offset: 3px">+31 6 19 62 33 66</a>
+      </div>
+      <div style="max-width: 440px; padding: 32px 0 24px; border-bottom: 1px solid rgba(255,255,255,0.15)">
+        <h2 style="margin: 0; font-family: 'Saira', 'Helvetica Neue', 'Helvetica', Arial, sans-serif; font-weight: 500; font-size: 16px; line-height: 1.4; letter-spacing: 0; color: #FFFFFF">Mail Nicky</h2>
+        <a href="mailto:bruckdakenzinkwerk@outlook.com" style="display: inline-block; margin-top: 12px; font-size: 15px; color: rgba(255,255,255,0.75); text-decoration: underline; text-underline-offset: 3px">bruckdakenzinkwerk@outlook.com</a>
+      </div>
+      <a href="#" class="btn-p" style="text-transform: uppercase; margin-top: 44px; display: inline-flex; align-items: center; gap: 12px; height: 48px; padding: 0 20px; box-sizing: border-box; border-radius: 0; background: #DFA701; color: #0B0B0B; font-weight: 700; font-size: 14px; text-decoration: none; white-space: nowrap"><span class="btn-t st" aria-label="Doe de dakscan"><span class="ch" aria-hidden="true" style="--i: 0">D</span><span class="ch" aria-hidden="true" style="--i: 1">o</span><span class="ch" aria-hidden="true" style="--i: 2">e</span><span class="ch" aria-hidden="true" style="--i: 3"> </span><span class="ch" aria-hidden="true" style="--i: 4">d</span><span class="ch" aria-hidden="true" style="--i: 5">e</span><span class="ch" aria-hidden="true" style="--i: 6"> </span><span class="ch" aria-hidden="true" style="--i: 7">d</span><span class="ch" aria-hidden="true" style="--i: 8">a</span><span class="ch" aria-hidden="true" style="--i: 9">k</span><span class="ch" aria-hidden="true" style="--i: 10">s</span><span class="ch" aria-hidden="true" style="--i: 11">c</span><span class="ch" aria-hidden="true" style="--i: 12">a</span><span class="ch" aria-hidden="true" style="--i: 13">n</span></span><span class="btn-ar" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a>
+    </div>
+    <form id="contactform" novalidate style="flex: 1 1 440px; min-width: 0; max-width: 586px; box-sizing: border-box; padding: 34px 36px 26px; border-radius: 20px; background: #222222; border: 1px solid rgba(255,255,255,0.3)">
+      <h2 style="margin: 0; font-family: 'Factory Sans', 'Helvetica Neue', 'Helvetica', Arial, sans-serif; font-weight: 600; font-size: 22px; line-height: 1.1; letter-spacing: -0.03em; text-transform: uppercase; color: #FFFFFF">Stuur ons een bericht</h2>
+      <div style="margin-top: 28px; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 30px 20px">
+        <div style="min-width: 0"><label for="c-naam" style="display: block; margin-bottom: 10px; font-size: 15px; color: rgba(255,255,255,0.85)">Naam:</label><input id="c-naam" type="text" autocomplete="given-name" style="width: 100%; box-sizing: border-box; height: 40px; padding: 0 14px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.15); background: #474747; color: #FFFFFF; font-family: 'Saira', 'Helvetica Neue', 'Helvetica', Arial, sans-serif; font-size: 15px; outline: none"></div>
+        <div style="min-width: 0"><label for="c-achternaam" style="display: block; margin-bottom: 10px; font-size: 15px; color: rgba(255,255,255,0.85)">Achternaam:</label><input id="c-achternaam" type="text" autocomplete="family-name" style="width: 100%; box-sizing: border-box; height: 40px; padding: 0 14px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.15); background: #474747; color: #FFFFFF; font-family: 'Saira', 'Helvetica Neue', 'Helvetica', Arial, sans-serif; font-size: 15px; outline: none"></div>
+        <div style="min-width: 0"><label for="c-email" style="display: block; margin-bottom: 10px; font-size: 15px; color: rgba(255,255,255,0.85)">E-mail:</label><input id="c-email" type="email" autocomplete="email" style="width: 100%; box-sizing: border-box; height: 40px; padding: 0 14px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.15); background: #474747; color: #FFFFFF; font-family: 'Saira', 'Helvetica Neue', 'Helvetica', Arial, sans-serif; font-size: 15px; outline: none"></div>
+        <div style="min-width: 0"><label for="c-telefoon" style="display: block; margin-bottom: 10px; font-size: 15px; color: rgba(255,255,255,0.85)">Telefoon:</label><input id="c-telefoon" type="tel" autocomplete="tel" style="width: 100%; box-sizing: border-box; height: 40px; padding: 0 14px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.15); background: #474747; color: #FFFFFF; font-family: 'Saira', 'Helvetica Neue', 'Helvetica', Arial, sans-serif; font-size: 15px; outline: none"></div>
+        <div style="grid-column: 1 / -1; min-width: 0"><label for="c-bedrijf" style="display: block; margin-bottom: 10px; font-size: 15px; color: rgba(255,255,255,0.85)">Bedrijfsnaam:</label><input id="c-bedrijf" type="text" style="width: 100%; box-sizing: border-box; height: 40px; padding: 0 14px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.15); background: #474747; color: #FFFFFF; font-family: 'Saira', 'Helvetica Neue', 'Helvetica', Arial, sans-serif; font-size: 15px; outline: none"></div>
+        <div style="grid-column: 1 / -1; min-width: 0"><label for="c-bericht" style="display: block; margin-bottom: 10px; font-size: 15px; color: rgba(255,255,255,0.85)">Schrijf hier uw bericht:</label><textarea id="c-bericht" rows="6" style="width: 100%; box-sizing: border-box; height: 40px; padding: 0 14px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.15); background: #474747; color: #FFFFFF; font-family: 'Saira', 'Helvetica Neue', 'Helvetica', Arial, sans-serif; font-size: 15px; outline: none; height: 166px; padding: 12px 14px; resize: vertical"></textarea></div>
+      </div>
+      <div style="margin-top: 26px">
+        <button id="c-verstuur" type="submit" class="btn-p" style="text-transform: uppercase; width: 100%; display: flex; align-items: center; justify-content: center; gap: 12px; height: 48px; padding: 0 16px; border-radius: 0; border: 0; background: #DFA701; color: #0B0B0B; font-family: 'Saira', 'Helvetica Neue', 'Helvetica', Arial, sans-serif; font-weight: 700; font-size: 14px; cursor: pointer"><span class="btn-t st" aria-label="Versturen"><span class="ch" aria-hidden="true" style="--i: 0">V</span><span class="ch" aria-hidden="true" style="--i: 1">e</span><span class="ch" aria-hidden="true" style="--i: 2">r</span><span class="ch" aria-hidden="true" style="--i: 3">s</span><span class="ch" aria-hidden="true" style="--i: 4">t</span><span class="ch" aria-hidden="true" style="--i: 5">u</span><span class="ch" aria-hidden="true" style="--i: 6">r</span><span class="ch" aria-hidden="true" style="--i: 7">e</span><span class="ch" aria-hidden="true" style="--i: 8">n</span></span><span class="btn-ar" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></button>
+      </div>
+    <p id="c-fout" role="alert" style="display: none; margin: 16px 0 0; font-size: 14px; font-weight: 600; color: #E8913A"></p><label aria-hidden="true" style="position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden">Website<input id="c-website" type="text" tabindex="-1" autocomplete="off"></label>
+    </form>
+  </div>
+</section>
+
+<!-- DAKSCAN CHECK -->
+<!-- FOOTER -->
+<footer style="background: #0B0B0B; padding: 0 clamp(16px, 3.6vw, 52px)">
+  <div style="max-width: 1240px; margin: 0 auto">
+    <div style="display: flex; flex-wrap: wrap; justify-content: flex-start; align-items: flex-end; gap: 48px 64px; padding: 120px 0 72px">
+      <div style="flex: 0 1 560px; min-width: 0">
+        <p style="margin: 0; font-size: 18px; font-weight: 700; color: #FFFFFF">Benieuwd hoe je dak ervoor staat? Doe de gratis dakscan.</p>
+        <form style="margin-top: 20px; display: flex; flex-wrap: wrap; align-items: center; gap: 0; padding: 6px; border: 1px solid rgba(255,255,255,0.25); background: #161616">
+          <label style="display: contents"><span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Postcode</span><input type="text" placeholder="Postcode" style="flex: 1 1 120px; min-width: 0; height: 56px; padding: 0 20px; box-sizing: border-box; border: 0; border-radius: 0; background: transparent; color: #FFFFFF; font-family: inherit; font-size: 16px; outline: none"></label>
+          <span aria-hidden="true" style="width: 1px; height: 32px; background: rgba(255,255,255,0.2)"></span>
+          <label style="display: contents"><span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Huisnummer</span><input type="text" placeholder="Huisnummer" style="flex: 1 1 120px; min-width: 0; height: 56px; padding: 0 20px; box-sizing: border-box; border: 0; border-radius: 0; background: transparent; color: #FFFFFF; font-family: inherit; font-size: 16px; outline: none; flex-basis: 100px"></label>
+          <a href="dakscan.html" class="btn-p" style="text-transform: uppercase; flex: none; display: inline-flex; align-items: center; gap: 12px; height: 56px; padding: 0 24px; box-sizing: border-box; background: #DFA701; color: #0B0B0B; font-weight: 700; font-size: 14px; text-decoration: none; white-space: nowrap"><span class="btn-t st" aria-label="Start dakscan"><span class="ch" aria-hidden="true" style="--i: 0">S</span><span class="ch" aria-hidden="true" style="--i: 1">t</span><span class="ch" aria-hidden="true" style="--i: 2">a</span><span class="ch" aria-hidden="true" style="--i: 3">r</span><span class="ch" aria-hidden="true" style="--i: 4">t</span><span class="ch" aria-hidden="true" style="--i: 5"> </span><span class="ch" aria-hidden="true" style="--i: 6">d</span><span class="ch" aria-hidden="true" style="--i: 7">a</span><span class="ch" aria-hidden="true" style="--i: 8">k</span><span class="ch" aria-hidden="true" style="--i: 9">s</span><span class="ch" aria-hidden="true" style="--i: 10">c</span><span class="ch" aria-hidden="true" style="--i: 11">a</span><span class="ch" aria-hidden="true" style="--i: 12">n</span></span><span class="btn-ar" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a>
+        </form>
+      </div>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 48px 40px; padding: 72px 0 88px; border-top: 1px solid rgba(255,255,255,0.14)">
+      <div style="flex: 1.4 1 280px; min-width: 0">
+        <img src="img/2eb862934a76df52611f70dd21ad94cc.png" alt="Brück Dak en Zinkwerk" style="width: 140px; height: auto; display: block">
+        <p style="margin: 40px 0 0; font-size: 16px; line-height: 1.7; color: rgba(255,255,255,0.75)">Goudwindestraat 39<br>6576 CD Ooij</p>
+        <a href="tel:+31619623366" style="display: block; margin-top: 0; font-size: 16px; line-height: 1.7; color: rgba(255,255,255,0.75); text-decoration: none">06 19 62 33 66</a>
+      </div>
+      <nav aria-label="Diensten" style="flex: 1 1 180px; min-width: 0"><span style="display: block; margin-bottom: 14px; font-size: 14px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #FFFFFF">Diensten</span><a href="dakwerken.html" style="display: block; text-decoration: none; color: rgba(255,255,255,0.75); font-size: 16px; line-height: 2.3">Dakwerken</a><a href="zinkwerken.html" style="display: block; text-decoration: none; color: rgba(255,255,255,0.75); font-size: 16px; line-height: 2.3">Zinkwerken</a><a href="dakpannen.html" style="display: block; text-decoration: none; color: rgba(255,255,255,0.75); font-size: 16px; line-height: 2.3">Dakpannen</a><a href="epdm.html" style="display: block; text-decoration: none; color: rgba(255,255,255,0.75); font-size: 16px; line-height: 2.3">EPDM</a><a href="dakisolatie.html" style="display: block; text-decoration: none; color: rgba(255,255,255,0.75); font-size: 16px; line-height: 2.3">Dakisolatie</a><a href="lekkages.html" style="display: block; text-decoration: none; color: rgba(255,255,255,0.75); font-size: 16px; line-height: 2.3">Lekkages</a></nav>
+      <nav aria-label="Direct regelen" style="flex: 1 1 180px; min-width: 0"><span style="display: block; margin-bottom: 14px; font-size: 14px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #FFFFFF">Direct regelen</span><a href="dakscan.html" style="display: block; text-decoration: none; color: rgba(255,255,255,0.75); font-size: 16px; line-height: 2.3">Dakscan</a><a href="subsidiecheck.html" style="display: block; text-decoration: none; color: rgba(255,255,255,0.75); font-size: 16px; line-height: 2.3">Subsidiecheck</a><a href="contact.html" style="display: block; text-decoration: none; color: rgba(255,255,255,0.75); font-size: 16px; line-height: 2.3">Contact opnemen</a><a href="mailto:bruckdakenzinkwerk@outlook.com" style="display: block; text-decoration: none; color: rgba(255,255,255,0.75); font-size: 16px; line-height: 2.3">Mail Nicky</a></nav>
+      <nav aria-label="Over Brück" style="flex: 1 1 180px; min-width: 0"><span style="display: block; margin-bottom: 14px; font-size: 14px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #FFFFFF">Over Brück</span><a href="over-ons.html" style="display: block; text-decoration: none; color: rgba(255,255,255,0.75); font-size: 16px; line-height: 2.3">Over ons</a><a href="projecten.html" style="display: block; text-decoration: none; color: rgba(255,255,255,0.75); font-size: 16px; line-height: 2.3">Projecten</a><a href="contact.html" style="display: block; text-decoration: none; color: rgba(255,255,255,0.75); font-size: 16px; line-height: 2.3">Contact</a></nav>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px; padding: 28px 0 36px; border-top: 1px solid rgba(255,255,255,0.14); font-size: 15px; color: rgba(255,255,255,0.65)">
+      <span style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px"><span>© 2026 Brück Dak en Zinkwerk</span><a href="#" style="text-decoration: none; color: rgba(255,255,255,0.65)">Privacy</a><a href="#" style="text-decoration: none; color: rgba(255,255,255,0.65)">Algemene voorwaarden</a><span style="font-weight: 700; color: #FFFFFF">KvK: 85783439</span></span>
+      <span style="display: flex; gap: 10px"><a href="https://www.facebook.com/bruckdakenzinkwerk/" target="_blank" rel="noopener" aria-label="Facebook" style="display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; box-sizing: border-box; border: 1px solid rgba(255,255,255,0.25); color: #FFFFFF; text-decoration: none"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H7v4h3v8h4v-8h3l1-4h-4V8z"></path></svg></a><a href="https://www.instagram.com/bruckdakenzinkwerk/" target="_blank" rel="noopener" aria-label="Instagram" style="display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; box-sizing: border-box; border: 1px solid rgba(255,255,255,0.25); color: #FFFFFF; text-decoration: none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor"></circle></svg></a><a href="https://wa.me/31619623366" target="_blank" rel="noopener" aria-label="WhatsApp" style="display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; box-sizing: border-box; border: 1px solid rgba(255,255,255,0.25); color: #FFFFFF; text-decoration: none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.7-4.8A9 9 0 1 1 8 19.6z"></path><path d="M9 9.5c.5 2.5 2.5 4.5 5 5l1.2-1.2 2 1-.5 1.7c-3.5.3-8-4.2-7.7-7.7l1.7-.5 1 2z"></path></svg></a></span>
+    </div>
+  </div>
+</footer>
+</div>
+</template>
+<script>
+
+class DCLogic{constructor(){this.state={};this.props={};}setState(p){Object.assign(this.state,p);window.__dcUpdate&&window.__dcUpdate();}}
+
+class Component extends DCLogic {
+  renderVals() {
+    const __navSolid = !!(this.state && this.state.navSolid);
+    if (!this.__solidBound && typeof window !== 'undefined') {
+      this.__solidBound = true;
+      const chk = () => { const v = (window.scrollY || 0) > 10; if (v !== !!(this.state && this.state.navSolid)) this.setState({ navSolid: v }); };
+      window.addEventListener('scroll', chk, { passive: true }); chk();
+    }
+    const __navHidden = !!(this.state && this.state.navHidden);
+    if (!this.__navBound && typeof window !== 'undefined') {
+      this.__navBound = true;
+      let lastY = window.scrollY || 0;
+      window.addEventListener('scroll', () => {
+        const y = window.scrollY || 0;
+        if (Math.abs(y - lastY) < 6) return;
+        const hide = false;
+        lastY = y;
+        if (hide !== !!(this.state && this.state.navHidden)) this.setState(hide ? { navHidden: true, menuOpen: false } : { navHidden: false });
+      }, { passive: true });
+    }
+    const st = this.state || {};
+    const open = !!st.menuOpen;
+    const hv = st.hover;
+    const active = 'Contact';
+    const navLinks = ['Projecten', 'Over ons', 'Contact'].map((label) => ({
+      label: label,
+      href: { 'Projecten': 'projecten.html', 'Over ons': 'over-ons.html', 'Contact': 'contact.html' }[label],
+      scale: (hv === label || (label === active && !hv)) ? 1 : 0,
+      origin: (hv === label || (label === active && !hv)) ? 'left center' : 'right center',
+      enter: () => this.setState({ hover: label, menuOpen: false }),
+      leave: () => this.setState({ hover: null })
+    }));
+    const mAct = (this.state && typeof this.state.menuSvc === 'number') ? this.state.menuSvc : 0;
+    const menuItems = [
+      { title: 'Dakwerken', short: 'Platte en hellende daken', img: 'img/3569059183015df3b752294bc94870af.jpg', text: 'Vervangen, renoveren en onderhouden. We adviseren wat echt nodig is.' },
+      { title: 'Zinkwerken', short: 'Goten, dakkapellen, boeidelen', img: 'img/566833f91f2125e9bf52e1298a4a6b63.jpg', text: 'Alles op maat gezet en strak afgewerkt, zodat het jaren meegaat.' },
+      { title: 'Dakpannen', short: 'Leggen en vervangen', img: 'img/01d5e5b5ef58a54651e5cd07aee47716.jpg', text: 'Onderhoudsarm en jarenlang mooi, in een kleur die bij je huis past.' },
+      { title: 'EPDM', short: 'Dakbedekking voor platte daken', img: 'img/8ab1afaf483e5222d1ae1238210eff08.jpg', text: 'Naadloos gelegd, gaat lang mee en vraagt weinig onderhoud.' },
+      { title: 'Dakisolatie', short: 'Minder stoken, vaak subsidie', img: 'img/faec84d1814a914d050740c3acfdc01a.jpg', text: 'Warmer in de winter, koeler in de zomer. Wij zoeken de subsidie voor je uit.' },
+      { title: 'Lekkages', short: 'Snel opgelost', img: 'img/63d74554af499d31f6ea856655c8c1a4.jpg', text: 'Snel erbij, de oorzaak gevonden en blijvend opgelost.' }
+    ].map((m, i) => Object.assign({}, m, {
+      bg: 'transparent',
+      href: {"Dakwerken": "dakwerken.html", "Zinkwerken": "zinkwerken.html", "Dakpannen": "dakpannen.html", "EPDM": "epdm.html", "Dakisolatie": "dakisolatie.html", "Lekkages": "lekkages.html"}[m.title],
+      arrowOpacity: (this.state && this.state.menuHov === i) ? 1 : 0,
+      arrowShift: (this.state && this.state.menuHov === i) ? '0px' : '-8px',
+      imgOpacity: mAct === i ? 1 : 0,
+      imgScale: mAct === i ? 1 : 1.06,
+      enter: () => this.setState({ menuSvc: i, menuHov: i }),
+      leave: () => this.setState({ menuHov: -1 })
+    }));
+    return {
+      navBg: (__navSolid || (this.state && this.state.menuOpen)) ? '#161616' : 'rgba(22,22,22,0)',
+      navLine: (__navSolid || (this.state && this.state.menuOpen)) ? 'rgba(255,255,255,0.12)' : 'rgba(255,255,255,0)',
+      navPadTop: (__navSolid || (this.state && this.state.menuOpen)) ? '0px' : '20px',
+      navY: __navHidden ? 'calc(-100% - 48px)' : '0px',
+      ariaOpen: open ? 'true' : 'false',
+      navLinks: navLinks,
+      ulScale: open ? 1 : 0,
+      ulOrigin: open ? 'left center' : 'right center',
+      chevron: open ? '180deg' : '0deg',
+      panelOpacity: open ? 1 : 0,
+      panelShift: open ? '0px' : '-12px',
+      panelScale: open ? 1 : 0.97,
+      menuItems: menuItems,
+      menuText: menuItems[mAct].text,
+      menuTitle: menuItems[mAct].title,
+      menuHref: menuItems[mAct].href,
+      panelVisibility: open ? 'visible' : 'hidden',
+      panelEvents: open ? 'auto' : 'none',
+      openMenu: () => this.setState({ menuOpen: true }),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      toggleMenu: () => this.setState({ menuOpen: !open })
+    };
+  }
+}
+(function(){
+  const comp=new Component(); let vals=comp.renderVals();
+  const binds=[];
+  const H=/\{\{\s*([^}]+?)\s*\}\}/g;
+  function get(path,scope){const parts=path.split('.');let v=(parts[0] in scope)?scope[parts[0]]():vals[parts[0]];for(let i=1;i<parts.length;i++){if(v==null)return v;v=v[parts[i]];}return v;}
+  function interp(str,scope){return str.replace(H,(m,p)=>{const v=get(p.trim(),scope);return v==null?'':String(v);});}
+  function walk(node,scope){
+    if(node.nodeType===3){if(H.test(node.nodeValue)){H.lastIndex=0;const tpl=node.nodeValue;const f=()=>{node.nodeValue=interp(tpl,scope)};f();binds.push(f);}H.lastIndex=0;return;}
+    if(node.nodeType!==1)return;
+    const tag=node.tagName.toLowerCase();
+    if(tag==='sc-for'){
+      const lp=node.getAttribute('list').replace(/[{}\s]/g,'');const as=node.getAttribute('as');
+      const list=get(lp,scope)||[];const frag=document.createDocumentFragment();
+      list.forEach((_,i)=>{const sc=Object.assign({},scope);sc[as]=()=>(get(lp,scope)||[])[i];
+        Array.from(node.childNodes).forEach(ch=>{const c=ch.cloneNode(true);frag.appendChild(c);walk(c,sc);});});
+      node.replaceWith(frag);return;
+    }
+    if(tag==='sc-if'){
+      const vp=node.getAttribute('value').replace(/[{}\s]/g,'');const w=document.createElement('span');w.style.display='contents';
+      Array.from(node.childNodes).forEach(ch=>w.appendChild(ch));node.replaceWith(w);
+      const f=()=>{w.style.display=get(vp,scope)?'contents':'none'};f();binds.push(f);
+      Array.from(w.childNodes).forEach(c=>walk(c,scope));return;
+    }
+    Array.from(node.attributes).forEach(a=>{
+      const n=a.name,v=a.value;
+      if(n.startsWith('hint-')){node.removeAttribute(n);return;}
+      if(/^on/i.test(n)&&/\{\{/.test(v)){node.removeAttribute(n);const p=v.replace(/[{}\s]/g,'');
+        const ev={onclick:'click',onmouseenter:'mouseenter',onmouseleave:'mouseleave',onchange:'input'}[n.toLowerCase()]||n.slice(2).toLowerCase();
+        node.addEventListener(ev,e=>{const fn=get(p,scope);if(typeof fn==='function'){if(ev==='click'&&node.tagName==='A'&&node.getAttribute('href')==='#')e.preventDefault();fn(e);}});return;}
+      if(/\{\{/.test(v)){const f=()=>{const x=interp(v,scope);node.setAttribute(n,x);if(n==='value'&&node.value!==x)node.value=x;};f();binds.push(f);}
+    });
+    if(tag==='a'&&node.getAttribute('href')==='#')node.addEventListener('click',e=>e.preventDefault());
+    Array.from(node.childNodes).forEach(c=>walk(c,scope));
+  }
+  const root=document.getElementById('dc-root');
+  const t=document.getElementById('dc-tpl').content.cloneNode(true);
+  Array.from(t.childNodes).forEach(c=>walk(c,{}));root.appendChild(t);
+  window.__comp=comp;window.__dcUpdate=()=>{vals=comp.renderVals();binds.forEach(f=>f());};
+})();
+
+</script>
+<script>
+/* Contactformulier versturen via api/lead.js (Resend). */
+(function(){
+  var f=document.getElementById('contactform'); if(!f) return;
+  var $=function(id){return document.getElementById(id)}, fout=$('c-fout'), knop=$('c-verstuur');
+  function toon(t){ fout.innerHTML=t; fout.style.display='block'; }
+  f.addEventListener('submit', async function(e){
+    e.preventDefault();
+    if (knop.disabled) return;
+    var d={ type:'contact', voornaam:$('c-naam').value.trim(), achternaam:$('c-achternaam').value.trim(), email:$('c-email').value.trim(),
+            telefoon:$('c-telefoon').value.trim(), bedrijf:$('c-bedrijf').value.trim(), bericht:$('c-bericht').value.trim(), website:$('c-website').value };
+    if(!d.voornaam || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email) || !d.bericht){ toon('Vul je naam, een geldig e-mailadres en je bericht in.'); return; }
+    fout.style.display='none'; knop.disabled=true; knop.style.opacity='0.6';
+    try{
+      var r=await fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)});
+      if(!r.ok) throw new Error(r.status);
+      f.innerHTML='<h2 style="margin: 0; font-family: \'Factory Sans\', \'Helvetica Neue\', Arial, sans-serif; font-weight: 600; font-size: 22px; line-height: 1.1; letter-spacing: -0.03em; text-transform: uppercase; color: #FFFFFF">Bedankt voor je bericht</h2>'
+        +'<p style="margin: 16px 0 0; font-size: 16px; line-height: 1.6; color: rgba(255,255,255,0.75)">Nicky neemt binnen 2 werkdagen contact met je op. Haast? Bel of app hem op <a href="tel:+31619623366" style="color: #DFA701">06 19 62 33 66</a>.</p>';
+    }catch(err){
+      knop.disabled=false; knop.style.opacity='';
+      toon('Versturen lukte niet. Probeer het nog eens, of bel of app Nicky op <a href="tel:+31619623366" style="color: inherit">06 19 62 33 66</a>.');
+    }
+  });
+})();
+</script>
+<script src="js/gsap.min.js" defer></script>
+<script src="js/ScrollTrigger.min.js" defer></script>
+<script src="reveal.js?v=2" defer></script>
+</body>
+</html>
