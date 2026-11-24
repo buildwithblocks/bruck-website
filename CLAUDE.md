@@ -14,10 +14,17 @@ Klantsite van Build with Blocks (Tim) voor Brück Dak en Zinkwerk (Nicky, Ooij).
 - De homepage-balk geeft postcode/huisnummer/"dak vernieuwd" via sessionStorage (`bruck-dakscan`) door aan de dakscan.
 - `api/lead.js`: Vercel-functie die dakscan- en contactaanvragen mailt via Resend (ontwerp "volledig donker").
 
-## Deployen
+## Deployen (via GitHub)
 - Vercel-project `bruck-dakwerken` (team build-with-blocks), live op https://bruck-dakwerken.vercel.app.
-- Op een nieuwe machine eerst: `npx vercel login` en `npx vercel link --yes --project bruck-dakwerken`.
-- Deployen: `npx vercel deploy --prod --yes`. Er is geen build-stap (framework Other, output `.`).
+- Het project is gekoppeld aan github.com/buildwithblocks/bruck-website:
+  - push naar `main` = automatisch live (productie);
+  - push naar een andere branch = automatisch een preview-link.
+- Werkwijze, lokaal én in de cloud: eerst `git pull`, dan wijzigen, dan committen en pushen. Niet meer handmatig
+  `vercel deploy` gebruiken, zodat GitHub en de live site altijd gelijk lopen.
+- In een cloud-sessie: werk op een branch en laat Tim de preview-link checken voor je naar `main` merget,
+  tenzij hij zegt dat het direct live mag.
+- Lokaal op een nieuwe Mac: `npx vercel login` en `npx vercel link --yes --project bruck-dakwerken` (alleen nodig
+  voor `vercel env`/logs). Er is geen build-stap (framework Other, output `.`).
 - Lokaal bekijken: `python3 -m http.server 4620` in deze map (cleanUrls werken lokaal niet; gebruik `.html`).
 
 ## Mails (Resend) – testmodus staat AAN tot de livegang
