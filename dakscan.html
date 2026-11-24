@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Dakscan | Brück Dak en Zinkwerk</title>
 <link rel="icon" href="img/2eb862934a76df52611f70dd21ad94cc.png">
+<script src="/js/meet.js"></script>
+<script>/* Dakscan geopend: via de balk op de homepage of direct. */ (function(){ var b = "direct"; try { if (sessionStorage.getItem("bruck-dakscan")) b = "homepage"; } catch (e) {} window.meet("Dakscan geopend", { bron: b }); })();</script>
 </head>
 <body>
 <style>
@@ -200,7 +202,7 @@ class Component extends DCLogic {
     this.setState({ zoeken: true, zoekFout: '', keuzes: null, tried: 0 });
     try {
       const r = await window.BruckScan.zoekAdres(pc, nr, toev);
-      if (!r) { this.setState({ zoeken: false, zoekFout: 'We vinden dit adres niet. Controleer je postcode, huisnummer en toevoeging.' }); return; }
+      if (!r) { window.meet && window.meet('Dakscan: adres niet gevonden'); this.setState({ zoeken: false, zoekFout: 'We vinden dit adres niet. Controleer je postcode, huisnummer en toevoeging.' }); return; }
       if (r.keuzes) {
         this.setState({ zoeken: false, keuzes: r.keuzes });
         const box = document.getElementById('ds-keuzes');
@@ -217,6 +219,7 @@ class Component extends DCLogic {
         return;
       }
       const scan = await window.BruckScan.scanDak(r.adres);
+      window.meet && window.meet('Dakscan: adres gevonden');
       this.setState({ zoeken: false, scan: scan, step: 2 });
       try { window.scrollTo(0, 0); } catch (e) {}
     } catch (e) {
@@ -333,6 +336,7 @@ class Component extends DCLogic {
           voornaam: (st.vn || '').trim(), achternaam: (st.an || '').trim(), email: (st.em || '').trim(), telefoon: (st.tel || '').trim(),
           toestemming: ok, website: st.hp || '' }) });
         if (!r.ok) throw new Error('status ' + r.status);
+        window.meet && window.meet(ok ? 'Lead - Dakscan: inspectie aangevraagd' : 'Lead - Dakscan: alleen dakrapport', { uitkomst: band[0], daktype: DAKTYPE_TXT[DAKTYPE] });
         this.setState({ sending: false });
         go(5)();
       } catch (e) { this.setState({ sending: false, sendErr: true }); }
@@ -356,7 +360,7 @@ class Component extends DCLogic {
       foto: scan ? scan.luchtfoto : 'img/524566cc159fcafb4eb93343bafd91ef.jpg', punten: scan ? scan.punten : '',
       daktypeTxt: DAKTYPE_TXT[DAKTYPE], oppTxt: oppTxt,
       gegevensRegel: [BOUWJAAR ? 'Bouwjaar ' + BOUWJAAR : 'Bouwjaar onbekend', DAKTYPE_TXT[DAKTYPE].toLowerCase(), scan && scan.oppervlak ? 'ca. ' + scan.oppervlak.toLocaleString('nl-NL') + ' m² dak' + (gedeeld ? ' (hele gebouw)' : '') : ''].filter(Boolean).join(' · '),
-      next2: v2 ? go(3) : () => this.setState({ tried: 2 }),
+      next2: v2 ? () => { window.meet && window.meet('Dakscan: score bekeken', { uitkomst: band[0] }); go(3)(); } : () => this.setState({ tried: 2 }),
       next4: v4 ? submit : () => this.setState({ tried: 4 }),
       sending: st.sending ? 'true' : 'false', sendOp: st.sending ? 0.6 : 1, errSend: st.sendErr ? 'block' : 'none',
       hp: st.hp || '', set_hp: (e) => this.setState({ hp: e.target.value }),
