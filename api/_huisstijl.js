@@ -61,6 +61,7 @@ function layout({ site, label, titel, intro, inhoud, voorKlant }) {
   const voet = voorKlant
     ? `<div style="${FONT};font-size:14px;line-height:1.7;color:${GRIJS}">` +
       `<strong style="color:#FFFFFF">${BRUCK.naam}</strong><br>${BRUCK.adres}<br>` +
+      `<a href="${BRUCK.whatsapp}" style="color:${GEEL};text-decoration:none">WhatsApp</a> · ` +
       `<a href="${BRUCK.telHref}" style="color:${GEEL};text-decoration:none">${BRUCK.tel}</a> · ` +
       `<a href="mailto:${BRUCK.mail}" style="color:${GEEL};text-decoration:none">${BRUCK.mail}</a><br>` +
       `<a href="${site}" style="color:${GRIJS}">${site.replace(/^https?:\/\//, '')}</a> · KvK ${BRUCK.kvk}</div>`

@@ -110,8 +110,8 @@
       '<h2 class="mm-rv" style="--i:' + (i++) + '">Vragen? Vraag het aan Nicky</h2>' +
       '<div class="mm-rijen">' +
       '<a class="mm-crow wa mm-rv" style="--i:' + (i++) + '" href="' + WA_URL + '" target="_blank" rel="noopener"><span class="mm-foto"><img src="img/nicky-rond.jpg" alt="" width="44" height="44" loading="lazy"><span class="mm-badge">' + WA(11) + '</span></span><span><span class="mm-t1">WhatsApp</span><span class="mm-t2">Stuur Nicky een appje</span></span><span class="mm-banner">Reactie binnen 1 werkdag</span></a>' +
-      '<a class="mm-crow mm-rv" style="--i:' + (i++) + '" href="mailto:bruckdakenzinkwerk@outlook.com"><span class="mm-vk">' + MAIL + '</span><span class="mm-t1">Mail ons</span></a>' +
-      '<a class="mm-crow mm-rv" style="--i:' + i + '" href="tel:+31619623366"><span class="mm-vk">' + TEL + '</span><span class="mm-t1">Bel ons</span></a>' +
+      '<a class="mm-crow mm-rv" style="--i:' + (i++) + '" href="tel:+31619623366"><span class="mm-vk">' + TEL + '</span><span class="mm-t1">Bel ons</span></a>' +
+      '<a class="mm-crow mm-rv" style="--i:' + i + '" href="mailto:bruckdakenzinkwerk@outlook.com"><span class="mm-vk">' + MAIL + '</span><span class="mm-t1">Mail ons</span></a>' +
       '</div></div></div></div>';
     var el = document.createElement('div');
     el.id = 'mm'; el.setAttribute('role', 'dialog'); el.setAttribute('aria-modal', 'true'); el.setAttribute('aria-label', 'Menu'); el.setAttribute('aria-hidden', 'true');

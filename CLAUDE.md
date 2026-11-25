@@ -17,11 +17,11 @@ Klantsite van Build with Blocks (Tim) voor Brück Dak en Zinkwerk (Nicky, Ooij).
   Een keuze uit de lijst met toevoegingen scant direct dat adres (`scanAdres`), zonder opnieuw te zoeken.
 - De dakscan volgt de Vermeulen-dakscan (laadscherm min. 2,6 s, formulier bij niet-gevonden adres, rijke uitslag,
   één naamveld + vraag + inspectie-vinkje, WhatsApp met ingevuld bericht). Bedankpagina: vervolgstappen links,
-  rechts subsidiecheck en "Direct contact" (WhatsApp primair met "Reactie binnen 1 werkdag", bellen, mailen).
+  met knop "Terug naar de website"; rechts subsidiecheck en "Direct contact" (WhatsApp primair met "Reactie binnen 1 werkdag", bellen, mailen).
 - `api/lead.js`: contactformulier en dakscan "adres niet gevonden" (Resend, ontwerp "volledig donker").
 - `api/rapport.mjs`: dakrapport-pdf (@react-pdf/renderer, 3 pagina's, overgenomen van Vermeulen `src/lib/rapport`).
   Rekent de score opnieuw uit, haalt de luchtfoto bij PDOK, mailt de klant (rapport@) en Nicky (met pdf als bijlage).
-  `?download=1` geeft de pdf terug. Rate limit 6 per IP per 10 min (download 20). Gedeelde mailopmaak in `api/_huisstijl.js`.
+  Het rapport komt alleen per mail (geen download). Rate limit 6 per IP per 10 min. Gedeelde mailopmaak in `api/_huisstijl.js`.
 - Lettertypes voor de pdf in `api/_fonts/`. De Factory Sans-subset van de site mist `0 ? - / ! # = @`; `F()` in
   rapport.mjs zet die tekens in Saira. Gebruik NIET de Factory Sans uit ~/Library/Fonts: dat is een demo met watermerk.
 - `vercel.json` zet `installCommand: npm ci` (nodig voor de pdf-functie) en neemt fonts, logo en Nicky-foto mee.
@@ -33,6 +33,7 @@ Klantsite van Build with Blocks (Tim) voor Brück Dak en Zinkwerk (Nicky, Ooij).
   Zet WhatsApp + hamburger in de bestaande balk en bouwt het off-canvas menu (stijl Globen): grote links, Diensten
   uitklapbaar, Start dakscan (primair) + Subsidiecheck (secundair), contact zoals boven de footer. Nieuwe pagina of
   dienst? Pas `DIENSTEN`/`HOOFD` in menu.js aan en verhoog `?v=` in de script-tags. Desktopnav: Projecten, Over ons, FAQ, Contact.
+- Contactvolgorde overal: eerst WhatsApp (app), dan bellen, dan mailen (teksten, knoppen, menu, pdf en mails).
 - Knoppen: alleen primaire (geel) en secundaire (witte rand) knoppen, geen icoon-tekstlinks als knop.
 
 ## Deployen (via GitHub)

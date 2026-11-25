@@ -1,7 +1,6 @@
 // POST /api/rapport: het dakrapport (pdf), overgenomen van de Vermeulen-dakscan (src/lib/rapport + api/dakscan/rapport).
 //  - standaard: maakt het rapport, mailt het naar de klant (KLANT_FROM, in testmodus naar LEAD_TO) en stuurt Nicky
 //    de aanvraag met het rapport als bijlage. Geeft { ok, mail }.
-//  - ?download=1: geeft dezelfde pdf terug (downloadknop op het bedankscherm).
 // Score en uitkomst rekent de server zelf opnieuw uit, zoals bij Vermeulen (bereken() in scan.ts).
 import fs from 'node:fs';
 import path from 'node:path';
@@ -91,10 +90,10 @@ const T = {
   ],
   stappenZonder: [
     ['Lees je rapport rustig door', 'Check de punten die je zelf kunt bekijken.'],
-    ['Wil je dat Nicky komt kijken?', 'Bel of app hem. Hij bekijkt je dak gratis en vrijblijvend.'],
+    ['Wil je dat Nicky komt kijken?', 'App of bel hem. Hij bekijkt je dak gratis en vrijblijvend.'],
     ['Je krijgt eerlijk advies', 'Je hoort wat nodig is en wat kan wachten.'],
   ],
-  contactTitel: 'Vragen over je rapport?', contactTekst: 'Bel, app of mail Nicky. Hij denkt graag met je mee.',
+  contactTitel: 'Vragen over je rapport?', contactTekst: 'App, bel of mail Nicky. Hij denkt graag met je mee.',
   disclaimer: 'Dit rapport is een indicatie op basis van openbare gegevens (BAG, 3D BAG en luchtfoto\'s van PDOK). Het dak kan in werkelijkheid jonger, ouder of anders opgebouwd zijn. Pas op locatie zien we echt hoe je dak ervoor staat. Aan dit rapport kun je geen rechten ontlenen.',
 };
 const SCORES = {
@@ -300,10 +299,10 @@ function Rapport(d) {
         h(View, { style: { flex: 1, paddingRight: 14 } },
           h(Text, { style: { fontSize: 13, fontWeight: 800, color: '#FFFFFF' } }, T.contactTitel),
           h(Text, { style: { fontSize: 9, lineHeight: 1.5, color: '#CFCFCF', marginTop: 3 } }, T.contactTekst)),
-        h(View, { style: { width: 200 } }, [['Telefoon', H.BRUCK.tel, H.BRUCK.telHref], ['WhatsApp', H.BRUCK.tel, H.BRUCK.whatsapp], ['E-mail', H.BRUCK.mail, 'mailto:' + H.BRUCK.mail]].map(([l, v, href], i) =>
+        h(View, { style: { width: 200 } }, [['WhatsApp', H.BRUCK.tel, H.BRUCK.whatsapp], ['Telefoon', H.BRUCK.tel, H.BRUCK.telHref], ['E-mail', H.BRUCK.mail, 'mailto:' + H.BRUCK.mail]].map(([l, v, href], i) =>
           h(View, { key: i, style: { flexDirection: 'row', alignItems: 'center', marginTop: i ? 6 : 0 } },
             h(Text, { style: { width: 58, fontSize: 7.5, fontWeight: 700, color: '#9A9A9A', textTransform: 'uppercase', letterSpacing: 0.6 } }, l),
-            h(Link, { src: href, style: { fontSize: 9.5, fontWeight: 800, color: i === 1 ? '#25D366' : i === 0 ? GEEL : '#FFFFFF', textDecoration: 'none' } }, v))))),
+            h(Link, { src: href, style: { fontSize: 9.5, fontWeight: 800, color: i === 0 ? '#25D366' : i === 1 ? GEEL : '#FFFFFF', textDecoration: 'none' } }, v))))),
       h(Text, { style: { ...s.klein, marginTop: 14, fontSize: 7.5 } }, T.disclaimer),
       ...Voet(d)));
 }
@@ -387,8 +386,8 @@ function mails(input, r, site) {
       site, voorKlant: true, label: 'Jouw dakrapport', titel: `Hoi ${voornaam},`,
       intro: `Bedankt voor het doen van de dakscan. In de bijlage vind je je persoonlijke dakrapport voor <strong style="color:#FFFFFF">${H.esc(r.adres)}</strong>.`,
       inhoud: H.scoreBlok(r.score, r.scoreLabel, SCORES[r.uitkomst][1]) +
-        H.alinea(input.inspectie ? `Nicky neemt <strong style="color:#FFFFFF">${H.REACTIE}</strong> contact met je op om een moment te plannen waarop hij je dak gratis komt bekijken. Liever sneller? Bel of app gerust.` : 'Wil je dat Nicky je dak komt bekijken? Bel of app gerust, of beantwoord deze mail.') +
-        H.knoppen([H.knop(H.BRUCK.telHref, `Bel Nicky: ${H.BRUCK.tel}`, true), H.knop(H.BRUCK.whatsapp, 'WhatsApp', false), H.knop(`mailto:${H.BRUCK.mail}`, 'Mail Nicky', false)]),
+        H.alinea(input.inspectie ? `Nicky neemt <strong style="color:#FFFFFF">${H.REACTIE}</strong> contact met je op om een moment te plannen waarop hij je dak gratis komt bekijken. Liever sneller? App of bel gerust.` : 'Wil je dat Nicky je dak komt bekijken? App of bel gerust, of beantwoord deze mail.') +
+        H.knoppen([H.knop(H.BRUCK.whatsapp, 'App Nicky', true), H.knop(H.BRUCK.telHref, `Bel Nicky: ${H.BRUCK.tel}`, false), H.knop(`mailto:${H.BRUCK.mail}`, 'Mail Nicky', false)]),
     }),
   };
   return { lead, klant };
@@ -398,8 +397,7 @@ const fout = (res, status, code) => res.status(status).json({ ok: false, fout: c
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') { res.setHeader('Allow', 'POST'); return res.status(405).json({ ok: false }); }
-  const download = String(req.query && req.query.download) === '1';
-  if (H.teVaak(H.ipVan(req), download ? 'download' : 'rapport', download ? 20 : 6)) return fout(res, 429, 'te-vaak');
+  if (H.teVaak(H.ipVan(req), 'rapport', 6)) return fout(res, 429, 'te-vaak');
   let body = req.body;
   if (typeof body === 'string') { try { body = JSON.parse(body); } catch { body = null; } }
   const input = leesInput(body);
@@ -409,14 +407,8 @@ export default async function handler(req, res) {
 
   let r;
   try { r = await maakRapport(input, c.site); }
-  catch (e) { console.error('[rapport] pdf maken mislukt:', e); if (download) return fout(res, 500, 'pdf'); }
+  catch (e) { console.error('[rapport] pdf maken mislukt:', e); }
 
-  if (download) {
-    res.setHeader('Content-Type', 'application/pdf');
-    res.setHeader('Content-Disposition', `attachment; filename="${r.bestandsnaam.replace(/"/g, '')}"; filename*=UTF-8''${encodeURIComponent(r.bestandsnaam)}`);
-    res.setHeader('Cache-Control', 'no-store');
-    return res.status(200).send(r.pdf);
-  }
   if (!c.apiKey) { console.error('RESEND_API_KEY ontbreekt'); return res.status(200).json({ ok: true, mail: false }); }
   if (!r) {
     // Rapport mislukt: de aanvraag gaat toch naar Nicky, zonder bijlage.
