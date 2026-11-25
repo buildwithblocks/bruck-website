@@ -219,12 +219,12 @@ class Component extends DCLogic {
     }));
     const mAct = (this.state && typeof this.state.menuSvc === 'number') ? this.state.menuSvc : 0;
     const menuItems = [
-      { title: 'Dakwerken', short: 'Platte en hellende daken vervangen, renoveren en onderhouden', img: 'img/drone-dak-gestript.jpg', text: 'Vervangen, renoveren en onderhouden. We adviseren wat echt nodig is.' },
-      { title: 'Zinkwerken', short: 'Dakgoten, dakkapellen en boeidelen, op maat gezet in zink', img: 'img/3569059183015df3b752294bc94870af.jpg', text: 'Alles op maat gezet en strak afgewerkt, zodat het jaren meegaat.' },
-      { title: 'Dakpannen', short: 'Pannendaken leggen en vervangen, inclusief folie en panlatten', img: 'img/drone-pannendak-vernieuwen.jpg', text: 'Onderhoudsarm en jarenlang mooi, in een kleur die bij je huis past.' },
-      { title: 'EPDM', short: 'Naadloze en duurzame dakbedekking voor je platte dak', img: 'img/8ab1afaf483e5222d1ae1238210eff08.jpg', text: 'Naadloos gelegd, gaat lang mee en vraagt weinig onderhoud.' },
-      { title: 'Dakisolatie', short: 'Warmer huis en lagere energierekening, vaak met subsidie', img: 'img/faec84d1814a914d050740c3acfdc01a.jpg', text: 'Warmer in de winter, koeler in de zomer. Wij zoeken de subsidie voor je uit.' },
-      { title: 'Lekkages', short: 'Snel ter plaatse, de oorzaak gevonden en blijvend opgelost', img: 'img/63d74554af499d31f6ea856655c8c1a4.jpg', text: 'Snel erbij, de oorzaak gevonden en blijvend opgelost.' }
+      { title: 'Dakwerken', short: 'Platte en hellende daken vervangen, renoveren en onderhouden', img: 'img/drone-dak-gestript.jpg', text: 'Vervangen, repareren en onderhouden van platte en hellende daken.' },
+      { title: 'Zinkwerken', short: 'Dakgoten, dakkapellen en boeidelen, op maat gezet in zink', img: 'img/3569059183015df3b752294bc94870af.jpg', text: 'Goten, boeidelen en dakkapellen, op maat gemaakt en geplaatst.' },
+      { title: 'Dakpannen', short: 'Pannendaken leggen en vervangen, inclusief folie en panlatten', img: 'img/drone-pannendak-vernieuwen.jpg', text: 'Een paar kapotte pannen vervangen of een compleet nieuw pannendak.' },
+      { title: 'EPDM', short: 'Dakbedekking van één stuk rubber voor je platte dak', img: 'img/8ab1afaf483e5222d1ae1238210eff08.jpg', text: 'Eén rubberen laag zonder naden op je platte dak.' },
+      { title: 'Dakisolatie', short: 'Warmer huis en lagere energierekening, vaak met subsidie', img: 'img/faec84d1814a914d050740c3acfdc01a.jpg', text: 'Minder stookkosten, en vaak krijg je een deel terug via subsidie.' },
+      { title: 'Lekkages', short: 'Snel langs om de oorzaak te vinden en te repareren', img: 'img/63d74554af499d31f6ea856655c8c1a4.jpg', text: 'We zoeken waar het water binnenkomt en repareren het daar.' }
     ].map((m, i) => Object.assign({}, m, {
       bg: 'transparent',
       href: {"Dakwerken": "dakwerken.html", "Zinkwerken": "zinkwerken.html", "Dakpannen": "dakpannen.html", "EPDM": "epdm.html", "Dakisolatie": "dakisolatie.html", "Lekkages": "lekkages.html"}[m.title],
@@ -290,7 +290,7 @@ class Component extends DCLogic {
     const UITKOMST = sc >= GRENS_GROEN ? 'groen' : sc >= GRENS_ORANJE ? 'oranje' : 'rood';
     const SCORE_TXT = {
       groen: ['Je dak ziet er goed uit', 'Op basis van de gegevens lijkt je dak in goede staat. Wil je zeker weten dat alles klopt? Dan komt Nicky vrijblijvend even kijken.', '#7CC68D'],
-      oranje: ['Je dak verdient aandacht', 'De gegevens laten signalen zien die we serieus nemen. Nu nog klein, maar wachten maakt het groter.', '#E8913A'],
+      oranje: ['Je dak heeft aandacht nodig', 'De leeftijd van je dak of je antwoorden wijzen erop dat er iets speelt. Laat het nakijken voordat kleine schade groter wordt.', '#E8913A'],
       rood: ['Je dak heeft snel actie nodig', 'De gegevens en je antwoorden wijzen op een dak dat snel aandacht nodig heeft. Lekt het nu? Bel Nicky direct op 06 19 62 33 66.', '#E5674F'],
     };
     const PUNTEN = {
@@ -305,7 +305,7 @@ class Component extends DCLogic {
     const hellingTxt = !scan ? 'Onbekend' : DAKTYPE === 'plat' ? 'Vrijwel vlak' : scan.helling ? 'ca. ' + scan.helling + '°' : 'Onbekend';
     const oppDelen = scan && scan.oppervlakSchuin && scan.oppervlakPlat ? scan.oppervlakSchuin + ' m² schuin + ' + scan.oppervlakPlat + ' m² plat' : '';
     const VERN_KEY = { 'Nee': 'nee', 'Minder dan 10 jaar geleden': 'recent', '10 tot 20 jaar geleden': 'middel', 'Meer dan 20 jaar geleden': 'lang', 'Weet ik niet': 'weetniet' };
-    const band = SCORE_TXT[UITKOMST]; const bandOud = sc >= GRENS_GROEN ? ['Goed', 'Je dak lijkt in goede staat.', '#7CC68D'] : sc >= GRENS_ORANJE ? ['Verdient aandacht', 'Nu nog klein, maar wachten maakt het groter.', '#E8913A'] : ['Snel actie nodig', 'Laat je dak op korte termijn nakijken.', '#E05A4E'];
+    const band = SCORE_TXT[UITKOMST]; const bandOud = sc >= GRENS_GROEN ? ['Goed', 'Je dak lijkt in goede staat.', '#7CC68D'] : sc >= GRENS_ORANJE ? ['Verdient aandacht', 'Laat het nakijken voordat het erger wordt.', '#E8913A'] : ['Snel actie nodig', 'Laat je dak op korte termijn nakijken.', '#E05A4E'];
     const ok = st.ok !== false;
     const go = (n) => () => { this.setState({ step: n, tried: 0 }); try { window.scrollTo(0, 0); } catch (e) {} };
     // Aanvraag versturen (api/lead.js -> Resend). Pas na succes naar het bedankscherm.

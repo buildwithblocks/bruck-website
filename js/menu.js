@@ -20,7 +20,7 @@
   var CSS = [
     ':root{--mm-io:cubic-bezier(.76,0,.24,1)}',
     '.mm-knoppen{display:none;margin-left:auto;gap:8px;align-items:center}',
-    '.mm-ikoon{width:48px;height:48px;border:0;border-radius:0;display:inline-flex;align-items:center;justify-content:center;background:rgba(255,255,255,.12);color:#fff;cursor:pointer;padding:0;text-decoration:none;font:inherit;transition:background-color .3s ease,color .3s ease}',
+    '.mm-ikoon{width:48px;height:48px;border:0;border-radius:0;display:inline-flex;align-items:center;justify-content:center;background:rgba(255,255,255,.18);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);color:#fff;cursor:pointer;padding:0;text-decoration:none;font:inherit;transition:background-color .3s ease,color .3s ease}',
     '@media (hover:hover){.mm-ikoon:hover{background:#DFA701;color:#0B0B0B}#mm .mm-hoofd a:hover,#mm .mm-hoofd button:hover{color:#DFA701}#mm .mm-sub a:hover{color:#fff}#mm .mm-sub a:hover svg{transform:translateX(3px)}}',
     '.mm-ikoon:focus:not(:focus-visible){outline:none}.mm-ikoon:focus-visible{outline:2px solid #DFA701;outline-offset:2px}',
     '.mm-ham{position:relative;width:20px;height:14px}',
@@ -28,6 +28,7 @@
     '.mm-ham i:nth-child(1){top:0}.mm-ham i:nth-child(2){top:6px}.mm-ham i:nth-child(3){top:12px}',
     '.mm-open .mm-ham i:nth-child(1){top:6px;transform:rotate(45deg)}.mm-open .mm-ham i:nth-child(2){opacity:0}.mm-open .mm-ham i:nth-child(3){top:6px;transform:rotate(-45deg)}',
     '@media (max-width:' + (BP - 1) + 'px){',
+    '[data-floating-nav]{background:rgba(22,22,22,var(--nav-a,0)) !important;border-bottom-color:rgba(255,255,255,calc(.12 * var(--nav-a,0))) !important;padding-top:calc(20px * (1 - var(--nav-a,0))) !important;transition:none !important}',
     ' [data-floating-nav] nav[aria-label="Hoofdmenu"],[data-floating-nav] .mm-desk{display:none !important}',
     ' [data-floating-nav] header{gap:16px !important}',
     ' .mm-knoppen{display:flex}',
@@ -182,4 +183,12 @@
   function probeer(n) { if (!start() && n < 40) setTimeout(function () { probeer(n + 1); }, 50); }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', function () { probeer(0); });
   else probeer(0);
+})();
+
+/* Mobiel en tablet: de headerbalk loopt tijdens het scrollen geleidelijk van transparant naar donker (over 140px). */
+(function () {
+  var root = document.documentElement, bezig = false;
+  function zet() { bezig = false; root.style.setProperty('--nav-a', Math.min(1, Math.max(0, (window.scrollY || 0) / 140)).toFixed(3)); }
+  addEventListener('scroll', function () { if (!bezig) { bezig = true; requestAnimationFrame(zet); } }, { passive: true });
+  addEventListener('pageshow', zet); zet();
 })();

@@ -93,13 +93,13 @@ const T = {
     ['Wil je dat Nicky komt kijken?', 'App of bel hem. Hij bekijkt je dak gratis en vrijblijvend.'],
     ['Je krijgt eerlijk advies', 'Je hoort wat nodig is en wat kan wachten.'],
   ],
-  contactTitel: 'Vragen? Vraag het aan Nicky', contactTekst: 'Nicky staat voor je klaar. Stuur een appje, bel of mail, dan hoor je snel van hem.',
+  contactTitel: 'Vragen? Vraag het aan Nicky', contactTekst: 'Stuur Nicky een appje, bel of mail hem. Hij reageert zo snel mogelijk.',
   disclaimer: 'Dit rapport is een indicatie op basis van openbare gegevens (BAG, 3D BAG en luchtfoto\'s van PDOK). Het dak kan in werkelijkheid jonger, ouder of anders opgebouwd zijn. Pas op locatie zien we echt hoe je dak ervoor staat. Aan dit rapport kun je geen rechten ontlenen.',
 };
 const SCORES = {
   groen: ['Je dak ziet er goed uit', 'Op basis van de gegevens lijkt je dak in goede staat. Wil je zeker weten dat alles klopt? Dan komt Nicky vrijblijvend even kijken.',
     [['Laat je dakgoten één keer per jaar controleren, zeker onder bomen.', 'alle'], ['Controleer na een storm of pannen en nokvorsten nog goed liggen.', 'schuin'], ['Houd je platte dak vrij van bladeren en takken, zodat het water weg kan.', 'plat']]],
-  oranje: ['Je dak verdient aandacht', 'De gegevens laten signalen zien die we serieus nemen. Nu nog klein, maar wachten maakt het groter.',
+  oranje: ['Je dak heeft aandacht nodig', 'De leeftijd van je dak of je antwoorden wijzen erop dat er iets speelt. Laat het nakijken voordat kleine schade groter wordt.',
     [['Daken van deze leeftijd hebben vaak last van verschoven of poreuze pannen.', 'schuin'], ['Op een plat dak van deze leeftijd zie je vaak blazen, scheuren of losse naden.', 'plat'], ['Controleer de dakgoten en het lood rond de schoorsteen.', 'alle']]],
   rood: ['Je dak heeft snel actie nodig', 'De gegevens en je antwoorden wijzen op een dak dat snel aandacht nodig heeft. Lekt het nu? Bel Nicky direct op 06 19 62 33 66.',
     [['Bij oudere bitumen daken zie je vaak blaasvorming en naadlekkage.', 'plat'], ['Bij oudere pannendaken zie je vaak poreuze pannen en loszittende nokvorsten.', 'schuin'], ['Laat het dak op korte termijn inspecteren.', 'alle']]],

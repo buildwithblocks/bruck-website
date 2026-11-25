@@ -72,12 +72,19 @@ Klantsite van Build with Blocks (Tim) voor Brück Dak en Zinkwerk (Nicky, Ooij).
     `--sp-24` 24/20/14 (hero-kop → tekst), `--kop-tekst` 20/16/12 (h2 → bodytekst),
     `--label-kop` 10/10/8 (geel label → kop).
   - Vast op alle schermen: knoppen naast elkaar 10px, tussenkop → tekst 8px, kleine tussenruimtes ≤ 20px.
-- Footer staat in `css/footer.css` (ontwerp A): kop "Jouw dak in goede handen" (geen plaatsnamen in koppen) + dakscan, logo/adres/KvK +
+- Footer staat in `css/footer.css` (ontwerp A): kop "Je dakdekker komt zelf kijken" (geen plaatsnamen in koppen) + dakscan, logo/adres/KvK +
   "App Nicky"-rij in contactstijl, kolommen Diensten / Direct regelen / Over Brück, onderbalk met
   Made by Build with Blocks. Tekstlinks: hover alleen kleur (wit), geen onderstreping. Op alle pagina's
   dezelfde markup; wijzig die overal tegelijk.
 - Geen accenten in koppen met de display-font (gebruik "1" of "een" in plaats van "één").
 - Hover-effecten: knoppen en kaarten worden #C99600; pijl-knoppen wisselen de pijl (uit rechts, in van links).
+
+## Teksten
+- Schrijf zoals Nicky praat: concreet, kort, gewone woorden. Geen AI-achtige reclametaal zoals "zonder gedoe",
+  "zonder zorgen", "waar je op kunt bouwen", "op hoog niveau", "staat voor je klaar", "denkt graag met je mee",
+  "aan het goede adres", "zonder kleine lettertjes", "van A tot Z", rijtjes van drie bijvoeglijke naamwoorden of
+  woordgrappen in koppen. Liever zeggen wat Nicky doet en wat de klant krijgt.
+- Geen plaatsnamen en geen "Brück" (ü) in koppen met Factory Sans; in lopende tekst mag het wel.
 
 ## Nog open
 - Stap-meting per dakscan-stap (Vercel custom events vragen Pro; anders Plausible).
