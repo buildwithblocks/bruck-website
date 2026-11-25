@@ -28,7 +28,10 @@
     '.mm-ham i:nth-child(1){top:0}.mm-ham i:nth-child(2){top:6px}.mm-ham i:nth-child(3){top:12px}',
     '.mm-open .mm-ham i:nth-child(1){top:6px;transform:rotate(45deg)}.mm-open .mm-ham i:nth-child(2){opacity:0}.mm-open .mm-ham i:nth-child(3){top:6px;transform:rotate(-45deg)}',
     '@media (max-width:' + (BP - 1) + 'px){',
-    '[data-floating-nav]{background:rgba(22,22,22,var(--nav-a,0)) !important;border-bottom-color:rgba(255,255,255,calc(.12 * var(--nav-a,0))) !important;padding-top:calc(20px * (1 - var(--nav-a,0))) !important;transition:none !important}',
+    '[data-floating-nav]{background:rgba(22,22,22,0) !important;border-bottom-color:rgba(255,255,255,0) !important;padding-top:0 !important;transition:background-color .4s ease,border-color .4s ease !important}',
+    '[data-floating-nav]>header{transform:translateY(20px);transition:transform .45s cubic-bezier(.2,.8,.2,1);will-change:transform}',
+    '.nav-vast [data-floating-nav]{background:rgba(22,22,22,1) !important;border-bottom-color:rgba(255,255,255,.12) !important}',
+    '.nav-vast [data-floating-nav]>header{transform:none}',
     ' [data-floating-nav] nav[aria-label="Hoofdmenu"],[data-floating-nav] .mm-desk{display:none !important}',
     ' [data-floating-nav] header{gap:16px !important}',
     ' .mm-knoppen{display:flex}',
@@ -187,10 +190,15 @@
   else probeer(0);
 })();
 
-/* Mobiel en tablet: de headerbalk loopt tijdens het scrollen geleidelijk van transparant naar donker (over 140px). */
+/* Mobiel en tablet: zodra je begint te scrollen kleurt de headerbalk in een vloeiende, tijdgestuurde overgang donker
+   (geen koppeling aan elke scrollpixel; die hapert op telefoons). Met een kleine marge om flikkeren te voorkomen. */
 (function () {
-  var root = document.documentElement, bezig = false;
-  function zet() { bezig = false; root.style.setProperty('--nav-a', Math.min(1, Math.max(0, (window.scrollY || 0) / 140)).toFixed(3)); }
+  var root = document.documentElement, vast = null, bezig = false;
+  function zet() {
+    bezig = false;
+    var y = window.scrollY || 0, v = vast ? y > 2 : y > 8;
+    if (v !== vast) { vast = v; root.classList.toggle('nav-vast', v); }
+  }
   addEventListener('scroll', function () { if (!bezig) { bezig = true; requestAnimationFrame(zet); } }, { passive: true });
   addEventListener('pageshow', zet); zet();
 })();
