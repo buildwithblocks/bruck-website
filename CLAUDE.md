@@ -69,5 +69,4 @@ Klantsite van Build with Blocks (Tim) voor Brück Dak en Zinkwerk (Nicky, Ooij).
 - Hover-effecten: knoppen en kaarten worden #C99600; pijl-knoppen wisselen de pijl (uit rechts, in van links).
 
 ## Nog open
-- Placeholders voor Nicky: duur "[X] dagen" (dienstpagina's).
 - Stap-meting per dakscan-stap (Vercel custom events vragen Pro; anders Plausible).
