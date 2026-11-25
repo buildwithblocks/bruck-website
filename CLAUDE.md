@@ -71,8 +71,10 @@ Klantsite van Build with Blocks (Tim) voor Brück Dak en Zinkwerk (Nicky, Ooij).
     `--sp-40` 40/32/24, `--sp-32` 32/24/18, `--sp-28` 28/24/18 (tekst → knop),
     `--sp-24` 24/20/14 (hero-kop → tekst), `--kop-tekst` 20/16/12 (h2 → bodytekst),
     `--label-kop` 10/10/8 (geel label → kop).
-  - Mobiel extra (onderaan `css/ritme.css`): opeenvolgende secties 150px uit elkaar via `data-m-onder` /
-    `data-m-boven` op de `<section>`, bodytekst 15px, blokken met clamp-padding 24px, label "Reactie binnen
+  - Ruimte tussen opeenvolgende secties: desktop 175 / tablet 150 / mobiel 125, via `data-m-onder` (vorige
+    sectie, onderpadding 0) en `data-m-boven` (volgende sectie) op de `<section>`; hero bovenaan en footer niet.
+    Homepage-intro (#intro-inhoud) volgt dezelfde waarden.
+  - Mobiel extra (onderaan `css/ritme.css`): bodytekst 15px, blokken met clamp-padding 24px, label "Reactie binnen
     1 werkdag" kleiner. Nieuwe sectie tussen andere secties? Geef haar en de vorige die attributen.
   - Vast op alle schermen: knoppen naast elkaar 10px, tussenkop → tekst 8px, kleine tussenruimtes ≤ 20px.
 - Footer staat in `css/footer.css` (ontwerp A): kop "Je dakdekker komt zelf kijken" (geen plaatsnamen in koppen) + dakscan, logo/adres/KvK +

@@ -21,11 +21,14 @@
 .ds-field>span>span:first-child,#dakscan-balk label>span>span:first-child{line-height:1.2}
 .ds-field input,.ds-field select,.ds-field textarea,#dakscan-balk input,#dakscan-balk select{margin-top:2px !important;line-height:1.3}
 
-/* Mobiel: secties overal 150px uit elkaar (alleen tussen opeenvolgende secties; hero bovenaan en footer niet),
+/* Ruimte tussen opeenvolgende secties (niet hero bovenaan en footer): desktop 175, tablet 150, mobiel 125.
+   Mobiel verder:
    bodytekst 15px, kleinere binnenruimte in blokken, subtieler label "Reactie binnen 1 werkdag". */
+[data-m-onder]{padding-bottom:0 !important}
+[data-m-boven]{padding-top:175px !important}
+@media (max-width:1199px){[data-m-boven]{padding-top:150px !important}}
 @media (max-width:767px){
-  [data-m-onder]{padding-bottom:0 !important}
-  [data-m-boven]{padding-top:150px !important}
+  [data-m-boven]{padding-top:125px !important}
   p[style*="font-size: 16px"],p[style*="font-size: 17px"],p[style*="font-size: 18px"],
   li[style*="font-size: 16px"],li[style*="font-size: 17px"],li span[style*="font-size: 16px"]{font-size:15px !important}
   [style*="padding: clamp(40px, 5vw, 72px)"],[style*="padding: clamp(32px, 4vw, 56px)"]{padding:24px !important}
