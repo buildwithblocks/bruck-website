@@ -30,6 +30,7 @@
     return {
       weergave: d.weergavenaam, straat: d.straatnaam, huis: d.huis_nlt || String(d.huisnummer),
       postcode: d.postcode, plaats: d.woonplaatsnaam, rd: rd, ll: ll, vboId: d.adresseerbaarobject_id,
+      gemeente: d.gemeentenaam || undefined,
     };
   }
 
@@ -81,10 +82,17 @@
       var a = (objs.find(function (o) { return o.attributes && o.attributes.b3_dak_type !== undefined; }) || {}).attributes;
       if (!a) return { daktype: 'onbekend' };
       var n = function (k) { return typeof a[k] === 'number' ? a[k] : 0; };
-      var plat = n('b3_opp_dak_plat'), schuin = n('b3_opp_dak_schuin'), totaal = plat + schuin, daktype = 'onbekend';
+      var plat = n('b3_opp_dak_plat'), schuin = n('b3_opp_dak_schuin'), grond = n('b3_opp_grond'), totaal = plat + schuin, daktype = 'onbekend';
       if (totaal > 0) { var p = plat / totaal; daktype = p > 0.85 ? 'plat' : p < 0.15 ? 'schuin' : 'combinatie'; }
       else if (typeof a.b3_dak_type === 'string') daktype = /horizontal/.test(a.b3_dak_type) ? 'plat' : a.b3_dak_type === 'slanted' ? 'schuin' : 'onbekend';
-      return { daktype: daktype, oppervlak: totaal > 0 ? Math.round(schuin) + Math.round(plat) : undefined };
+      // Helling van de schuine delen: verhouding tussen grondvlak en echte dakoppervlakte (afgerond op 5 graden).
+      var helling;
+      if (schuin > 0 && grond > 0) {
+        var proj = Math.max(1, grond - plat), cos = Math.min(1, proj / schuin), deg = Math.acos(cos) * 180 / Math.PI;
+        if (deg >= 5) helling = Math.round(deg / 5) * 5;
+      }
+      var rs = Math.round(schuin), rp = Math.round(plat);
+      return { daktype: daktype, oppervlak: totaal > 0 ? rs + rp : undefined, oppervlakSchuin: rs || undefined, oppervlakPlat: rp || undefined, helling: helling };
     });
   }
 
@@ -118,8 +126,9 @@
       return dakVan(pand.id).catch(function () { return { daktype: 'onbekend' }; }).then(function (dak) {
         var k = kaderVan(adres, pand.contour);
         return {
-          adres: adres, bouwjaar: pand.bouwjaar, daktype: dak.daktype, oppervlak: dak.oppervlak, adressen: pand.adressen,
-          luchtfoto: luchtfotoUrl(k), punten: svgPunten(pand.contour, k),
+          adres: adres, bouwjaar: pand.bouwjaar, pandId: pand.id, daktype: dak.daktype, oppervlak: dak.oppervlak,
+          oppervlakSchuin: dak.oppervlakSchuin, oppervlakPlat: dak.oppervlakPlat, helling: dak.helling, adressen: pand.adressen,
+          kader: k, contour: pand.contour, luchtfoto: luchtfotoUrl(k), punten: svgPunten(pand.contour, k),
         };
       });
     });

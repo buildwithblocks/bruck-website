@@ -1,0 +1,10 @@
+{
+  "name": "bruck-website",
+  "private": true,
+  "description": "Statische site van Brück Dak en Zinkwerk; dependencies alleen voor de serverfuncties in api/ (pdf-rapport).",
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "@react-pdf/renderer": "4.9.0",
+    "react": "19.2.0"
+  }
+}

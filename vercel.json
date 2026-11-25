@@ -1,3 +1,10 @@
 {
-  "cleanUrls": true
+  "cleanUrls": true,
+  "installCommand": "npm ci",
+  "functions": {
+    "api/rapport.mjs": {
+      "maxDuration": 30,
+      "includeFiles": "{api/_fonts/**,img/2eb862934a76df52611f70dd21ad94cc.png,img/nicky-rond.jpg}"
+    }
+  }
 }

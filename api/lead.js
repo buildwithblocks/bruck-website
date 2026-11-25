@@ -13,104 +13,15 @@
 //                   met [TEST] in het onderwerp. Zet LEAD_TEST op "0" om live te gaan.
 //   SITE_URL        basis-URL voor logo en links (standaard https://bruck-dakwerken.vercel.app)
 
-const BRUCK = {
-  naam: 'Brück Dak en Zinkwerk',
-  tel: '06 19 62 33 66',
-  telHref: 'tel:+31619623366',
-  whatsapp: 'https://wa.me/31619623366',
-  mail: 'bruckdakenzinkwerk@outlook.com',
-  adres: 'Goudwindestraat 39, 6576 CD Ooij',
-  kvk: '85783439',
-};
-const REACTIE = 'binnen 2 werkdagen';
-const GEEL = '#DFA701', DONKER = '#161616', ZWART = '#0B0B0B';
-const FONT = "font-family:'Saira',Arial,Helvetica,sans-serif";
-const SCORE_KLEUR = { 'Goed': '#7CC68D', 'Verdient aandacht': '#E8913A', 'Snel actie nodig': '#E5674F' }; // zelfde kleuren als de dakscan
-
-const clean = (v, max = 300) => String(v == null ? '' : v).replace(/[\u0000-\u001f\u007f]/g, ' ').trim().slice(0, max);
-const cleanText = (v, max = 4000) => String(v == null ? '' : v).replace(/\r\n?/g, '\n').replace(/[\u0000-\u0009\u000b-\u001f\u007f]/g, ' ').trim().slice(0, max);
-const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-const isEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
-const telDigits = (v) => v.replace(/\D/g, '');
-const telHref = (v) => { const d = telDigits(v); return d ? 'tel:' + (d.startsWith('0') ? '+31' + d.slice(1) : '+' + d) : ''; };
-
-// ---------- bouwstenen: ontwerp B "volledig donker", in de stijl van de website ----------
-// Tabel-opmaak met bgcolor-attributen, zodat Outlook, Gmail en Apple Mail de donkere vlakken goed tonen.
-
-const BG = '#0B0B0B', VLAK = '#161616', KAART = '#1F1F1F', LIJN = '#2C2C2C', ZACHT = '#B8B8B8', GRIJS = '#8A8A8A';
-
-function rijen(rows) {
-  return '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse">' +
-    rows.filter(([, v]) => v).map(([k, v]) =>
-      `<tr><td style="padding:12px 16px 12px 0;border-bottom:1px solid ${LIJN};${FONT};font-size:14px;color:${GRIJS};white-space:nowrap;vertical-align:top">${esc(k)}</td>` +
-      `<td style="padding:12px 0;border-bottom:1px solid ${LIJN};${FONT};font-size:15px;font-weight:bold;color:#FFFFFF;text-align:right">${esc(v).replace(/\n/g, '<br>')}</td></tr>`).join('') +
-    '</table>';
-}
-
-function knop(href, label, primair) {
-  const stijl = primair
-    ? `background:${GEEL};color:${ZWART};border:1px solid ${GEEL}`
-    : `background:${VLAK};color:#FFFFFF;border:1px solid #6A6A6A`;
-  return `<td style="padding:0 8px 8px 0"><a href="${esc(href)}" style="display:inline-block;padding:14px 22px;${stijl};${FONT};font-size:14px;font-weight:bold;letter-spacing:.04em;text-transform:uppercase;text-decoration:none">${esc(label)}</a></td>`;
-}
-const knoppen = (lijst) => `<table role="presentation" cellpadding="0" cellspacing="0" style="margin:28px 0 0"><tr>${lijst.join('')}</tr></table>`;
-
-function scoreBlok(score, label, advies) {
-  const kleur = SCORE_KLEUR[label] || GEEL;
-  return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="${KAART}" style="background:${KAART};margin:0 0 24px"><tr><td style="padding:28px">` +
-    `<div style="${FONT};font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:${GRIJS}">Jouw dakscore</div>` +
-    `<div style="${FONT};font-size:56px;line-height:1;font-weight:bold;color:${GEEL};margin-top:8px">${esc(score)}</div>` +
-    (label ? `<div style="${FONT};font-size:20px;font-weight:bold;color:${kleur};margin-top:10px">${esc(label)}</div>` : '') +
-    (advies ? `<div style="${FONT};font-size:15px;line-height:1.5;color:${ZACHT};margin-top:4px">${esc(advies)}</div>` : '') +
-    `</td></tr></table>`;
-}
-
-const tekstBlok = (tekst) => `<div style="padding:18px 20px;background:${KAART};border-left:4px solid ${GEEL};${FONT};font-size:15px;line-height:1.6;color:#FFFFFF">${esc(tekst).replace(/\n/g, '<br>')}</div>`;
-const alinea = (html) => `<p style="margin:24px 0 0;${FONT};font-size:15px;line-height:1.6;color:${ZACHT}">${html}</p>`;
-
-function layout({ site, label, titel, intro, inhoud, voorKlant }) {
-  const logo = `${site}/img/email-logo.png`;
-  const voet = voorKlant
-    ? `<div style="${FONT};font-size:14px;line-height:1.7;color:${GRIJS}">` +
-      `<strong style="color:#FFFFFF">${BRUCK.naam}</strong><br>${BRUCK.adres}<br>` +
-      `<a href="${BRUCK.telHref}" style="color:${GEEL};text-decoration:none">${BRUCK.tel}</a> · ` +
-      `<a href="mailto:${BRUCK.mail}" style="color:${GEEL};text-decoration:none">${BRUCK.mail}</a><br>` +
-      `<a href="${site}" style="color:${GRIJS}">${site.replace(/^https?:\/\//, '')}</a> · KvK ${BRUCK.kvk}</div>`
-    : `<div style="${FONT};font-size:13px;color:${GRIJS}">Verstuurd via de website van ${BRUCK.naam}.</div>`;
-  return `<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">` +
-    `<meta name="color-scheme" content="dark light"><meta name="supported-color-schemes" content="dark light"><title>${esc(titel)}</title></head>` +
-    `<body style="margin:0;padding:0;background:${BG}" bgcolor="${BG}">` +
-    `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="${BG}" style="background:${BG}"><tr><td align="center" style="padding:24px 12px">` +
-    `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:600px">` +
-    // kop met logo
-    `<tr><td bgcolor="${VLAK}" style="background:${VLAK};padding:32px 32px 8px">` +
-    `<a href="${site}"><img src="${logo}" width="112" alt="${BRUCK.naam}" style="display:block;width:112px;height:auto;border:0"></a></td></tr>` +
-    // inhoud
-    `<tr><td bgcolor="${VLAK}" style="background:${VLAK};padding:24px 32px 32px">` +
-    (label ? `<div style="${FONT};font-size:13px;font-weight:bold;letter-spacing:.08em;text-transform:uppercase;color:${GEEL}">${esc(label)}</div>` : '') +
-    `<h1 style="margin:8px 0 12px;${FONT};font-size:30px;line-height:1.1;font-weight:bold;text-transform:uppercase;color:#FFFFFF">${esc(titel)}</h1>` +
-    (intro ? `<p style="margin:0 0 24px;${FONT};font-size:16px;line-height:1.6;color:${ZACHT}">${intro}</p>` : '') +
-    inhoud + `</td></tr>` +
-    // voet
-    `<tr><td bgcolor="${BG}" style="background:${BG};padding:24px 32px;border-top:1px solid ${LIJN}">${voet}</td></tr>` +
-    `</table></td></tr></table></body></html>`;
-}
-
-async function send(apiKey, msg) {
-  const r = await fetch('https://api.resend.com/emails', {
-    method: 'POST',
-    headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify(msg),
-  });
-  if (!r.ok) throw new Error(`Resend ${r.status}: ${(await r.text()).slice(0, 300)}`);
-}
+const { BRUCK, REACTIE, clean, cleanText, isEmail, telDigits, telHref, rijen, knop, knoppen, scoreBlok, tekstBlok, alinea, layout, send, config, stuurKlant, teVaak, ipVan } = require('./_huisstijl');
 
 // ---------- de mails ----------
 
 function maakMails(b, site) {
-  const type = b.type === 'contact' ? 'contact' : 'dakscan';
-  const voornaam = clean(b.voornaam, 80);
-  const naam = [voornaam, clean(b.achternaam, 80)].filter(Boolean).join(' ');
+  const type = b.type === 'contact' || b.type === 'nietgevonden' ? b.type : 'dakscan';
+  // Eén naamveld (dakscan, zoals Vermeulen) of voor- en achternaam (contactformulier).
+  const naam = clean(b.naam, 120) || [clean(b.voornaam, 80), clean(b.achternaam, 80)].filter(Boolean).join(' ');
+  const voornaam = clean(b.voornaam, 80) || naam.split(/\s+/)[0] || naam;
   const email = clean(b.email, 160);
   const tel = clean(b.telefoon, 40);
   const klantKnoppen = knoppen([knop(BRUCK.telHref, `Bel Nicky: ${BRUCK.tel}`, true), knop(`mailto:${BRUCK.mail}`, 'Mail Nicky', false)]);
@@ -147,6 +58,26 @@ function maakMails(b, site) {
     };
   }
 
+  if (type === 'nietgevonden') {
+    const adres = clean(b.adresVol, 160);
+    const vraag = cleanText(b.bericht);
+    return {
+      leadSubject: `Dakscan: adres niet gevonden – ${naam} – ${adres}`,
+      leadHtml: layout({
+        site, label: 'Dakscan: adres niet gevonden', titel: naam,
+        intro: `Het adres stond niet in de BAG (bijvoorbeeld nieuwbouw). Zoek het na en neem ${REACTIE} contact op.`,
+        inhoud: rijen([['Telefoon', tel], ['E-mail', email], ['Ingevuld adres', adres]]) +
+          (vraag ? '<div style="height:20px;line-height:20px;font-size:0">&nbsp;</div>' + tekstBlok(vraag) : '') + leadKnoppen(),
+      }),
+      klantSubject: 'We hebben je aanvraag ontvangen',
+      klantHtml: layout({
+        site, voorKlant: true, label: 'Aanvraag ontvangen', titel: `Bedankt, ${voornaam}!`,
+        intro: `We konden je adres niet automatisch vinden. Nicky zoekt het na en neemt <strong style="color:#FFFFFF">${REACTIE}</strong> contact met je op.`,
+        inhoud: rijen([['Adres', adres]]) + alinea('Haast? Bel of app Nicky direct.') + klantKnoppen,
+      }),
+    };
+  }
+
   const bericht = cleanText(b.bericht);
   return {
     leadSubject: `Contactformulier: ${naam}`,
@@ -177,18 +108,16 @@ module.exports = async (req, res) => {
   // Honeypot: bots vullen dit verborgen veld in. Doe alsof het gelukt is.
   if (clean(b.website)) return res.status(200).json({ ok: true });
 
-  const type = b.type === 'contact' ? 'contact' : 'dakscan';
+  if (teVaak(ipVan(req), 'lead', 6)) return res.status(429).json({ ok: false, error: 'te-vaak' });
+
+  const type = b.type === 'contact' || b.type === 'nietgevonden' ? b.type : 'dakscan';
   const email = clean(b.email, 160);
-  if (!clean(b.voornaam) || !isEmail(email)) return res.status(400).json({ ok: false, error: 'velden' });
-  if (type === 'dakscan' && telDigits(clean(b.telefoon, 40)).length < 10) return res.status(400).json({ ok: false, error: 'velden' });
+  if (!(clean(b.naam) || clean(b.voornaam)) || !isEmail(email)) return res.status(400).json({ ok: false, error: 'velden' });
+  if (type !== 'contact' && telDigits(clean(b.telefoon, 40)).length < 10) return res.status(400).json({ ok: false, error: 'velden' });
   if (type === 'contact' && !cleanText(b.bericht)) return res.status(400).json({ ok: false, error: 'velden' });
 
-  const apiKey = process.env.RESEND_API_KEY;
-  const from = process.env.LEAD_FROM || 'Brück dakscan <dakscan@bruckdakwerken.nl>';
-  const klantFrom = process.env.KLANT_FROM || 'Brück Dak en Zinkwerk <rapport@bruckdakwerken.nl>';
-  const to = process.env.LEAD_TO || 'info@buildwithblocks.nl';
-  const test = process.env.LEAD_TEST !== '0';
-  const site = (process.env.SITE_URL || 'https://bruck-dakwerken.vercel.app').replace(/\/+$/, '');
+  const c = config();
+  const { apiKey, from, to, test, site } = c;
   if (!apiKey) { console.error('RESEND_API_KEY ontbreekt'); return res.status(500).json({ ok: false, error: 'config' }); }
 
   const m = maakMails(b, site);
@@ -196,14 +125,7 @@ module.exports = async (req, res) => {
   try {
     await send(apiKey, { from, to: [to], reply_to: email, subject: (test ? '[TEST] ' : '') + m.leadSubject, html: m.leadHtml });
     try {
-      if (test) {
-        // Testmodus: de klantmail gaat alleen naar LEAD_TO, ter controle.
-        await send(apiKey, { from: klantFrom, to: [to], subject: `[TEST klantmail → ${email}] ${m.klantSubject}`, html: m.klantHtml });
-      } else if (klantFrom && !/buildwithblocks\.nl/i.test(klantFrom)) {
-        await send(apiKey, { from: klantFrom, to: [email], reply_to: to, subject: m.klantSubject, html: m.klantHtml });
-      } else {
-        console.error('Geen klantmail verstuurd: KLANT_FROM ontbreekt of is geen domein van Brück');
-      }
+      await stuurKlant(c, { subject: m.klantSubject, html: m.klantHtml }, email);
     } catch (e) { console.error('Bevestiging klant mislukt', e.message); }
     return res.status(200).json({ ok: true });
   } catch (e) {

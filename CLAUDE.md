@@ -15,7 +15,16 @@ Klantsite van Build with Blocks (Tim) voor Brück Dak en Zinkwerk (Nicky, Ooij).
 - `dakscan.html` is een gesloten omgeving: geen menu, footer of contactblok, alleen een topbalk (Terug naar home,
   logo) met de 5 benoemde stappen; "Vorige" en de volgende knop staan per stap in een vaste balk onderin (stap 2–4).
   Een keuze uit de lijst met toevoegingen scant direct dat adres (`scanAdres`), zonder opnieuw te zoeken.
-- `api/lead.js`: Vercel-functie die dakscan- en contactaanvragen mailt via Resend (ontwerp "volledig donker").
+- De dakscan volgt de Vermeulen-dakscan (laadscherm min. 2,6 s, formulier bij niet-gevonden adres, rijke uitslag,
+  één naamveld + vraag + inspectie-vinkje, WhatsApp met ingevuld bericht). Bedankpagina: vervolgstappen links,
+  rechts subsidiecheck en "Direct contact" (WhatsApp primair met "Reactie binnen 1 werkdag", bellen, mailen).
+- `api/lead.js`: contactformulier en dakscan "adres niet gevonden" (Resend, ontwerp "volledig donker").
+- `api/rapport.mjs`: dakrapport-pdf (@react-pdf/renderer, 3 pagina's, overgenomen van Vermeulen `src/lib/rapport`).
+  Rekent de score opnieuw uit, haalt de luchtfoto bij PDOK, mailt de klant (rapport@) en Nicky (met pdf als bijlage).
+  `?download=1` geeft de pdf terug. Rate limit 6 per IP per 10 min (download 20). Gedeelde mailopmaak in `api/_huisstijl.js`.
+- Lettertypes voor de pdf in `api/_fonts/`. De Factory Sans-subset van de site mist `0 ? - / ! # = @`; `F()` in
+  rapport.mjs zet die tekens in Saira. Gebruik NIET de Factory Sans uit ~/Library/Fonts: dat is een demo met watermerk.
+- `vercel.json` zet `installCommand: npm ci` (nodig voor de pdf-functie) en neemt fonts, logo en Nicky-foto mee.
 
 ## Deployen (via GitHub)
 - Vercel-project `bruck-dakwerken` (team build-with-blocks), live op https://bruck-dakwerken.vercel.app.
