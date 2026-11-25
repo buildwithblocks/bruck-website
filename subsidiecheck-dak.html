@@ -181,12 +181,12 @@ class Component extends DCLogic {
     }));
     const mAct = (this.state && typeof this.state.menuSvc === 'number') ? this.state.menuSvc : 0;
     const menuItems = [
-      { title: 'Dakwerken', short: 'Platte en hellende daken', img: 'img/3569059183015df3b752294bc94870af.jpg', text: 'Vervangen, renoveren en onderhouden. We adviseren wat echt nodig is.' },
-      { title: 'Zinkwerken', short: 'Goten, dakkapellen, boeidelen', img: 'img/566833f91f2125e9bf52e1298a4a6b63.jpg', text: 'Alles op maat gezet en strak afgewerkt, zodat het jaren meegaat.' },
-      { title: 'Dakpannen', short: 'Leggen en vervangen', img: 'img/01d5e5b5ef58a54651e5cd07aee47716.jpg', text: 'Onderhoudsarm en jarenlang mooi, in een kleur die bij je huis past.' },
-      { title: 'EPDM', short: 'Dakbedekking voor platte daken', img: 'img/8ab1afaf483e5222d1ae1238210eff08.jpg', text: 'Naadloos gelegd, gaat lang mee en vraagt weinig onderhoud.' },
-      { title: 'Dakisolatie', short: 'Minder stoken, vaak subsidie', img: 'img/faec84d1814a914d050740c3acfdc01a.jpg', text: 'Warmer in de winter, koeler in de zomer. Wij zoeken de subsidie voor je uit.' },
-      { title: 'Lekkages', short: 'Snel opgelost', img: 'img/63d74554af499d31f6ea856655c8c1a4.jpg', text: 'Snel erbij, de oorzaak gevonden en blijvend opgelost.' }
+      { title: 'Dakwerken', short: 'Platte en hellende daken vervangen, renoveren en onderhouden', img: 'img/3569059183015df3b752294bc94870af.jpg', text: 'Vervangen, renoveren en onderhouden. We adviseren wat echt nodig is.' },
+      { title: 'Zinkwerken', short: 'Dakgoten, dakkapellen en boeidelen, op maat gezet in zink', img: 'img/566833f91f2125e9bf52e1298a4a6b63.jpg', text: 'Alles op maat gezet en strak afgewerkt, zodat het jaren meegaat.' },
+      { title: 'Dakpannen', short: 'Pannendaken leggen en vervangen, inclusief folie en panlatten', img: 'img/01d5e5b5ef58a54651e5cd07aee47716.jpg', text: 'Onderhoudsarm en jarenlang mooi, in een kleur die bij je huis past.' },
+      { title: 'EPDM', short: 'Naadloze en duurzame dakbedekking voor je platte dak', img: 'img/8ab1afaf483e5222d1ae1238210eff08.jpg', text: 'Naadloos gelegd, gaat lang mee en vraagt weinig onderhoud.' },
+      { title: 'Dakisolatie', short: 'Warmer huis en lagere energierekening, vaak met subsidie', img: 'img/faec84d1814a914d050740c3acfdc01a.jpg', text: 'Warmer in de winter, koeler in de zomer. Wij zoeken de subsidie voor je uit.' },
+      { title: 'Lekkages', short: 'Snel ter plaatse, de oorzaak gevonden en blijvend opgelost', img: 'img/63d74554af499d31f6ea856655c8c1a4.jpg', text: 'Snel erbij, de oorzaak gevonden en blijvend opgelost.' }
     ].map((m, i) => Object.assign({}, m, {
       bg: 'transparent',
       href: {"Dakwerken": "dakwerken.html", "Zinkwerken": "zinkwerken.html", "Dakpannen": "dakpannen.html", "EPDM": "epdm.html", "Dakisolatie": "dakisolatie.html", "Lekkages": "lekkages.html"}[m.title],
