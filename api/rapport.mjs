@@ -3,15 +3,13 @@
 //    de aanvraag met het rapport als bijlage. Geeft { ok, mail }.
 //  - ?download=1: geeft dezelfde pdf terug (downloadknop op het bedankscherm).
 // Score en uitkomst rekent de server zelf opnieuw uit, zoals bij Vermeulen (bereken() in scan.ts).
-import { createRequire } from 'node:module';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import * as R from '@react-pdf/renderer';
+import React from 'react';
+import H from './_huisstijl.js';
 
-const require = createRequire(import.meta.url);
-const R = require('@react-pdf/renderer');
-const React = require('react');
-const H = require('./_huisstijl.js');
 const { Document, Page, View, Text, Image, Link, Svg, Polygon, Rect, Circle, Path, Defs, LinearGradient, Stop, Font, StyleSheet, renderToBuffer } = R;
 const h = React.createElement;
 
