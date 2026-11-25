@@ -12,6 +12,8 @@ Klantsite van Build with Blocks (Tim) voor Brück Dak en Zinkwerk (Nicky, Ooij).
   van de Vermeulen-dakscan (`~/Projecten/vermeulen-daktechniek/src/components/dakscan/scan.ts`).
 - De dakscore in `dakscan.html` rekent exact als Vermeulen (`bereken()` in scan.ts); houd die gelijk.
 - De homepage-balk geeft postcode/huisnummer/"dak vernieuwd" via sessionStorage (`bruck-dakscan`) door aan de dakscan.
+- `dakscan.html` is een gesloten omgeving: geen menu, footer of contactblok, alleen een topbalk (Terug naar home,
+  logo, Bel Nicky) met de 5 benoemde stappen; "Vorige" en de volgende knop staan per stap onder de inhoud (geen vaste balk).
 - `api/lead.js`: Vercel-functie die dakscan- en contactaanvragen mailt via Resend (ontwerp "volledig donker").
 
 ## Deployen (via GitHub)
