@@ -20,3 +20,15 @@
 .ds-field,#dakscan-balk label{padding-top:12px !important;padding-bottom:12px !important}
 .ds-field>span>span:first-child,#dakscan-balk label>span>span:first-child{line-height:1.2}
 .ds-field input,.ds-field select,.ds-field textarea,#dakscan-balk input,#dakscan-balk select{margin-top:2px !important;line-height:1.3}
+
+/* Mobiel: secties overal 150px uit elkaar (alleen tussen opeenvolgende secties; hero bovenaan en footer niet),
+   bodytekst 15px, kleinere binnenruimte in blokken, subtieler label "Reactie binnen 1 werkdag". */
+@media (max-width:767px){
+  [data-m-onder]{padding-bottom:0 !important}
+  [data-m-boven]{padding-top:150px !important}
+  p[style*="font-size: 16px"],p[style*="font-size: 17px"],p[style*="font-size: 18px"],
+  li[style*="font-size: 16px"],li[style*="font-size: 17px"],li span[style*="font-size: 16px"]{font-size:15px !important}
+  [style*="padding: clamp(40px, 5vw, 72px)"],[style*="padding: clamp(32px, 4vw, 56px)"]{padding:24px !important}
+  .j-banner{font-size:12px !important;padding:4px 9px !important;right:14px !important;font-weight:600 !important}
+  [data-contact-footer]>div>div:last-child{margin-top:20px}
+}
