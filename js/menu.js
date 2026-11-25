@@ -34,7 +34,9 @@
     ' .mm-knoppen{display:flex}',
     '}',
     'html.mm-lock,html.mm-lock body{overflow:hidden}',
-    '.mm-open [data-floating-nav]{background:#161616 !important;border-bottom-color:rgba(255,255,255,.08) !important}',
+    /* Menu open: de balk krijgt geen eigen achtergrond meer (die sprong in één keer aan); het menuvlak schuift er
+       zelf onderdoor, zodat de vulling met dezelfde beweging meekomt. */
+    '.mm-open [data-floating-nav]{border-bottom-color:rgba(255,255,255,.08) !important;transition:border-color .55s var(--mm-io) !important}',
     '#mm{position:fixed;inset:0;z-index:99;visibility:hidden;pointer-events:none;background:#161616;color:#fff;font-family:"Saira","Helvetica Neue",Arial,sans-serif;clip-path:inset(0 0 100% 0);transition:clip-path .55s var(--mm-io) .14s,visibility 0s .7s}',
     '.mm-open #mm{visibility:visible;pointer-events:auto;clip-path:inset(0 0 0 0);transition:clip-path .55s var(--mm-io),visibility 0s}',
     '#mm .mm-scroll{position:absolute;inset:0;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:112px clamp(16px,3.6vw,52px) calc(36px + env(safe-area-inset-bottom))}',
