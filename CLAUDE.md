@@ -26,6 +26,11 @@ Klantsite van Build with Blocks (Tim) voor Brück Dak en Zinkwerk (Nicky, Ooij).
   rapport.mjs zet die tekens in Saira. Gebruik NIET de Factory Sans uit ~/Library/Fonts: dat is een demo met watermerk.
 - `vercel.json` zet `installCommand: npm ci` (nodig voor de pdf-functie) en neemt fonts, logo en Nicky-foto mee.
 
+- `faq.html`: alle FAQ's per onderwerp (zoekveld, meelopend onderwerpmenu, links naar #vraag). Gemaakt uit de
+  `faqs`-lijsten van de pagina's; pas je daar een vraag aan, pas hem dan ook hier aan. FAQ-blokken op de pagina's
+  hebben allemaal de knop "Neem contact op" naar contact.html.
+- Knoppen: alleen primaire (geel) en secundaire (witte rand) knoppen, geen icoon-tekstlinks als knop.
+
 ## Deployen (via GitHub)
 - Vercel-project `bruck-dakwerken` (team build-with-blocks), live op https://bruck-dakwerken.vercel.app.
 - Het project is gekoppeld aan github.com/buildwithblocks/bruck-website:
