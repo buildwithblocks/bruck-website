@@ -1,6 +1,6 @@
 /* Scroll-reveal, gelijk aan Globen (Osmo "Elements Reveal on Scroll", GSAP + ScrollTrigger):
    - per blok: de directe onderdelen van een blok komen 100ms na elkaar binnen;
-   - een blok start zodra zijn bovenkant 80% van het scherm bereikt ("top 80%", eenmalig);
+   - een blok start zodra zijn bovenkant 92% van het scherm bereikt ("top 92%", eenmalig);
    - elk onderdeel schuift 2em omhoog en fadet in (autoAlpha), 0,8s, ease power4.inOut;
    - kaarten (met achtergrond of rand) komen als geheel binnen, tekstkolommen per kop/alinea/knop.
    Vereist js/gsap.min.js en js/ScrollTrigger.min.js. Zonder die scripts, zonder JavaScript of met
@@ -14,7 +14,7 @@
   var DURATION = 0.8;         // s
   var DISTANCE = '2em';
   var EASE = 'power4.inOut';
-  var START = 'top 80%';
+  var START = 'top 92%';
   // Alleen wat de animatie zelf zet weer opruimen; de site gebruikt veel inline styles.
   var CLEAR = 'transform,opacity,visibility';
 
