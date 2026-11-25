@@ -1,0 +1,14 @@
+/* Spacingsysteem Brück. Desktop >= 1200px, tablet 768-1199px, mobiel <= 767px.
+   Secties: --sec-*, afstanden binnen secties: --sp-*. Waarden: desktop / tablet / mobiel. */
+:root{
+  --sec-xs:40px;  --sec-s:80px;  --sec-m:104px; --sec-l:160px; --sec-xl:200px;
+  --sp-24:24px; --sp-28:28px; --sp-32:32px; --sp-40:40px; --sp-48:48px; --sp-56:56px; --sp-64:64px; --sp-80:80px;
+}
+@media (max-width:1199px){:root{
+  --sec-xs:32px;  --sec-s:56px;  --sec-m:72px;  --sec-l:96px;  --sec-xl:120px;
+  --sp-24:20px; --sp-28:24px; --sp-32:24px; --sp-40:32px; --sp-48:36px; --sp-56:40px; --sp-64:48px; --sp-80:56px;
+}}
+@media (max-width:767px){:root{
+  --sec-xs:24px;  --sec-s:40px;  --sec-m:48px;  --sec-l:64px;  --sec-xl:80px;
+  --sp-24:14px; --sp-28:18px; --sp-32:18px; --sp-40:24px; --sp-48:28px; --sp-56:32px; --sp-64:36px; --sp-80:40px;
+}}

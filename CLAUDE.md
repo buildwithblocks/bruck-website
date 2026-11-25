@@ -63,8 +63,18 @@ Klantsite van Build with Blocks (Tim) voor Brück Dak en Zinkwerk (Nicky, Ooij).
 ## Stijlregels
 - Donker (#161616, vlakken #1F1F1F, formulieren #0B0B0B), accent #DFA701 (hover #C99600), rechte hoeken,
   subtiele lijnen (rgba(255,255,255,.12–.15)). Koppen Factory Sans in hoofdletters, tekst Saira.
-- Spacing zoals de homepage: geel label → kop 16px, hero-kop → tekst 24px, kop → tekst 32px,
-  tussenkop → tekst 8px, tekst → tussenkop 40px, tekst → knop 28px.
+- Spacing loopt via `css/ritme.css` (op elke pagina gelinkt). Gebruik in inline styles altijd de variabelen,
+  nooit vaste px voor deze afstanden. Desktop ≥1200 / tablet 768–1199 / mobiel ≤767:
+  - Secties (padding boven/onder): `--sec-xl` 200/120/80, `--sec-l` 160/96/64, `--sec-m` 104/72/48,
+    `--sec-s` 80/56/40, `--sec-xs` 40/32/24.
+  - Binnen secties: `--sp-80` 80/56/40, `--sp-64` 64/48/36, `--sp-56` 56/40/32, `--sp-48` 48/36/28,
+    `--sp-40` 40/32/24, `--sp-32` 32/24/18 (kop → tekst), `--sp-28` 28/24/18 (tekst → knop),
+    `--sp-24` 24/20/14 (hero-kop → tekst).
+  - Vast op alle schermen: geel label → kop 16px, tussenkop → tekst 8px, kleine tussenruimtes ≤ 20px.
+- Footer staat in `css/footer.css` (ontwerp A): kop "Jouw dakdekker uit Ooij" + dakscan, logo/adres/KvK +
+  "App Nicky"-rij in contactstijl, kolommen Diensten / Direct regelen / Over Brück, onderbalk met
+  Made by Build with Blocks. Tekstlinks: hover alleen kleur (wit), geen onderstreping. Op alle pagina's
+  dezelfde markup; wijzig die overal tegelijk.
 - Geen accenten in koppen met de display-font (gebruik "1" of "een" in plaats van "één").
 - Hover-effecten: knoppen en kaarten worden #C99600; pijl-knoppen wisselen de pijl (uit rechts, in van links).
 
