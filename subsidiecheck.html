@@ -386,7 +386,7 @@ class Component extends DCLogic {
       '<div class="sc-balkform">' + veld('sc-pc', 'Postcode', PIN, st.pc, '1234 AB', 'name="postcode" autocomplete="postal-code"') + veld('sc-nr', 'Huisnummer', HUIS, st.nr, '12a', 'name="huisnummer"') + knop + '</div>' +
       (st.fout === 'niet' ? '<div style="margin-top:12px">' + notice('Dit adres is niet gevonden. Controleer je postcode en huisnummer.') + '</div>' : '') +
       (st.fout === 'netwerk' ? '<div style="margin-top:12px">' + notice('Het opzoeken van je adres lukte niet. Controleer je verbinding en probeer het opnieuw.') + '</div>' : '') +
-      '<ul class="sc-vinkjes">' + ['Je ziet je bedrag binnen 1 minuut', 'Berekend op het oppervlak van jouw dak', 'Gratis, je zit nergens aan vast'].map(function (t) { return '<li>' + VINKG + t + '</li>'; }).join('') + '</ul>' +
+      '<ul class="sc-vinkjes">' + ['Bereken je maximale subsidie', 'Geheel vrijblijvend', 'Binnen 1 minuut'].map(function (t) { return '<li>' + VINKG + t + '</li>'; }).join('') + '</ul>' +
       '</form>';
   }
   function stapToevoeging() {
