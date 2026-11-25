@@ -93,7 +93,7 @@ const T = {
     ['Wil je dat Nicky komt kijken?', 'App of bel hem. Hij bekijkt je dak gratis en vrijblijvend.'],
     ['Je krijgt eerlijk advies', 'Je hoort wat nodig is en wat kan wachten.'],
   ],
-  contactTitel: 'Vragen over je rapport?', contactTekst: 'App, bel of mail Nicky. Hij denkt graag met je mee.',
+  contactTitel: 'Vragen? Vraag het aan Nicky', contactTekst: 'Nicky staat voor je klaar. Stuur een appje, bel of mail, dan hoor je snel van hem.',
   disclaimer: 'Dit rapport is een indicatie op basis van openbare gegevens (BAG, 3D BAG en luchtfoto\'s van PDOK). Het dak kan in werkelijkheid jonger, ouder of anders opgebouwd zijn. Pas op locatie zien we echt hoe je dak ervoor staat. Aan dit rapport kun je geen rechten ontlenen.',
 };
 const SCORES = {
@@ -228,6 +228,39 @@ function Luchtfoto(d, w, hh) {
   ] : []));
 }
 
+/* Contactblok zoals boven de footer op de website: WhatsApp met Nicky en "Reactie binnen 1 werkdag", dan bellen, dan mailen. */
+const WA_PAD = 'M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z';
+const KAART = '#1F1F1F', RAND = '#4A4A4A', ZACHT = '#BDBDBD';
+const Tegel = (paden) => h(View, { style: { width: 22, height: 22, backgroundColor: GEEL, alignItems: 'center', justifyContent: 'center', marginRight: 10 } },
+  h(Svg, { width: 13, height: 13, viewBox: '0 0 24 24' }, ...paden.map((p, i) => p.rect
+    ? h(Rect, { key: i, x: 2, y: 4, width: 20, height: 16, rx: 1, stroke: ZWART, strokeWidth: 2, fill: 'none' })
+    : h(Path, { key: i, d: p, stroke: ZWART, strokeWidth: 2, fill: 'none', strokeLinecap: 'round', strokeLinejoin: 'round' }))));
+const ContactRij = (href, links, t1, t2, extra) => h(Link, { src: href, style: { textDecoration: 'none', marginTop: extra ? 0 : 6 } },
+  h(View, { style: { position: 'relative', flexDirection: 'row', alignItems: 'center', borderWidth: 1, borderColor: RAND, paddingVertical: extra ? 9 : 7, paddingHorizontal: 11 } },
+    links,
+    h(View, { style: { flex: 1 } },
+      h(Text, { style: { fontSize: extra ? 12.5 : 10.5, fontWeight: 700, color: '#FFFFFF' } }, t1),
+      h(Text, { style: { fontSize: 8.5, color: ZACHT, marginTop: 1 } }, t2)),
+    extra || null));
+function Contact(d) {
+  const foto = h(View, { style: { width: 36, height: 36, marginRight: 12, position: 'relative' } },
+    d.nicky ? h(Image, { src: d.nicky, style: { width: 36, height: 36, borderRadius: 18 } }) : null,
+    h(View, { style: { position: 'absolute', right: -4, bottom: -4, width: 19, height: 19, borderRadius: 9.5, backgroundColor: KAART, alignItems: 'center', justifyContent: 'center' } },
+      h(View, { style: { width: 15, height: 15, borderRadius: 7.5, backgroundColor: '#25D366', alignItems: 'center', justifyContent: 'center' } },
+        h(Svg, { width: 9, height: 9, viewBox: '0 0 24 24' }, h(Path, { d: WA_PAD, fill: '#FFFFFF' })))));
+  const banner = h(View, { style: { position: 'absolute', top: -7, right: 12, width: 104, backgroundColor: GEEL, paddingVertical: 2.5 } },
+    h(Text, { style: { fontSize: 7.5, fontWeight: 700, color: ZWART, textAlign: 'center' } }, 'Reactie binnen 1 werkdag'));
+  return h(View, { style: { marginTop: 24, flexDirection: 'row', alignItems: 'center', backgroundColor: KAART, paddingVertical: 16, paddingHorizontal: 20 }, wrap: false },
+    h(View, { style: { width: 200, paddingRight: 22 } },
+      h(Text, { style: { ...s.label, color: GEEL } }, 'Contact'),
+      h(Text, { style: { fontFamily: 'Factory', fontSize: 22, lineHeight: 1.02, textTransform: 'uppercase', color: '#FFFFFF', marginTop: 8 } }, ...F(T.contactTitel)),
+      h(Text, { style: { fontSize: 9, lineHeight: 1.55, color: ZACHT, marginTop: 10 } }, T.contactTekst)),
+    h(View, { style: { flex: 1, paddingTop: 7 } },
+      ContactRij(H.BRUCK.whatsapp, foto, 'WhatsApp', 'Stuur Nicky een appje', banner),
+      ContactRij(H.BRUCK.telHref, Tegel(['M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z']), 'Bel ons', H.BRUCK.tel),
+      ContactRij('mailto:' + H.BRUCK.mail, Tegel([{ rect: 1 }, 'm22 6-10 7L2 6']), 'Stuur een mail', H.BRUCK.mail)));
+}
+
 function Rapport(d) {
   const k = KLEUR[d.uitkomst];
   return h(Document, { title: `${T.titel} ${d.adresKop}, ${d.adresSub}`, author: H.BRUCK.naam, creator: H.BRUCK.naam, producer: H.BRUCK.naam, language: 'nl' },
@@ -241,10 +274,10 @@ function Rapport(d) {
           h(Text, { style: { fontSize: 9, color: GRIJS, marginTop: 2 } }, `${T.opgesteldVoor} `, h(Text, { style: { fontWeight: 700, color: ZWART } }, d.naam)))),
       h(View, { style: { marginTop: 30 } },
         h(Text, { style: s.label }, T.label),
-        h(Text, { style: { ...s.h1, marginTop: 10 } }, ...F(d.adresKop)),
+        h(Text, { style: { ...s.h1, fontSize: d.kopGrootte, marginTop: 10 } }, ...F(d.adresKop)),
         h(Text, { style: { fontSize: 15, fontWeight: 700, color: TEKST, marginTop: 6 } }, d.adresSub),
         h(Text, { style: { ...s.p, marginTop: 12, maxWidth: 450 } }, T.intro)),
-      h(View, { style: { marginTop: 18 } }, Luchtfoto(d, W, FOTO_H), h(Text, { style: { ...s.klein, marginTop: 7 } }, (d.foto && d.foto.punten ? T.fotoTekst + ' ' : '') + T.fotoBron)),
+      h(View, { style: { marginTop: 18 } }, Luchtfoto(d, W, d.fotoH), h(Text, { style: { ...s.klein, marginTop: 7 } }, (d.foto && d.foto.punten ? T.fotoTekst + ' ' : '') + T.fotoBron)),
       h(View, { style: { marginTop: 14 }, wrap: false },
         h(View, { style: { flexDirection: 'row', backgroundColor: k.tint, paddingVertical: 18, paddingHorizontal: 22 } },
           h(View, { style: { width: 150 } },
@@ -294,15 +327,7 @@ function Rapport(d) {
           h(View, { style: { width: 22, height: 22, backgroundColor: i === 0 ? GEEL : LICHT, alignItems: 'center', justifyContent: 'center' } }, h(Text, { style: { fontSize: 10, fontWeight: 800, color: ZWART } }, String(i + 1))),
           h(Text, { style: { fontSize: 10, fontWeight: 800, marginTop: 8 } }, titel),
           h(Text, { style: { fontSize: 8.5, lineHeight: 1.5, color: TEKST, marginTop: 3 } }, tekst))))),
-      h(View, { style: { marginTop: 28, flexDirection: 'row', alignItems: 'center', backgroundColor: ZWART, padding: 18 }, wrap: false },
-        d.nicky ? h(Image, { src: d.nicky, style: { width: 62, height: 62, borderRadius: 31, marginRight: 16 } }) : null,
-        h(View, { style: { flex: 1, paddingRight: 14 } },
-          h(Text, { style: { fontSize: 13, fontWeight: 800, color: '#FFFFFF' } }, T.contactTitel),
-          h(Text, { style: { fontSize: 9, lineHeight: 1.5, color: '#CFCFCF', marginTop: 3 } }, T.contactTekst)),
-        h(View, { style: { width: 200 } }, [['WhatsApp', H.BRUCK.tel, H.BRUCK.whatsapp], ['Telefoon', H.BRUCK.tel, H.BRUCK.telHref], ['E-mail', H.BRUCK.mail, 'mailto:' + H.BRUCK.mail]].map(([l, v, href], i) =>
-          h(View, { key: i, style: { flexDirection: 'row', alignItems: 'center', marginTop: i ? 6 : 0 } },
-            h(Text, { style: { width: 58, fontSize: 7.5, fontWeight: 700, color: '#9A9A9A', textTransform: 'uppercase', letterSpacing: 0.6 } }, l),
-            h(Link, { src: href, style: { fontSize: 9.5, fontWeight: 800, color: i === 0 ? '#25D366' : i === 1 ? GEEL : '#FFFFFF', textDecoration: 'none' } }, v))))),
+      Contact(d),
       h(Text, { style: { ...s.klein, marginTop: 14, fontSize: 7.5 } }, T.disclaimer),
       ...Voet(d)));
 }
@@ -338,7 +363,13 @@ async function maakRapport(input, site) {
   const pc = (p) => p.replace(/^(\d{4})\s*([A-Za-z]{2})$/, '$1 $2').toUpperCase();
   const adresKop = `${a.straat} ${a.huis}`.trim() || a.weergave;
   const adresSub = [pc(a.postcode), a.plaats].filter(Boolean).join(' ');
-  const foto = await luchtfoto(scan.kader, scan.contour, W / FOTO_H);
+  // Bij klachten is de scoretekst langer; dan een lagere luchtfoto zodat pagina 1 compleet blijft.
+  // Lange straatnaam: kleinere kop (Factory Sans in hoofdletters is ca. 0,56 em per teken); past hij dan nog niet op 1 regel, ook een lagere foto.
+  const tekens = (`${a.straat} ${a.huis}`.trim() || a.weergave || '').length;
+  const kopGrootte = Math.round(Math.max(28, Math.min(46, W / (tekens * 0.56))));
+  const tweeRegels = tekens * kopGrootte * 0.56 > W;
+  const fotoH = (aw.klachten ? 190 : FOTO_H) - (tweeRegels ? 40 : 0);
+  const foto = await luchtfoto(scan.kader, scan.contour, W / fotoH);
   const logo = bestand('img/2eb862934a76df52611f70dd21ad94cc.png');
   if (!logo) throw new Error('logo ontbreekt');
   const d = {
@@ -347,7 +378,7 @@ async function maakRapport(input, site) {
     scoreTekst: [scoreTekst, aw.klachten ? T.klachtenTekst : ''].filter(Boolean).join(' '), marker: sc.score / 10, feiten,
     aandacht: filter(punten, scan.daktype), zelf: filter(T.zelfPunten, scan.daktype),
     subsidie: { bedrag, berekening, notities }, stappen: input.inspectie ? T.stappenInspectie : T.stappenZonder,
-    foto, logo, nicky: bestand('img/nicky-rond.jpg'), website: site.replace(/^https?:\/\//, ''),
+    foto, fotoH, kopGrootte, logo, nicky: bestand('img/nicky-rond.jpg'), website: site.replace(/^https?:\/\//, ''),
   };
   const pdf = await renderToBuffer(Rapport(d));
   const bestandsnaam = (`Dakrapport ${adresKop} ${a.plaats}`.replace(/[^\p{L}\p{N} ._-]+/gu, '').trim() || 'Dakrapport') + '.pdf';
