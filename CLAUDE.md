@@ -13,7 +13,8 @@ Klantsite van Build with Blocks (Tim) voor Brück Dak en Zinkwerk (Nicky, Ooij).
 - De dakscore in `dakscan.html` rekent exact als Vermeulen (`bereken()` in scan.ts); houd die gelijk.
 - De homepage-balk geeft postcode/huisnummer/"dak vernieuwd" via sessionStorage (`bruck-dakscan`) door aan de dakscan.
 - `dakscan.html` is een gesloten omgeving: geen menu, footer of contactblok, alleen een topbalk (Terug naar home,
-  logo, Bel Nicky) met de 5 benoemde stappen; "Vorige" en de volgende knop staan per stap onder de inhoud (geen vaste balk).
+  logo) met de 5 benoemde stappen; "Vorige" en de volgende knop staan per stap in een vaste balk onderin (stap 2–4).
+  Een keuze uit de lijst met toevoegingen scant direct dat adres (`scanAdres`), zonder opnieuw te zoeken.
 - `api/lead.js`: Vercel-functie die dakscan- en contactaanvragen mailt via Resend (ontwerp "volledig donker").
 
 ## Deployen (via GitHub)
