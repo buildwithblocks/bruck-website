@@ -1,8 +1,5 @@
 /* Footer Brück (ontwerp A). Spacing via css/ritme.css. */
 .ft{position:relative;overflow:hidden;background:#0B0B0B;color:rgba(255,255,255,.75)}
-.ft-pannen{position:absolute;inset:0;pointer-events:none;
- background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='28'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='.045' stroke-width='1.2'%3E%3Cpath d='M0 28a14 14 0 0 1 28 0a14 14 0 0 1 28 0'/%3E%3Cpath d='M-14 14a14 14 0 0 1 28 0a14 14 0 0 1 28 0a14 14 0 0 1 28 0'/%3E%3C/g%3E%3C/svg%3E");
- -webkit-mask-image:radial-gradient(120% 90% at 80% 0%,#000 30%,transparent 85%);mask-image:radial-gradient(120% 90% at 80% 0%,#000 30%,transparent 85%)}
 .ft-in{position:relative;max-width:1240px;margin:0 auto}
 .ft-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:var(--sp-40) 64px;padding:var(--sec-m) 0 var(--sp-80);border-bottom:1px solid rgba(255,255,255,.14)}
 .ft-kop{flex:1 1 420px;min-width:0;margin:0;font-family:'Factory Sans','Helvetica Neue',Arial,sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:-.03em;line-height:1.02;color:#fff;font-size:clamp(38px,5vw,68px)}
@@ -16,8 +13,11 @@
 .ft a.ft-l{color:rgba(255,255,255,.75);text-decoration:none;transition:color .3s ease}
 .ft-kol a.ft-l{font-size:16px;line-height:2.3}
 .ft a.ft-l:hover,.ft a.ft-l:focus-visible{color:#fff}
-.ft-app{position:relative;display:flex;align-items:center;gap:16px;margin-top:var(--sp-32);max-width:340px;padding:16px 18px 16px 14px;border:1px solid rgba(255,255,255,.18);color:#fff;text-decoration:none;transition:border-color .3s ease}
-.ft-app:hover,.ft-app:focus-visible{border-color:#DFA701}
+.ft-app{position:relative;display:flex;align-items:center;gap:16px;margin-top:var(--sp-32);max-width:340px;padding:16px 18px 16px 14px;border:1px solid rgba(255,255,255,.18);color:#fff;text-decoration:none;transition:background-color .3s ease,border-color .3s ease}
+.ft-app *{transition:color .3s ease}
+.ft-app:hover,.ft-app:focus-visible{background-color:#DFA701;border-color:#DFA701;color:#0B0B0B}
+.ft-app:hover b,.ft-app:hover small,.ft-app:focus-visible b,.ft-app:focus-visible small{color:#0B0B0B}
+.ft-app:hover .cbadge,.ft-app:focus-visible .cbadge{box-shadow:0 0 0 3px #DFA701}
 .ft-app .j-foto,.ft-app .j-foto img{width:52px;height:52px}
 .ft-app .j-foto{flex:none;position:relative}
 .ft-app .j-foto img{display:block;border-radius:50%;object-fit:cover}
