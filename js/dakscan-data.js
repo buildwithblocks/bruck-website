@@ -70,6 +70,7 @@
           bouwjaar: bj && bj > 1000 && bj < 2100 ? bj : undefined,
           contour: ring ? ring.map(function (c) { return [c[0], c[1]]; }) : undefined,
           adressen: typeof p.properties.aantal_verblijfsobjecten === 'number' ? p.properties.aantal_verblijfsobjecten : undefined,
+          gebruiksdoel: p.properties.gebruiksdoel || undefined,
         };
       });
     });
@@ -128,6 +129,7 @@
         return {
           adres: adres, bouwjaar: pand.bouwjaar, pandId: pand.id, daktype: dak.daktype, oppervlak: dak.oppervlak,
           oppervlakSchuin: dak.oppervlakSchuin, oppervlakPlat: dak.oppervlakPlat, helling: dak.helling, adressen: pand.adressen,
+          gebruiksdoel: pand.gebruiksdoel,
           kader: k, contour: pand.contour, luchtfoto: luchtfotoUrl(k), punten: svgPunten(pand.contour, k),
         };
       });

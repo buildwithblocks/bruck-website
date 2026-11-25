@@ -18,7 +18,7 @@ const { BRUCK, REACTIE, clean, cleanText, isEmail, telDigits, telHref, rijen, kn
 // ---------- de mails ----------
 
 function maakMails(b, site) {
-  const type = b.type === 'contact' || b.type === 'nietgevonden' ? b.type : 'dakscan';
+  const type = ['contact', 'nietgevonden', 'subsidie'].includes(b.type) ? b.type : 'dakscan';
   // Eén naamveld (dakscan, zoals Vermeulen) of voor- en achternaam (contactformulier).
   const naam = clean(b.naam, 120) || [clean(b.voornaam, 80), clean(b.achternaam, 80)].filter(Boolean).join(' ');
   const voornaam = clean(b.voornaam, 80) || naam.split(/\s+/)[0] || naam;
@@ -53,6 +53,33 @@ function maakMails(b, site) {
         inhoud: (score ? scoreBlok(score, label, advies) : '') +
           rijen([['Adres', adres], ['Bouwjaar', clean(b.bouwjaar, 6)], ['Daktype', daktype], ['Dakoppervlak', opp],
                  ['Dak vernieuwd', clean(b.vernieuwd, 60)], ['Lekkage of vocht', clean(b.lekkage, 10)]]) +
+          klantKnoppen,
+      }),
+    };
+  }
+
+  if (type === 'subsidie') {
+    const adres = clean(b.adresVol, 160);
+    const totaal = clean(b.totaal, 20), regel = clean(b.regel, 120), dak = clean(b.dak, 80);
+    const kaart = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(adres)}`;
+    const luchtfoto = clean(b.luchtfoto, 600);
+    return {
+      leadSubject: `Subsidiecheck: ${naam} – ${adres}${totaal ? ` – ${totaal}` : ''}`,
+      leadHtml: layout({
+        site, label: 'Nieuwe subsidiecheck', titel: naam,
+        intro: `Heeft de subsidie voor dakisolatie berekend. Neem ${REACTIE} contact op.`,
+        inhoud: rijen([['Telefoon', tel], ['E-mail', email], ['Adres', adres], ['Gemeente', clean(b.gemeente, 80)],
+                 ['Bouwjaar', clean(b.bouwjaar, 6)], ['Adressen in pand', clean(b.adressen, 6)], ['Dakoppervlak (geschat)', dak],
+                 ['ISDE dakisolatie', regel], ['Totale subsidie', totaal], ['Mag contact opnemen', b.toestemming === false ? 'Nee' : 'Ja']]) +
+          leadKnoppen([knop(kaart, 'Adres op kaart', false), ...(luchtfoto ? [knop(luchtfoto, 'Luchtfoto', false)] : [])]),
+      }),
+      klantSubject: 'Je subsidie voor dakisolatie',
+      klantHtml: layout({
+        site, voorKlant: true, label: 'Jouw subsidiecheck', titel: `Bedankt, ${voornaam}!`,
+        intro: `Hieronder zie je wat dakisolatie je aan subsidie oplevert. Nicky neemt <strong style="color:#FFFFFF">${REACTIE}</strong> contact met je op.`,
+        inhoud: rijen([['Adres', adres], ['Dakoppervlak (geschat)', dak], ['ISDE dakisolatie', regel], ['Totale subsidie', totaal]]) +
+          '<div style="height:16px;line-height:16px;font-size:0">&nbsp;</div>' +
+          alinea('Het dakoppervlak is geschat uit openbare gegevens. Tijdens het bezoek meet Nicky je dak precies op. Aan deze berekening kun je geen rechten ontlenen.') +
           klantKnoppen,
       }),
     };
@@ -110,7 +137,7 @@ module.exports = async (req, res) => {
 
   if (teVaak(ipVan(req), 'lead', 6)) return res.status(429).json({ ok: false, error: 'te-vaak' });
 
-  const type = b.type === 'contact' || b.type === 'nietgevonden' ? b.type : 'dakscan';
+  const type = ['contact', 'nietgevonden', 'subsidie'].includes(b.type) ? b.type : 'dakscan';
   const email = clean(b.email, 160);
   if (!(clean(b.naam) || clean(b.voornaam)) || !isEmail(email)) return res.status(400).json({ ok: false, error: 'velden' });
   if (type !== 'contact' && telDigits(clean(b.telefoon, 40)).length < 10) return res.status(400).json({ ok: false, error: 'velden' });
