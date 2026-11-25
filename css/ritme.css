@@ -15,3 +15,8 @@
   --sp-24:14px; --sp-28:18px; --sp-32:18px; --sp-40:24px; --sp-48:28px; --sp-56:32px; --sp-64:36px; --sp-80:40px;
   --label-kop:8px; --kop-tekst:12px;
 }}
+
+/* Formuliervelden met titel + invoer (contact, dakscan, dakscanbalk): titel en invoer dicht op elkaar, ruimte boven en onder. */
+.ds-field,#dakscan-balk label{padding-top:12px !important;padding-bottom:12px !important}
+.ds-field>span>span:first-child,#dakscan-balk label>span>span:first-child{line-height:1.2}
+.ds-field input,.ds-field select,.ds-field textarea,#dakscan-balk input,#dakscan-balk select{margin-top:2px !important;line-height:1.3}
