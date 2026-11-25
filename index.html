@@ -489,6 +489,9 @@ window.__dsLayout=s;if(window.ResizeObserver)new ResizeObserver(s).observe(f);ad
   }
   if (window.ResizeObserver) new ResizeObserver(function(){ requestAnimationFrame(pas); }).observe(form.parentNode);
   addEventListener('resize', pas); pas();
+  // Opnieuw meten zodra de webfonts en de pagina geladen zijn: met het reservefont past de balk soms net niet.
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function(){ requestAnimationFrame(pas); });
+  addEventListener('load', function(){ requestAnimationFrame(pas); });
 })();
 </script>
 <script src="js/gsap.min.js" defer></script>
