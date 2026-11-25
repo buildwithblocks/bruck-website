@@ -196,9 +196,9 @@ class Component extends DCLogic {
     const open = !!st.menuOpen;
     const hv = st.hover;
     const active = 'Over ons';
-    const navLinks = ['Projecten', 'Over ons', 'Contact'].map((label) => ({
+    const navLinks = ['Projecten', 'Over ons', 'FAQ', 'Contact'].map((label) => ({
       label: label,
-      href: { 'Projecten': 'projecten.html', 'Over ons': 'over-ons.html', 'Contact': 'contact.html' }[label],
+      href: { 'Projecten': 'projecten.html', 'Over ons': 'over-ons.html', 'FAQ': 'faq.html', 'Contact': 'contact.html' }[label],
       scale: (hv === label || (label === active && !hv)) ? 1 : 0,
       origin: (hv === label || (label === active && !hv)) ? 'left center' : 'right center',
       enter: () => this.setState({ hover: label, menuOpen: false }),
@@ -300,5 +300,6 @@ class Component extends DCLogic {
 <script src="js/gsap.min.js" defer></script>
 <script src="js/ScrollTrigger.min.js" defer></script>
 <script src="reveal.js?v=2" defer></script>
+<script src="js/menu.js?v=3" defer></script>
 </body>
 </html>

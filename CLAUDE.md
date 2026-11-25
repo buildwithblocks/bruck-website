@@ -29,6 +29,10 @@ Klantsite van Build with Blocks (Tim) voor Brück Dak en Zinkwerk (Nicky, Ooij).
 - `faq.html`: alle FAQ's per onderwerp (zoekveld, meelopend onderwerpmenu, links naar #vraag). Gemaakt uit de
   `faqs`-lijsten van de pagina's; pas je daar een vraag aan, pas hem dan ook hier aan. FAQ-blokken op de pagina's
   hebben allemaal de knop "Neem contact op" naar contact.html.
+- `js/menu.js`: mobiel en tablet menu (onder 1200 px), op elke pagina met `[data-floating-nav]` (niet de dakscan).
+  Zet WhatsApp + hamburger in de bestaande balk en bouwt het off-canvas menu (stijl Globen): grote links, Diensten
+  uitklapbaar, Start dakscan (primair) + Subsidiecheck (secundair), contact zoals boven de footer. Nieuwe pagina of
+  dienst? Pas `DIENSTEN`/`HOOFD` in menu.js aan en verhoog `?v=` in de script-tags. Desktopnav: Projecten, Over ons, FAQ, Contact.
 - Knoppen: alleen primaire (geel) en secundaire (witte rand) knoppen, geen icoon-tekstlinks als knop.
 
 ## Deployen (via GitHub)
