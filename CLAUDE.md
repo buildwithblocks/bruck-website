@@ -80,7 +80,7 @@ Klantsite van Build with Blocks (Tim) voor Brück Dak en Zinkwerk (Nicky, Ooij).
   - Mobiel extra (onderaan `css/ritme.css`): bodytekst 15px, blokken met clamp-padding 24px, label "Reactie binnen
     1 werkdag" kleiner. Nieuwe sectie tussen andere secties? Geef haar en de vorige die attributen.
   - Vast op alle schermen: knoppen naast elkaar 10px, tussenkop → tekst 8px, kleine tussenruimtes ≤ 20px.
-- Footer staat in `css/footer.css` (ontwerp A): kop "Je dakdekker komt zelf kijken" (geen plaatsnamen in koppen) + dakscan, logo/adres/KvK +
+- Footer staat in `css/footer.css` (ontwerp A): kop "Hoe staat jouw dak ervoor?" (geen plaatsnamen in koppen) + dakscan, logo/adres/KvK +
   "App Nicky"-rij in contactstijl, kolommen Diensten / Direct regelen / Over Brück, onderbalk met
   Made by Build with Blocks. Tekstlinks: hover alleen kleur (wit), geen onderstreping. Op alle pagina's
   dezelfde markup; wijzig die overal tegelijk.
