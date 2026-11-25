@@ -70,7 +70,7 @@ Klantsite van Build with Blocks (Tim) voor Brück Dak en Zinkwerk (Nicky, Ooij).
   - Binnen secties: `--sp-80` 80/56/40, `--sp-64` 64/48/36, `--sp-56` 56/40/32, `--sp-48` 48/36/28,
     `--sp-40` 40/32/24, `--sp-32` 32/24/18 (kop → tekst), `--sp-28` 28/24/18 (tekst → knop),
     `--sp-24` 24/20/14 (hero-kop → tekst).
-  - Vast op alle schermen: geel label → kop 16px, tussenkop → tekst 8px, kleine tussenruimtes ≤ 20px.
+  - Vast op alle schermen: knoppen naast elkaar 10px, geel label → kop 16px, tussenkop → tekst 8px, kleine tussenruimtes ≤ 20px.
 - Footer staat in `css/footer.css` (ontwerp A): kop "Jouw dakdekker uit Ooij" + dakscan, logo/adres/KvK +
   "App Nicky"-rij in contactstijl, kolommen Diensten / Direct regelen / Over Brück, onderbalk met
   Made by Build with Blocks. Tekstlinks: hover alleen kleur (wit), geen onderstreping. Op alle pagina's
