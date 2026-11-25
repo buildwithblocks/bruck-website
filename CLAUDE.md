@@ -37,6 +37,7 @@ Klantsite van Build with Blocks (Tim) voor Brück Dak en Zinkwerk (Nicky, Ooij).
 - Contactvolgorde overal: eerst WhatsApp (app), dan bellen, dan mailen (teksten, knoppen, menu, pdf en mails).
 - Knoppen: alleen primaire (geel) en secundaire (witte rand) knoppen, geen icoon-tekstlinks als knop.
 
+- `bedankt.html`: bedankpagina na het contactformulier (noindex, voornaam via sessionStorage `bruck-contact-naam`).
 - `privacy.html`: privacyverklaring (footerlink Privacy, links bij de akkoord-zin in de dakscan). Werk die bij als er
   een nieuwe dienst bijkomt die persoonsgegevens verwerkt (formulier, mailtool, statistieken).
 
