@@ -1,0 +1,40 @@
+{
+  "slug": "dakdekker-beek",
+  "plaats": "Beek",
+  "volgorde": 2,
+  "seo": {
+    "title": "Dakdekker Beek | Brück Dak en Zinkwerk",
+    "description": "Dakdekker in Beek (Berg en Dal). Brück Dak en Zinkwerk uit Ooij doet dakwerk, zinkwerk, dakpannen, EPDM en lekkages. Doe de gratis dakscan."
+  },
+  "h1": "Dakdekker<br>Beek",
+  "heroIntro": "Woon je in Beek? Brück Dak en Zinkwerk zit om de hoek in Ooij en helpt je met alles op en rond je dak.",
+  "heroImg": "img/drone-pannendak-straatzijde.jpg",
+  "label": "Dakdekker Beek",
+  "introTitel": "Dakwerk in Beek",
+  "alineas": [
+    "Beek ligt tegen de stuwwal, tussen de bossen. Veel woningen staan onder hoge bomen. Daardoor vallen er veel bladeren in de goten, groeit er sneller mos op de pannen en drogen daken langzamer op. Een verstopte goot is hier vaak de oorzaak van een <a href=\"lekkages.html\">lekkage</a>.",
+    "We maken goten schoon, vervangen <a href=\"zinkwerken.html\">zinkwerk</a> en leggen nieuwe <a href=\"dakpannen.html\">dakpannen</a> waar de oude poreus zijn geworden. Op platte daken van aanbouwen en garages leggen we <a href=\"epdm.html\">EPDM</a> of nieuwe <a href=\"dakwerken.html\">dakbedekking</a>.",
+    "Veel woningen in Beek zijn ouder en slecht geïsoleerd. Laat je je dak toch vernieuwen, dan is dat het moment voor <a href=\"dakisolatie.html\">dakisolatie</a>. Benieuwd hoe jouw dak ervoor staat? Doe de gratis <a href=\"dakscan.html\">dakscan</a>."
+  ],
+  "img": "img/epdm-plat-dak-pannen.jpg",
+  "imgAlt": "Nieuw EPDM op een plat dak naast een pannendak",
+  "faqTitel": "Vragen over je dak<br>in Beek",
+  "faq": [
+    {
+      "vraag": "Werken jullie in Beek?",
+      "antwoord": "Ja. Beek ligt naast Ooij, waar Brück zit. Je hebt dus een dakdekker uit de buurt."
+    },
+    {
+      "vraag": "Mijn goten lopen vaak over, wat kan ik doen?",
+      "antwoord": "Laat ze een of twee keer per jaar schoonmaken, zeker onder bomen. Lopen ze ook schoon over, dan liggen ze misschien niet goed op afschot. Nicky kijkt het na."
+    },
+    {
+      "vraag": "Groeit er mos op mijn dak, is dat erg?",
+      "antwoord": "Mos houdt vocht vast en kan pannen op den duur laten afbrokkelen. Laat het dak dan nakijken."
+    },
+    {
+      "vraag": "Hoe snel kunnen jullie in Beek zijn?",
+      "antwoord": "Bij een lekkage proberen we zo snel mogelijk te komen. Vanuit Ooij zijn we er in een paar minuten."
+    }
+  ]
+}

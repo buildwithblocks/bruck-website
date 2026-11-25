@@ -1,0 +1,40 @@
+{
+  "slug": "dakdekker-nijmegen",
+  "plaats": "Nijmegen",
+  "volgorde": 4,
+  "seo": {
+    "title": "Dakdekker Nijmegen | Brück Dak en Zinkwerk",
+    "description": "Dakdekker in Nijmegen nodig? Brück Dak en Zinkwerk uit Ooij doet dakwerk, dakpannen, EPDM, zinkwerk en lekkages. Doe de gratis dakscan."
+  },
+  "h1": "Dakdekker<br>Nijmegen",
+  "heroIntro": "Brück Dak en Zinkwerk zit in Ooij, vlak bij Nijmegen-Oost. Nicky werkt in heel Nijmegen, van jaren-30-woningen tot nieuwbouw.",
+  "heroImg": "img/drone-pannendak-avondlicht.jpg",
+  "label": "Dakdekker Nijmegen",
+  "introTitel": "Dakwerk in Nijmegen",
+  "alineas": [
+    "In Nijmegen staan veel woningen uit de jaren twintig en dertig, met pannendaken, dakkapellen en zinken goten. Na tientallen jaren zijn de pannen vaak poreus, de folie eronder is versleten en het zinkwerk lekt bij de naden. We vervangen <a href=\"dakpannen.html\">dakpannen</a>, folie en panlatten, en maken nieuw <a href=\"zinkwerken.html\">zinkwerk</a> op maat.",
+    "Bij rijtjeshuizen uit de jaren zestig en zeventig liggen vaak platte daken op de aanbouw, de garage of de dakkapel. Die vervangen we door nieuwe <a href=\"dakwerken.html\">dakbedekking</a> of <a href=\"epdm.html\">EPDM</a>. Heb je al last van vocht of druppels, laat dan snel de <a href=\"lekkages.html\">lekkage</a> opsporen.",
+    "Wordt je dak toch vernieuwd, isoleer het dan meteen. Met de <a href=\"subsidiecheck.html\">subsidiecheck</a> zie je wat <a href=\"dakisolatie.html\">dakisolatie</a> je oplevert. Of doe eerst de gratis <a href=\"dakscan.html\">dakscan</a>."
+  ],
+  "img": "img/dakkapel-nieuwe-zwarte-pannen.jpg",
+  "imgAlt": "Nieuw antraciet pannendak rond een dakkapel en dakraam",
+  "faqTitel": "Vragen over je dak<br>in Nijmegen",
+  "faq": [
+    {
+      "vraag": "Werken jullie in heel Nijmegen?",
+      "antwoord": "Ja. Brück zit in Ooij, op een paar kilometer van Nijmegen-Oost, en werkt in de hele stad."
+    },
+    {
+      "vraag": "Kunnen jullie een dakkapel van zink voorzien?",
+      "antwoord": "Ja. We maken zinken kappen, zijwangen en goten op maat, en vervangen de dakbedekking op de dakkapel."
+    },
+    {
+      "vraag": "Mijn huis is van rond 1930, moet het dak eraf?",
+      "antwoord": "Niet altijd. Vaak zijn het de folie, de panlatten of een deel van de pannen. Nicky kijkt wat er echt nodig is."
+    },
+    {
+      "vraag": "Kan ik subsidie krijgen voor dakisolatie?",
+      "antwoord": "Vaak wel, via de ISDE. Met de subsidiecheck zie je in een minuut wat je ongeveer terugkrijgt."
+    }
+  ]
+}

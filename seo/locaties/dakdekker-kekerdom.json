@@ -1,0 +1,40 @@
+{
+  "slug": "dakdekker-kekerdom",
+  "plaats": "Kekerdom",
+  "volgorde": 10,
+  "seo": {
+    "title": "Dakdekker Kekerdom | Brück Dak en Zinkwerk",
+    "description": "Dakdekker in Kekerdom. Brück Dak en Zinkwerk uit Ooij doet dakwerk, dakpannen, EPDM, zinkwerk en lekkages in de Ooijpolder. Doe de gratis dakscan."
+  },
+  "h1": "Dakdekker<br>Kekerdom",
+  "heroIntro": "Kekerdom ligt in de Ooijpolder, net als Ooij, waar Brück Dak en Zinkwerk zit. Nicky is dus snel bij je.",
+  "heroImg": "img/707e3272bbde25f4ee5464004b79ef70.jpg",
+  "label": "Dakdekker Kekerdom",
+  "introTitel": "Dakwerk in Kekerdom",
+  "alineas": [
+    "Kekerdom is een klein dijkdorp in de Ooijpolder, vlak bij de Millingerwaard. Er staan oude dijkwoningen en boerderijen, vaak met grote pannendaken. In de open polder waait het hard, waardoor pannen en nokvorsten kunnen gaan schuiven.",
+    "We zetten losse pannen vast, vervangen <a href=\"dakpannen.html\">dakpannen</a>, folie en panlatten, en vernieuwen <a href=\"zinkwerken.html\">zinkwerk</a> zoals goten en boeidelen. Op platte daken van schuren en aanbouwen leggen we <a href=\"epdm.html\">EPDM</a>.",
+    "Bij een <a href=\"lekkages.html\">lekkage</a> zoeken we eerst waar het water binnenkomt. En vernieuw je je dak, neem dan <a href=\"dakisolatie.html\">dakisolatie</a> mee. Doe eerst de gratis <a href=\"dakscan.html\">dakscan</a> als je wilt zien hoe je dak ervoor staat."
+  ],
+  "img": "img/pannendak-hoek-boeidelen.jpg",
+  "imgAlt": "Nieuw oranje pannendak met strak afgewerkte boeidelen",
+  "faqTitel": "Vragen over je dak<br>in Kekerdom",
+  "faq": [
+    {
+      "vraag": "Werken jullie in Kekerdom?",
+      "antwoord": "Ja. Kekerdom ligt in de Ooijpolder, vlak bij Ooij, waar Brück zit."
+    },
+    {
+      "vraag": "Doen jullie ook grote daken van boerderijen?",
+      "antwoord": "Ja. Nicky komt kijken, meet het dak in en maakt een offerte voor het hele dak of een deel."
+    },
+    {
+      "vraag": "Er liggen pannen los na een storm, wat nu?",
+      "antwoord": "App of bel Nicky. Ga niet zelf het dak op. We zetten de pannen vast of dekken het dak tijdelijk af."
+    },
+    {
+      "vraag": "Krijg ik garantie op het werk?",
+      "antwoord": "Ja, je krijgt 10 jaar garantie op het uitgevoerde werk."
+    }
+  ]
+}

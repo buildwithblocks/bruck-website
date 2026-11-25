@@ -17,6 +17,64 @@
       "source": "/subsidiecheck-uitslag",
       "destination": "/subsidiecheck",
       "permanent": true
+    },
+    {
+      "source": "/offerte-aanvragen",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/diensten",
+      "destination": "/dakwerken",
+      "permanent": true
+    },
+    {
+      "source": "/hallo-wereld",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/category/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/author/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/comments/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    }
+  ],
+  "trailingSlash": false,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "bruck-dakwerken.vercel.app"
+        }
+      ],
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
     }
   ]
 }

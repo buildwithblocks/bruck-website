@@ -1,0 +1,40 @@
+{
+  "slug": "dakdekker-heilig-landstichting",
+  "plaats": "Heilig Landstichting",
+  "volgorde": 9,
+  "seo": {
+    "title": "Dakdekker Heilig Landstichting | Brück Dak en Zinkwerk",
+    "description": "Dakdekker in Heilig Landstichting. Brück Dak en Zinkwerk uit Ooij doet dakwerk, dakpannen, zinkwerk, EPDM en lekkages. Doe de gratis dakscan."
+  },
+  "h1": "Dakdekker<br>Heilig Landstichting",
+  "heroIntro": "Woon je in Heilig Landstichting? Brück Dak en Zinkwerk uit Ooij helpt je met je dak, je goten en je zinkwerk.",
+  "heroImg": "img/drone-dak-folie-panlatten.jpg",
+  "label": "Dakdekker Heilig Landstichting",
+  "introTitel": "Dakwerk in Heilig Landstichting",
+  "alineas": [
+    "Heilig Landstichting ligt tussen Nijmegen en Groesbeek, midden in het groen. Veel woningen staan vrij, tussen hoge bomen. Bladeren en naalden belanden in de goten, en op de pannen groeit sneller mos. Dat kan op den duur leiden tot <a href=\"lekkages.html\">lekkage</a>.",
+    "We maken goten en afvoeren weer in orde, vervangen <a href=\"zinkwerken.html\">zinkwerk</a> en leggen nieuwe <a href=\"dakpannen.html\">dakpannen</a> waar de oude poreus zijn. Op platte daken van aanbouwen leggen we <a href=\"epdm.html\">EPDM</a> of nieuwe <a href=\"dakwerken.html\">dakbedekking</a>.",
+    "Laat je je dak vernieuwen, neem dan <a href=\"dakisolatie.html\">dakisolatie</a> mee. Wil je eerst zien hoe je dak ervoor staat? Doe de gratis <a href=\"dakscan.html\">dakscan</a>."
+  ],
+  "img": "img/dakkapel-nieuwe-pannen.jpg",
+  "imgAlt": "Dakkapel met nieuwe antraciet dakpannen, vanaf de steiger",
+  "faqTitel": "Vragen over je dak<br>in Heilig Landstichting",
+  "faq": [
+    {
+      "vraag": "Werken jullie in Heilig Landstichting?",
+      "antwoord": "Ja. Heilig Landstichting hoort bij de gemeente Berg en Dal, net als Ooij, waar Brück zit."
+    },
+    {
+      "vraag": "Er groeit mos op mijn dak, moet dat weg?",
+      "antwoord": "Mos houdt vocht vast en kan pannen laten afbrokkelen. Laat het dak nakijken, dan hoor je of er meer nodig is."
+    },
+    {
+      "vraag": "Kunnen jullie zinken goten op maat maken?",
+      "antwoord": "Ja. We meten alles in en maken goten, boeidelen en afvoeren passend voor jouw woning."
+    },
+    {
+      "vraag": "Kan ik subsidie krijgen voor dakisolatie?",
+      "antwoord": "Vaak wel. Met de subsidiecheck zie je wat je ongeveer terugkrijgt."
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "slug": "dakdekker-groesbeek",
+  "plaats": "Groesbeek",
+  "volgorde": 5,
+  "seo": {
+    "title": "Dakdekker Groesbeek | Brück Dak en Zinkwerk",
+    "description": "Dakdekker in Groesbeek. Brück Dak en Zinkwerk uit Ooij vervangt dakpannen, legt EPDM, maakt zinkwerk en isoleert daken. Doe de gratis dakscan."
+  },
+  "h1": "Dakdekker<br>Groesbeek",
+  "heroIntro": "Woon je in Groesbeek? Brück Dak en Zinkwerk uit Ooij helpt je met je pannendak, je platte dak en je goten.",
+  "heroImg": "img/drone-pannendak-bovenaanzicht.jpg",
+  "label": "Dakdekker Groesbeek",
+  "introTitel": "Dakwerk in Groesbeek",
+  "alineas": [
+    "Groesbeek is de grootste kern van de gemeente Berg en Dal. Er staan veel eengezinswoningen uit de jaren zestig en zeventig. De <a href=\"dakpannen.html\">pannendaken</a> van die huizen zijn nu vaak aan vervanging toe: de pannen zijn poreus, de folie is versleten en er is nauwelijks isolatie.",
+    "Dat maakt het een goed moment om het dak in één keer te vernieuwen en te isoleren. Voor <a href=\"dakisolatie.html\">dakisolatie</a> krijg je vaak subsidie terug; met de <a href=\"subsidiecheck.html\">subsidiecheck</a> zie je hoeveel.",
+    "Op aanbouwen en garages leggen we <a href=\"epdm.html\">EPDM</a> of nieuwe <a href=\"dakwerken.html\">dakbedekking</a>, en we vervangen goten en boeidelen in <a href=\"zinkwerken.html\">zink</a>. Wil je eerst weten hoe je dak ervoor staat? Doe de gratis <a href=\"dakscan.html\">dakscan</a>."
+  ],
+  "img": "img/oranje-nok-boeidelen.jpg",
+  "imgAlt": "Woning met een nieuw oranje pannendak en strak afgewerkte boeidelen",
+  "faqTitel": "Vragen over je dak<br>in Groesbeek",
+  "faq": [
+    {
+      "vraag": "Werken jullie in Groesbeek?",
+      "antwoord": "Ja. Groesbeek hoort bij de gemeente Berg en Dal, net als Ooij, waar Brück zit."
+    },
+    {
+      "vraag": "Mijn huis is uit de jaren zeventig, wat moet er aan het dak gebeuren?",
+      "antwoord": "Vaak zijn de folie en de panlatten versleten en is het dak slecht geïsoleerd. Nicky kijkt wat er nodig is en of de pannen nog mee kunnen."
+    },
+    {
+      "vraag": "Kan ik het dak isoleren als de pannen eraf gaan?",
+      "antwoord": "Ja, dat is het beste moment. We isoleren dan aan de buitenkant, onder de nieuwe pannen."
+    },
+    {
+      "vraag": "Hoe snel kan Nicky komen kijken?",
+      "antwoord": "Neem contact op, dan plannen jullie samen een moment. Bij een lekkage proberen we zo snel mogelijk te komen."
+    }
+  ]
+}

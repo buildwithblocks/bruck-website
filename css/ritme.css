@@ -35,3 +35,8 @@
   .j-banner{font-size:12px !important;padding:4px 9px !important;right:14px !important;font-weight:600 !important}
   [data-contact-footer]>div>div:last-child{margin-top:20px}
 }
+
+/* Hero van subpagina's (diensten, over ons, projecten, plaatspagina's): lager op mobiel. De homepage-hero niet. */
+@media (max-width:767px){
+  section[style*="position: relative; min-height: 760px"],section[style*="position: relative; min-height: 700px"]{min-height:500px !important}
+}

@@ -1,0 +1,40 @@
+{
+  "slug": "dakdekker-leuth",
+  "plaats": "Leuth",
+  "volgorde": 8,
+  "seo": {
+    "title": "Dakdekker Leuth | Brück Dak en Zinkwerk",
+    "description": "Dakdekker in Leuth. Brück Dak en Zinkwerk uit het nabije Ooij doet dakwerk, dakpannen, EPDM, zinkwerk en lekkages. Doe de gratis dakscan."
+  },
+  "h1": "Dakdekker<br>Leuth",
+  "heroIntro": "Leuth ligt op een paar minuten van Ooij, waar Brück Dak en Zinkwerk zit. Nicky helpt je met alles op en rond je dak.",
+  "heroImg": "img/drone-pannendak-vernieuwen.jpg",
+  "label": "Dakdekker Leuth",
+  "introTitel": "Dakwerk in Leuth",
+  "alineas": [
+    "Leuth ligt aan de voet van de Duivelsberg, tussen de bossen en de Ooijpolder. Je vindt er dorpswoningen, boerderijen en vrijstaande huizen. Onder de bomen raken goten snel vol, en aan de polderkant waait het hard. Beide zorgen ervoor dat een dak sneller slijt.",
+    "We vervangen <a href=\"dakpannen.html\">dakpannen</a> en nokvorsten, leggen <a href=\"epdm.html\">EPDM</a> op platte daken en vernieuwen goten en boeidelen in <a href=\"zinkwerken.html\">zink</a>. Bij een <a href=\"lekkages.html\">lekkage</a> zoeken we eerst waar het water echt binnenkomt.",
+    "Wordt je dak vernieuwd, isoleer het dan meteen. Met de <a href=\"subsidiecheck.html\">subsidiecheck</a> zie je wat <a href=\"dakisolatie.html\">dakisolatie</a> oplevert. Of doe eerst de gratis <a href=\"dakscan.html\">dakscan</a>."
+  ],
+  "img": "img/epdm-naast-pannen.jpg",
+  "imgAlt": "EPDM-dakbedekking strak aangesloten op het pannendak",
+  "faqTitel": "Vragen over je dak<br>in Leuth",
+  "faq": [
+    {
+      "vraag": "Werken jullie in Leuth?",
+      "antwoord": "Ja. Leuth hoort bij de gemeente Berg en Dal en ligt vlak bij Ooij, waar Brück zit."
+    },
+    {
+      "vraag": "Hoe vaak moeten mijn goten schoon?",
+      "antwoord": "Een of twee keer per jaar, zeker als er bomen in de buurt staan. Zo blijft het water goed weglopen."
+    },
+    {
+      "vraag": "Wat kost een nieuw pannendak?",
+      "antwoord": "Dat hangt af van de grootte, het type pan en de staat van de ondergrond. Na een bezoek krijg je een duidelijke offerte."
+    },
+    {
+      "vraag": "Krijg ik garantie op het werk?",
+      "antwoord": "Ja, je krijgt 10 jaar garantie op het uitgevoerde werk."
+    }
+  ]
+}

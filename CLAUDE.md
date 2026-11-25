@@ -45,6 +45,21 @@ Klantsite van Build with Blocks (Tim) voor Brück Dak en Zinkwerk (Nicky, Ooij).
 - `privacy.html`: privacyverklaring (footerlink Privacy, links bij de akkoord-zin in de dakscan). Werk die bij als er
   een nieuwe dienst bijkomt die persoonsgegevens verwerkt (formulier, mailtool, statistieken).
 
+## SEO (seo/)
+- `node seo/bouw.mjs` (Node in ~/.local/node/bin) na elke wijziging in `seo/`. Het script:
+  - bouwt de lokale pagina's `dakdekker-<plaats>.html` uit `seo/locaties/<plaats>.json` met sjabloon
+    `seo/sjablonen/locatie.html` (afgeleid van dakwerken.html; zelfde opzet voor elke plaats);
+  - zet in elke pagina tussen `<!-- SEO:start -->` en `<!-- SEO:end -->` de description, robots, canonical
+    (https://bruckdakwerken.nl), Open Graph en JSON-LD (RoofingContractor, WebPage, BreadcrumbList, Service bij
+    plaatsen, FAQPage uit `faqSrc` of de FAQ-pagina). Titles en descriptions van vaste pagina's: `seo/paginas.json`;
+  - schrijft `sitemap.xml` en `robots.txt`.
+- Pas het SEO-blok of de lokale pagina's nooit met de hand aan; altijd via `seo/` en het script.
+- Plaatspagina's staan niet in het menu; ze linken naar elkaar ("Ook actief in") en de FAQ-pagina linkt ernaar.
+- Nieuwe pagina? Voeg hem toe aan `seo/paginas.json` en draai het script (anders geen SEO-blok).
+- vercel.json: 301's van de oude WordPress-URL's (/offerte-aanvragen, /diensten, /hallo-wereld, /category, /author,
+  /feed), `trailingSlash: false`, en `X-Robots-Tag: noindex` op bruck-dakwerken.vercel.app (blijft ook na de livegang).
+- SEO-agent (zoals Vermeulen) nog niet opgezet: seo/AGENT.md, log.md en scripts volgen als Tim dat start.
+
 ## Deployen (via GitHub)
 - Vercel-project `bruck-dakwerken` (team build-with-blocks), live op https://bruck-dakwerken.vercel.app.
 - Het project is gekoppeld aan github.com/buildwithblocks/bruck-website:

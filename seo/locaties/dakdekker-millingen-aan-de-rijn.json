@@ -1,0 +1,40 @@
+{
+  "slug": "dakdekker-millingen-aan-de-rijn",
+  "plaats": "Millingen aan de Rijn",
+  "volgorde": 7,
+  "seo": {
+    "title": "Dakdekker Millingen aan de Rijn | Brück Dak en Zinkwerk",
+    "description": "Dakdekker in Millingen aan de Rijn. Brück Dak en Zinkwerk uit Ooij doet dakwerk, dakpannen, EPDM, zinkwerk en lekkages. Doe de gratis dakscan."
+  },
+  "h1": "Dakdekker<br>Millingen aan de Rijn",
+  "heroIntro": "Woon je in Millingen aan de Rijn? Brück Dak en Zinkwerk uit Ooij helpt je met alles op en rond je dak.",
+  "heroImg": "img/drone-dak-gestript.jpg",
+  "label": "Dakdekker Millingen aan de Rijn",
+  "introTitel": "Dakwerk in Millingen",
+  "alineas": [
+    "Millingen ligt aan het water, waar de Rijn zich splitst. Sinds 2015 hoort het bij de gemeente Berg en Dal. Aan de rivier waait het hard, en daar krijgen daken het zwaar van. Na een storm liggen pannen of nokvorsten vaak los, en dan kan er water onder je dak komen.",
+    "We zetten losse pannen vast, vervangen <a href=\"dakpannen.html\">dakpannen</a> die poreus zijn en dekken je dak bij een <a href=\"lekkages.html\">lekkage</a> zo nodig eerst tijdelijk af. Op platte daken leggen we <a href=\"epdm.html\">EPDM</a> of nieuwe <a href=\"dakwerken.html\">dakbedekking</a>.",
+    "Ook voor <a href=\"zinkwerken.html\">zinkwerk</a> en <a href=\"dakisolatie.html\">dakisolatie</a> kun je bij ons terecht. Wil je eerst zelf zien hoe je dak ervoor staat? Doe de gratis <a href=\"dakscan.html\">dakscan</a>."
+  ],
+  "img": "img/dak-afgedekt-zeil.jpg",
+  "imgAlt": "Dak tijdelijk waterdicht afgedekt met een zeil",
+  "faqTitel": "Vragen over je dak<br>in Millingen aan de Rijn",
+  "faq": [
+    {
+      "vraag": "Werken jullie in Millingen aan de Rijn?",
+      "antwoord": "Ja. Millingen hoort bij de gemeente Berg en Dal, net als Ooij, waar Brück zit."
+    },
+    {
+      "vraag": "Er liggen pannen los na een storm, wat nu?",
+      "antwoord": "App of bel Nicky. Ga niet zelf het dak op. We zetten de pannen vast of dekken het dak tijdelijk af."
+    },
+    {
+      "vraag": "Is stormschade gedekt door mijn verzekering?",
+      "antwoord": "Dat verschilt per verzekering. We kunnen de schade vastleggen met foto's, zodat je het makkelijk kunt melden."
+    },
+    {
+      "vraag": "Kan ik subsidie krijgen voor dakisolatie?",
+      "antwoord": "Vaak wel. Met de subsidiecheck zie je wat je ongeveer terugkrijgt."
+    }
+  ]
+}

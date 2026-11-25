@@ -1,0 +1,40 @@
+{
+  "slug": "dakdekker-berg-en-dal",
+  "plaats": "Berg en Dal",
+  "volgorde": 3,
+  "seo": {
+    "title": "Dakdekker Berg en Dal | Brück Dak en Zinkwerk",
+    "description": "Dakdekker in de gemeente Berg en Dal. Brück Dak en Zinkwerk uit Ooij werkt in Berg en Dal, Groesbeek, Beek, Millingen en omgeving. Doe de dakscan."
+  },
+  "h1": "Dakdekker<br>Berg en Dal",
+  "heroIntro": "Brück Dak en Zinkwerk zit in Ooij en werkt in de hele gemeente Berg en Dal, van het dorp zelf tot Groesbeek en Millingen.",
+  "heroImg": "img/drone-pannendak-zonnepanelen.jpg",
+  "label": "Dakdekker Berg en Dal",
+  "introTitel": "Dakdekker in de hele gemeente",
+  "alineas": [
+    "De gemeente Berg en Dal is groot en gevarieerd. Je vindt er villa's tussen de bossen in het dorp Berg en Dal, rijtjeshuizen in Groesbeek en dijkwoningen in de Ooijpolder. Elk dak vraagt iets anders, en Nicky kijkt per woning wat er nodig is.",
+    "We vervangen en repareren <a href=\"dakwerken.html\">platte en hellende daken</a>, leggen <a href=\"dakpannen.html\">dakpannen</a> en <a href=\"epdm.html\">EPDM</a>, en maken <a href=\"zinkwerken.html\">zinkwerk</a> op maat. Bij een <a href=\"lekkages.html\">lekkage</a> zijn we vanuit Ooij snel in de buurt.",
+    "Wil je je dak laten isoleren? Met de <a href=\"subsidiecheck.html\">subsidiecheck</a> zie je wat je terugkrijgt. Of doe eerst de gratis <a href=\"dakscan.html\">dakscan</a> en zie hoe je dak ervoor staat."
+  ],
+  "img": "img/dakkapel-nieuwbouw.jpg",
+  "imgAlt": "Nieuwe dakkapel met zwarte zijwangen in een antraciet pannendak",
+  "faqTitel": "Vragen over je dak<br>in Berg en Dal",
+  "faq": [
+    {
+      "vraag": "In welke plaatsen in Berg en Dal werken jullie?",
+      "antwoord": "In de hele gemeente: onder meer Ooij, Beek, Berg en Dal, Groesbeek, Ubbergen, Leuth, Kekerdom, Millingen aan de Rijn en Heilig Landstichting."
+    },
+    {
+      "vraag": "Komen jullie eerst kijken?",
+      "antwoord": "Ja. Nicky bekijkt je dak, bespreekt wat er nodig is en daarna krijg je een offerte."
+    },
+    {
+      "vraag": "Kan ik subsidie krijgen voor dakisolatie?",
+      "antwoord": "Vaak wel, via de ISDE van de overheid. Met de subsidiecheck zie je hoeveel je ongeveer terugkrijgt."
+    },
+    {
+      "vraag": "Krijg ik garantie op het werk?",
+      "antwoord": "Ja, je krijgt 10 jaar garantie op het uitgevoerde werk."
+    }
+  ]
+}

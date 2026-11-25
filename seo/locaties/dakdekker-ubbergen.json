@@ -1,0 +1,40 @@
+{
+  "slug": "dakdekker-ubbergen",
+  "plaats": "Ubbergen",
+  "volgorde": 6,
+  "seo": {
+    "title": "Dakdekker Ubbergen | Brück Dak en Zinkwerk",
+    "description": "Dakdekker in Ubbergen. Brück Dak en Zinkwerk zit in buurdorp Ooij en doet dakwerk, zinkwerk, dakpannen, EPDM en lekkages. Doe de dakscan."
+  },
+  "h1": "Dakdekker<br>Ubbergen",
+  "heroIntro": "Ubbergen ligt naast Ooij, waar Brück Dak en Zinkwerk zit. Nicky is dus snel bij je.",
+  "heroImg": "img/drone-woning-steigers.jpg",
+  "label": "Dakdekker Ubbergen",
+  "introTitel": "Dakwerk in Ubbergen",
+  "alineas": [
+    "Ubbergen ligt tussen Nijmegen en Beek, aan de rand van de stuwwal. Je vindt er oudere woningen, villa's en boerderijen, vaak met een pannendak en zinken goten. Bij zulke daken komt het aan op goed <a href=\"zinkwerken.html\">zinkwerk</a> en loodwerk rond schoorstenen en dakkapellen.",
+    "We vervangen versleten <a href=\"dakpannen.html\">dakpannen</a> en folie, leggen <a href=\"epdm.html\">EPDM</a> op platte daken en zoeken bij een <a href=\"lekkages.html\">lekkage</a> uit waar het water echt binnenkomt.",
+    "Laat je je dak vernieuwen, neem dan <a href=\"dakisolatie.html\">dakisolatie</a> mee. Benieuwd naar de staat van je dak? Doe de gratis <a href=\"dakscan.html\">dakscan</a>."
+  ],
+  "img": "img/dakkapel-zijwang.jpg",
+  "imgAlt": "Nieuwe dakkapel met strak afgewerkte zijwangen in een pannendak",
+  "faqTitel": "Vragen over je dak<br>in Ubbergen",
+  "faq": [
+    {
+      "vraag": "Werken jullie in Ubbergen?",
+      "antwoord": "Ja. Ubbergen ligt naast Ooij, waar Brück zit."
+    },
+    {
+      "vraag": "Kunnen jullie oud loodwerk rond mijn schoorsteen vervangen?",
+      "antwoord": "Ja. We vervangen lood en zink rond schoorstenen en dakkapellen, zodat er geen water meer langs loopt."
+    },
+    {
+      "vraag": "Wat kost dakwerk aan een oudere woning?",
+      "antwoord": "Dat hangt af van wat er nodig is. Na een bezoek krijg je een duidelijke offerte."
+    },
+    {
+      "vraag": "Kan ik subsidie krijgen voor dakisolatie?",
+      "antwoord": "Vaak wel. Met de subsidiecheck zie je wat je ongeveer terugkrijgt."
+    }
+  ]
+}
