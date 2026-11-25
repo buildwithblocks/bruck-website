@@ -21,7 +21,8 @@ Klantsite van Build with Blocks (Tim) voor Brück Dak en Zinkwerk (Nicky, Ooij).
 - `api/lead.js`: contactformulier en dakscan "adres niet gevonden" (Resend, ontwerp "volledig donker").
 - `api/rapport.mjs`: dakrapport-pdf (@react-pdf/renderer, 3 pagina's, overgenomen van Vermeulen `src/lib/rapport`).
   Rekent de score opnieuw uit, haalt de luchtfoto bij PDOK, mailt de klant (rapport@) en Nicky (met pdf als bijlage).
-  Het rapport komt alleen per mail (geen download). Rate limit 6 per IP per 10 min. Gedeelde mailopmaak in `api/_huisstijl.js`.
+  Het rapport komt alleen per mail (geen download). Rate limit 6 per IP per 10 min. Gedeelde mailopmaak in `api/_huisstijl.js`
+  (mobiel via media queries; `contactBlok()` = contact zoals op de site, met plaatjes uit `img/mail/`).
 - Lettertypes voor de pdf in `api/_fonts/`. De Factory Sans-subset van de site mist `0 ? - / ! # = @`; `F()` in
   rapport.mjs zet die tekens in Saira. Gebruik NIET de Factory Sans uit ~/Library/Fonts: dat is een demo met watermerk.
 - `vercel.json` zet `installCommand: npm ci` (nodig voor de pdf-functie) en neemt fonts, logo en Nicky-foto mee.

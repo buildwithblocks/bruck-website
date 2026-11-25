@@ -377,7 +377,7 @@ function mails(input, r, site) {
       intro: input.inspectie ? `Wil een gratis dakinspectie. Neem ${H.REACTIE} contact op om een moment te plannen. Het dakrapport zit als bijlage bij deze mail.` : `Heeft het dakrapport aangevraagd (zit als bijlage bij deze mail). Geen inspectie gevraagd.`,
       inhoud: H.scoreBlok(r.score, r.scoreLabel, '') + H.rijen(velden) +
         (input.vraag ? '<div style="height:20px;line-height:20px;font-size:0">&nbsp;</div>' + H.tekstBlok(input.vraag) : '') +
-        H.knoppen([H.knop(H.telHref(input.telefoon), `Bel ${voornaam}`, true), H.knop(`mailto:${input.email}`, `Mail ${voornaam}`, false), H.knop(kaart, 'Adres op kaart', false), H.knop(luchtfotoUrl, 'Luchtfoto', false)]),
+        H.knoppen([H.knop(H.waHref(input.telefoon), `App ${voornaam}`, true), H.knop(H.telHref(input.telefoon), `Bel ${voornaam}`, false), H.knop(`mailto:${input.email}`, `Mail ${voornaam}`, false), H.knop(kaart, 'Adres op kaart', false), H.knop(luchtfotoUrl, 'Luchtfoto', false)]),
     }),
   };
   const klant = {
@@ -387,7 +387,7 @@ function mails(input, r, site) {
       intro: `Bedankt voor het doen van de dakscan. In de bijlage vind je je persoonlijke dakrapport voor <strong style="color:#FFFFFF">${H.esc(r.adres)}</strong>.`,
       inhoud: H.scoreBlok(r.score, r.scoreLabel, SCORES[r.uitkomst][1]) +
         H.alinea(input.inspectie ? `Nicky neemt <strong style="color:#FFFFFF">${H.REACTIE}</strong> contact met je op om een moment te plannen waarop hij je dak gratis komt bekijken. Liever sneller? App of bel gerust.` : 'Wil je dat Nicky je dak komt bekijken? App of bel gerust, of beantwoord deze mail.') +
-        H.knoppen([H.knop(H.BRUCK.whatsapp, 'App Nicky', true), H.knop(H.BRUCK.telHref, `Bel Nicky: ${H.BRUCK.tel}`, false), H.knop(`mailto:${H.BRUCK.mail}`, 'Mail Nicky', false)]),
+        H.contactBlok(site),
     }),
   };
   return { lead, klant };

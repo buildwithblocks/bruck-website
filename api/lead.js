@@ -13,7 +13,7 @@
 //                   met [TEST] in het onderwerp. Zet LEAD_TEST op "0" om live te gaan.
 //   SITE_URL        basis-URL voor logo en links (standaard https://bruck-dakwerken.vercel.app)
 
-const { BRUCK, REACTIE, clean, cleanText, isEmail, telDigits, telHref, rijen, knop, knoppen, scoreBlok, tekstBlok, alinea, layout, send, config, stuurKlant, teVaak, ipVan } = require('./_huisstijl');
+const { BRUCK, REACTIE, clean, cleanText, isEmail, telDigits, telHref, rijen, knop, knoppen, scoreBlok, tekstBlok, alinea, layout, send, config, stuurKlant, teVaak, ipVan, contactBlok, waHref } = require('./_huisstijl');
 
 // ---------- de mails ----------
 
@@ -24,9 +24,10 @@ function maakMails(b, site) {
   const voornaam = clean(b.voornaam, 80) || naam.split(/\s+/)[0] || naam;
   const email = clean(b.email, 160);
   const tel = clean(b.telefoon, 40);
-  const klantKnoppen = knoppen([knop(BRUCK.whatsapp, 'App Nicky', true), knop(BRUCK.telHref, `Bel Nicky: ${BRUCK.tel}`, false), knop(`mailto:${BRUCK.mail}`, 'Mail Nicky', false)]);
+  const klantKnoppen = contactBlok(site);
   const leadKnoppen = (extra) => knoppen([
-    tel ? knop(telHref(tel), `Bel ${voornaam}`, true) : '',
+    tel ? knop(waHref(tel), `App ${voornaam}`, true) : '',
+    tel ? knop(telHref(tel), `Bel ${voornaam}`, false) : '',
     knop(`mailto:${email}`, `Mail ${voornaam}`, false), ...(extra || [])]);
 
   if (type === 'dakscan') {
@@ -52,7 +53,6 @@ function maakMails(b, site) {
         inhoud: (score ? scoreBlok(score, label, advies) : '') +
           rijen([['Adres', adres], ['Bouwjaar', clean(b.bouwjaar, 6)], ['Daktype', daktype], ['Dakoppervlak', opp],
                  ['Dak vernieuwd', clean(b.vernieuwd, 60)], ['Lekkage of vocht', clean(b.lekkage, 10)]]) +
-          alinea('Liever niet wachten? App of bel Nicky direct, of beantwoord deze mail.') +
           klantKnoppen,
       }),
     };
@@ -73,7 +73,7 @@ function maakMails(b, site) {
       klantHtml: layout({
         site, voorKlant: true, label: 'Aanvraag ontvangen', titel: `Bedankt, ${voornaam}!`,
         intro: `We konden je adres niet automatisch vinden. Nicky zoekt het na en neemt <strong style="color:#FFFFFF">${REACTIE}</strong> contact met je op.`,
-        inhoud: rijen([['Adres', adres]]) + alinea('Haast? App of bel Nicky direct.') + klantKnoppen,
+        inhoud: rijen([['Adres', adres]]) + klantKnoppen,
       }),
     };
   }
@@ -93,7 +93,7 @@ function maakMails(b, site) {
       site, voorKlant: true, label: 'Bericht ontvangen', titel: `Bedankt, ${voornaam}!`,
       intro: `We hebben je bericht goed ontvangen. Nicky neemt <strong style="color:#FFFFFF">${REACTIE}</strong> contact met je op.`,
       inhoud: tekstBlok(bericht) +
-        alinea('Haast? App of bel Nicky direct.') + klantKnoppen,
+        klantKnoppen,
     }),
   };
 }
