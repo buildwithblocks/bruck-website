@@ -56,3 +56,14 @@
 @media (max-width:767px){
   [style*="; padding: 48px; box-sizing: border-box"]{padding:24px !important}
 }
+
+/* Tablet en mobiel: kolommen die onder elkaar komen te staan vullen altijd de volle breedte (geen desktop-max-breedte
+   meer), ook de alinea's erin. Foto's die onder de tekst komen: volle breedte in 4:3. */
+@media (max-width:1199px){
+  section [style*="flex: 1 1"][style*="max-width"]{max-width:none !important}
+  section [style*="flex: 1 1"] > p,section [style*="flex: 1 1"] > h2{max-width:none !important}
+}
+@media (max-width:1099px){
+  section img[style*="flex: 0 1"]{flex:1 1 100% !important;max-width:none !important;width:100% !important;height:auto !important;aspect-ratio:4/3 !important}
+  section [style*="flex: 1 1"] > img[style*="aspect-ratio"]{aspect-ratio:4/3 !important;height:auto !important}
+}

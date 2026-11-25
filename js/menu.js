@@ -24,8 +24,10 @@
     '@media (hover:hover){.mm-ikoon:hover{background:#DFA701;color:#0B0B0B}#mm .mm-hoofd a:hover,#mm .mm-hoofd button:hover{color:#DFA701}#mm .mm-sub a:hover{color:#fff}#mm .mm-sub a:hover svg{transform:translateX(3px)}}',
     '.mm-ikoon:focus:not(:focus-visible){outline:none}.mm-ikoon:focus-visible{outline:2px solid #DFA701;outline-offset:2px}',
     '.mm-ham{position:relative;width:20px;height:14px}',
-    '.mm-ham i{position:absolute;left:0;right:0;height:1.5px;background:currentColor;transition:transform .5s var(--mm-io),opacity .3s ease,top .5s var(--mm-io)}',
+    /* Hamburger <-> kruisje in twee fases. Dicht: eerst terugdraaien, dan uit elkaar schuiven. Open: eerst naar het midden, dan draaien. */
+    '.mm-ham i{position:absolute;left:0;right:0;height:1.5px;background:currentColor;transform-origin:50% 50%;will-change:transform,top;transition:transform .28s cubic-bezier(.4,0,.2,1) 0s,top .28s cubic-bezier(.4,0,.2,1) .22s,opacity .12s linear .22s}',
     '.mm-ham i:nth-child(1){top:0}.mm-ham i:nth-child(2){top:6px}.mm-ham i:nth-child(3){top:12px}',
+    '.mm-open .mm-ham i{transition:top .28s cubic-bezier(.4,0,.2,1) 0s,transform .32s cubic-bezier(.4,0,.2,1) .22s,opacity .12s linear .1s}',
     '.mm-open .mm-ham i:nth-child(1){top:6px;transform:rotate(45deg)}.mm-open .mm-ham i:nth-child(2){opacity:0}.mm-open .mm-ham i:nth-child(3){top:6px;transform:rotate(-45deg)}',
     '@media (max-width:' + (BP - 1) + 'px){',
     '[data-floating-nav]{background:rgba(22,22,22,0) !important;border-bottom-color:rgba(255,255,255,0) !important;padding-top:0 !important;transition:background-color .4s ease,border-color .4s ease !important}',
