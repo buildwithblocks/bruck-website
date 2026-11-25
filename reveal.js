@@ -99,3 +99,28 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
   else init();
 })();
+
+/* Knopteksten met losse letters (rol-effect): letters per woord groeperen, zodat een te lange knoptekst op mobiel
+   alleen tussen woorden naar een tweede regel gaat. Werkt ook voor knoppen die later in de pagina komen. */
+(function () {
+  function groepeer(st) {
+    if (st.getAttribute('data-wrd')) return;
+    var kids = [].slice.call(st.children);
+    if (!kids.length || !kids.every(function (k) { return k.classList && k.classList.contains('ch'); })) return;
+    st.setAttribute('data-wrd', '1');
+    var woord = null;
+    kids.forEach(function (ch) {
+      if (ch.textContent === ' ') { woord = null; return; }
+      if (!woord) { woord = document.createElement('span'); woord.className = 'wrd'; woord.style.cssText = 'display:inline-block;white-space:nowrap'; st.insertBefore(woord, ch); }
+      woord.appendChild(ch);
+    });
+  }
+  function alles(root) { (root.querySelectorAll ? root : document).querySelectorAll('.st').forEach(groepeer); }
+  function start() {
+    alles(document);
+    if (window.MutationObserver) new MutationObserver(function (m) {
+      m.forEach(function (r) { r.addedNodes.forEach(function (n) { if (n.nodeType === 1) { if (n.classList.contains('st')) groepeer(n); alles(n); } }); });
+    }).observe(document.body, { childList: true, subtree: true });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start();
+})();

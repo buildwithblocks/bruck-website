@@ -40,3 +40,19 @@
 @media (max-width:767px){
   section[style*="position: relative; min-height: 760px"],section[style*="position: relative; min-height: 700px"]{min-height:500px !important}
 }
+
+/* Knoppen passen altijd: nooit breder dan hun vak, en op mobiel lopen lange teksten door op een tweede regel
+   (afbreken op de spaties tussen woorden). De minimale hoogte blijft gelijk aan de oorspronkelijke hoogte. */
+.btn-p,.btn-s{max-width:100%;box-sizing:border-box}
+@media (max-width:767px){
+  .btn-p,.btn-s,html body .ds-acties .btn-p,html body .ds-acties .btn-s{white-space:normal !important;height:auto !important;min-height:48px;padding-top:12px !important;padding-bottom:12px !important;text-align:center;line-height:1.25}
+  .btn-p[style*="height: 56px"],.btn-s[style*="height: 56px"],.sc-knop{min-height:56px}
+  /* Rol-effect (alleen voor hover) uit op mobiel, zodat de tekst op woordgrenzen kan doorlopen naar een tweede regel. */
+  .btn-p .st,.btn-s .st,.btn-t.st{display:inline;overflow:visible;white-space:normal;line-height:1.25;min-width:0}
+  .btn-p .st .ch,.btn-s .st .ch{text-shadow:none !important;transform:none !important}
+  .btn-ar{flex:none}
+}
+/* Blokken met vaste binnenruimte van 48px (homepage): op mobiel 24px, zodat tekst de breedte gebruikt. */
+@media (max-width:767px){
+  [style*="; padding: 48px; box-sizing: border-box"]{padding:24px !important}
+}

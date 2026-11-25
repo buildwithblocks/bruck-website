@@ -45,7 +45,8 @@ function plaatsenBlok(huidig) {
   <div style="max-width: 1240px; margin: 0 auto">
     <span style="display: block; font-size: 14px; font-weight: 700; color: #DFA701; text-transform: uppercase">Werkgebied</span>
     <h2 style="margin: var(--label-kop) 0 0; font-family: 'Factory Sans', 'Helvetica Neue', 'Helvetica', Arial, sans-serif; font-weight: 600; font-size: clamp(30px, 3.4vw, 44px); line-height: 1.05; letter-spacing: -0.03em; text-transform: uppercase; color: #FFFFFF">Ook actief in</h2>
-    <div style="margin-top: var(--sp-32); display: flex; flex-wrap: wrap; gap: 10px">${links}</div>
+    <p style="margin: var(--kop-tekst) 0 0; max-width: 560px; font-size: 16px; line-height: 1.6; color: rgba(255,255,255,0.75)">Onder andere in deze plaatsen. Woon je ergens anders in de buurt? App of bel Nicky, dan kijken we wat er kan.</p>
+    <div style="margin-top: var(--sp-28); display: flex; flex-wrap: wrap; gap: 10px">${links}</div>
   </div>
 </section>`;
 }
