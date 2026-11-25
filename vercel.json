@@ -4,7 +4,7 @@
   "functions": {
     "api/rapport.mjs": {
       "maxDuration": 30,
-      "includeFiles": "{api/_fonts/**,img/2eb862934a76df52611f70dd21ad94cc.png,img/nicky-rond.jpg}"
+      "includeFiles": "{api/_fonts/**,img/2eb862934a76df52611f70dd21ad94cc.png,img/nicky-rond.jpg,node_modules/pdfkit/js/**,node_modules/@react-pdf/font/node_modules/pdfkit/js/**}"
     }
   }
 }
