@@ -482,9 +482,14 @@ class Component extends DCLogic {
     if (sec) sec.classList.toggle('sc-res', !!res);
     app.innerHTML = html;
     bind();
-    // Stap-meting (één keer per bezoek): 1 geopend, 2 bedrag afgeschermd (adres gevonden), 3 verstuurd.
+    // Stap-meting (één keer per bezoek): 1 geopend, 2 bedrag afgeschermd (adres gevonden), 3 bedrag bekeken (na versturen).
     if (window.meetStap) {
-      if (res && st.open) window.meetStap('Subsidiecheck', 3, 'verstuurd');
+      if (res && st.open) {
+        // Het bedrag is pas na het versturen te zien: stap 3 = bedrag bekeken, met het bedrag in ranges.
+        var r3 = bereken(), t3 = r3.totaal;
+        var range = t3 <= 0 ? 'geen subsidie' : t3 < 500 ? 'tot € 500' : t3 < 1000 ? '€ 500 - 1.000' : t3 < 2000 ? '€ 1.000 - 2.000' : t3 < 3000 ? '€ 2.000 - 3.000' : '€ 3.000 of meer';
+        window.meetStap('Subsidiecheck', 3, 'bedrag bekeken', { bedrag: range, dak: r3.geschat ? 'geschat' : 'gemeten' });
+      }
       else if (res) window.meetStap('Subsidiecheck', 2, 'bedrag afgeschermd', { dak: st.w.dak ? 'gevonden' : 'onbekend' });
       else window.meetStap('Subsidiecheck', 1, 'geopend');
     }
