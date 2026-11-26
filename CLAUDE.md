@@ -56,12 +56,36 @@ Klantsite van Build with Blocks (Tim) voor Brück Dak en Zinkwerk (Nicky, Ooij).
 - Pas het SEO-blok of de lokale pagina's nooit met de hand aan; altijd via `seo/` en het script.
 - Plaatspagina's staan niet in het menu; ze linken naar elkaar ("Ook actief in") en de FAQ-pagina linkt ernaar.
 - Nieuwe pagina? Voeg hem toe aan `seo/paginas.json` en draai het script (anders geen SEO-blok).
-- vercel.json: 301's van de oude WordPress-URL's (/offerte-aanvragen, /diensten, /hallo-wereld, /category, /author,
-  /feed), `trailingSlash: false`, en `X-Robots-Tag: noindex` op bruck-dakwerken.vercel.app (blijft ook na de livegang).
-- SEO-agent (zoals Vermeulen) nog niet opgezet: seo/AGENT.md, log.md en scripts volgen als Tim dat start.
+- vercel.json: 301's van alle oude WordPress-URL's (pagina's, /offerte-aanvragen, /diensten, Yoast-sitemaps, /home,
+  /wp-admin), `cleanUrls`, `trailingSlash: false`, en `X-Robots-Tag: noindex` op bruck-dakwerken.vercel.app.
+- Interne links altijd naar de schone URL (`/dakwerken`, `/` voor home), nooit `pagina.html`.
+- `404.html` is de foutpagina (noindex, `<base href="/">`); `seo/bouw.mjs` slaat hem over.
+
+### SEO-regels (van Tim, 26 nov 2026)
+- In titels, descriptions, alt-teksten en structured data altijd de volledige naam **Brück Dak en Zinkwerk**, nooit
+  alleen "Brück" (de persoon "Nicky van Brück" mag wel).
+- Homepage: geen plaatsnaam in de titel, liefst ook niet in de description.
+- Elke titel en description is uniek op de site. Lokale pagina's zijn geen sjabloontekst: titel begint met
+  "Dakdekker <plaats>", daarna wat specifiek is voor die plaats (uit de tekst van de pagina zelf).
+- Titel max. 60 tekens, description max. 155 tekens.
+- Privacy en bedankt: noindex en niet in de sitemap.
+- Deelafbeelding (og:image) is op elke pagina dezelfde: `img/deelafbeelding.jpg` (1200x630). De eigen hero-foto van
+  een pagina gaat via `afbeelding` in de structured data (primaryImageOfPage).
+- Alt-teksten beschrijven wat er echt op de foto staat; bekijk de foto voor je er een schrijft. Geen verzonnen feiten
+  (bijv. levensduur, prijzen) in teksten of descriptions: alleen wat al op de site staat of wat Nicky bevestigt.
+- Google Bedrijfsprofiel (kgmid /g/11t0qx58sl) staat als sameAs/hasMap in de structured data.
+
+### SEO-agent
+- De algemene SEO-agent (repo buildwithblocks/seo-agent) werkt in deze repo. Nieuwe landingspagina's: maak een
+  dienstpagina naar het voorbeeld van een bestaande (bijv. `epdm.html`) of een plaatspagina via `seo/locaties/`,
+  voeg hem toe aan `seo/paginas.json`, draai `node seo/bouw.mjs` en link hem vanuit een passende pagina.
+  Nieuwe diensten ook in het menu (`js/menu.js`, DIENSTEN) en de footer (op alle pagina's) zetten.
+- Er is geen build-stap en geen typecheck: controleer lokaal met `python3 scripts/dev-server.py` (poort 4620) dat de
+  pagina laadt, alle links werken en er geen fouten in de console staan.
 
 ## Deployen (via GitHub)
-- Vercel-project `bruck-dakwerken` (team build-with-blocks), live op https://bruck-dakwerken.vercel.app.
+- Vercel-project `bruck-dakwerken` (team build-with-blocks, Pro), live op https://bruckdakwerken.nl
+  (testadres https://bruck-dakwerken.vercel.app, noindex).
 - Het project is gekoppeld aan github.com/buildwithblocks/bruck-website:
   - push naar `main` = automatisch live (productie);
   - push naar een andere branch = automatisch een preview-link.
@@ -71,17 +95,22 @@ Klantsite van Build with Blocks (Tim) voor Brück Dak en Zinkwerk (Nicky, Ooij).
   tenzij hij zegt dat het direct live mag.
 - Lokaal op een nieuwe Mac: `npx vercel login` en `npx vercel link --yes --project bruck-dakwerken` (alleen nodig
   voor `vercel env`/logs). Er is geen build-stap (framework Other, output `.`).
-- Lokaal bekijken: `python3 -m http.server 4620` in deze map (cleanUrls werken lokaal niet; gebruik `.html`).
+- Lokaal bekijken: `python3 scripts/dev-server.py` (poort 4620, schone URL's zoals op Vercel).
 
-## Mails (Resend) – testmodus staat AAN tot de livegang
-- Omgevingsvariabelen in Vercel: `RESEND_API_KEY` (staat erin, key mag alleen bruckdakwerken.nl).
+## Mails (Resend) – live sinds 26 nov 2026
+- Omgevingsvariabelen in Vercel (Production): `RESEND_API_KEY`, `LEAD_TO`=bruckdakenzinkwerk@outlook.com,
+  `LEAD_TEST`=0, `SITE_URL`=https://bruckdakwerken.nl. Aanvragen gaan naar Nicky, klanten krijgen hun eigen mail.
 - Afzenders: intern `dakscan@bruckdakwerken.nl`, klanten `rapport@bruckdakwerken.nl`. Nooit vanaf buildwithblocks.nl
   naar klanten (Tim wil dat expliciet niet).
-- Nu gaat alles naar info@buildwithblocks.nl met [TEST]. Bij de livegang (pas dan, op verzoek van Tim):
-  `LEAD_TO`=bruckdakenzinkwerk@outlook.com, `LEAD_TEST`=0, `SITE_URL`=https://bruckdakwerken.nl, en opnieuw deployen.
+- Stuur geen testaanvragen in zonder overleg: die komen echt bij Nicky binnen.
 
 ## Domein
-- bruckdakwerken.nl staat bij Hostinger (DNS via dns-parking.com, Hostinger-mail). Nog niet aan Vercel gekoppeld.
+- bruckdakwerken.nl bij Hostinger (DNS via dns-parking.com, Hostinger-mail). Gekoppeld aan Vercel op 26 nov 2026:
+  A @ 216.150.1.1 + 216.150.16.1, CNAME www → Vercel (www stuurt 308 door naar het hoofddomein), geen AAAA.
+  MX/SPF (Hostinger-mail) en de Resend-records (`send.`, `resend._domainkey`) nooit aanraken.
+- Sitemap ingediend in Google Search Console (26 nov 2026, 23 pagina's).
+- Meten: Vercel Web Analytics + custom events via `js/meet.js` (klikken op bellen/mailen/WhatsApp en knoppen naar
+  dakscan/contact/subsidiecheck, met pagina en plek; leads als "Lead - …").
 
 ## Stijlregels
 - Donker (#161616, vlakken #1F1F1F, formulieren #0B0B0B), accent #DFA701 (hover #C99600), rechte hoeken,
@@ -115,4 +144,4 @@ Klantsite van Build with Blocks (Tim) voor Brück Dak en Zinkwerk (Nicky, Ooij).
 - Geen plaatsnamen en geen "Brück" (ü) in koppen met Factory Sans; in lopende tekst mag het wel.
 
 ## Nog open
-- Stap-meting per dakscan-stap (Vercel custom events vragen Pro; anders Plausible).
+- Nicky moet de feiten in de teksten van de lokale pagina's nog nalopen.
