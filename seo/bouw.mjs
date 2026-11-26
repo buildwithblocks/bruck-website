@@ -104,7 +104,7 @@ function seoBlok(bestand, html) {
   return r;
 }
 
-const bestanden = fs.readdirSync(ROOT).filter((f) => f.endsWith('.html') && !f.startsWith('_'));
+const bestanden = fs.readdirSync(ROOT).filter((f) => f.endsWith('.html') && !f.startsWith('_') && f !== '404.html');
 for (const f of bestanden) {
   let html = lees(f);
   const blok = seoBlok(f, html);
