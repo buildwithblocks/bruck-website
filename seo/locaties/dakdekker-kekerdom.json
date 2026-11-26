@@ -3,7 +3,7 @@
   "plaats": "Kekerdom",
   "volgorde": 10,
   "seo": {
-    "title": "Dakdekker Kekerdom | Brück Dak en Zinkwerk",
+    "title": "Dakdekker Kekerdom | Dakwerk en zinkwerk | Brück",
     "description": "Dakdekker in Kekerdom. Brück Dak en Zinkwerk uit Ooij doet dakwerk, dakpannen, EPDM, zinkwerk en lekkages in de Ooijpolder. Doe de gratis dakscan."
   },
   "h1": "Dakdekker<br>Kekerdom",
@@ -13,8 +13,8 @@
   "introTitel": "Dakwerk in Kekerdom",
   "alineas": [
     "Kekerdom is een klein dijkdorp in de Ooijpolder, vlak bij de Millingerwaard. Er staan oude dijkwoningen en boerderijen, vaak met grote pannendaken. In de open polder waait het hard, waardoor pannen en nokvorsten kunnen gaan schuiven.",
-    "We zetten losse pannen vast, vervangen <a href=\"dakpannen.html\">dakpannen</a>, folie en panlatten, en vernieuwen <a href=\"zinkwerken.html\">zinkwerk</a> zoals goten en boeidelen. Op platte daken van schuren en aanbouwen leggen we <a href=\"epdm.html\">EPDM</a>.",
-    "Bij een <a href=\"lekkages.html\">lekkage</a> zoeken we eerst waar het water binnenkomt. En vernieuw je je dak, neem dan <a href=\"dakisolatie.html\">dakisolatie</a> mee. Doe eerst de gratis <a href=\"dakscan.html\">dakscan</a> als je wilt zien hoe je dak ervoor staat."
+    "We zetten losse pannen vast, vervangen <a href=\"/dakpannen\">dakpannen</a>, folie en panlatten, en vernieuwen <a href=\"/zinkwerken\">zinkwerk</a> zoals goten en boeidelen. Op platte daken van schuren en aanbouwen leggen we <a href=\"/epdm\">EPDM</a>.",
+    "Bij een <a href=\"/lekkages\">lekkage</a> zoeken we eerst waar het water binnenkomt. En vernieuw je je dak, neem dan <a href=\"/dakisolatie\">dakisolatie</a> mee. Doe eerst de gratis <a href=\"/dakscan\">dakscan</a> als je wilt zien hoe je dak ervoor staat."
   ],
   "img": "img/pannendak-hoek-boeidelen.jpg",
   "imgAlt": "Nieuw oranje pannendak met strak afgewerkte boeidelen",
@@ -52,5 +52,6 @@
       "vraag": "Kunnen jullie het platte dak van mijn schuur of aanbouw vervangen?",
       "antwoord": "Ja. We halen de oude bedekking weg als dat nodig is en leggen nieuwe bitumen of EPDM, met nette randen en afvoeren."
     }
-  ]
+  ],
+  "heroAlt": "Twee woningen met een nieuw oranje pannendak en zonnepanelen"
 }

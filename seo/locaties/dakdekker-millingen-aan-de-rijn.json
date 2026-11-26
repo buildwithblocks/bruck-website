@@ -13,8 +13,8 @@
   "introTitel": "Dakwerk in Millingen",
   "alineas": [
     "Millingen ligt aan het water, waar de Rijn zich splitst. Sinds 2015 hoort het bij de gemeente Berg en Dal. Aan de rivier waait het hard, en daar krijgen daken het zwaar van. Na een storm liggen pannen of nokvorsten vaak los, en dan kan er water onder je dak komen.",
-    "We zetten losse pannen vast, vervangen <a href=\"dakpannen.html\">dakpannen</a> die poreus zijn en dekken je dak bij een <a href=\"lekkages.html\">lekkage</a> zo nodig eerst tijdelijk af. Op platte daken leggen we <a href=\"epdm.html\">EPDM</a> of nieuwe <a href=\"dakwerken.html\">dakbedekking</a>.",
-    "Ook voor <a href=\"zinkwerken.html\">zinkwerk</a> en <a href=\"dakisolatie.html\">dakisolatie</a> kun je bij ons terecht. Wil je eerst zelf zien hoe je dak ervoor staat? Doe de gratis <a href=\"dakscan.html\">dakscan</a>."
+    "We zetten losse pannen vast, vervangen <a href=\"/dakpannen\">dakpannen</a> die poreus zijn en dekken je dak bij een <a href=\"/lekkages\">lekkage</a> zo nodig eerst tijdelijk af. Op platte daken leggen we <a href=\"/epdm\">EPDM</a> of nieuwe <a href=\"/dakwerken\">dakbedekking</a>.",
+    "Ook voor <a href=\"/zinkwerken\">zinkwerk</a> en <a href=\"/dakisolatie\">dakisolatie</a> kun je bij ons terecht. Wil je eerst zelf zien hoe je dak ervoor staat? Doe de gratis <a href=\"/dakscan\">dakscan</a>."
   ],
   "img": "img/dak-afgedekt-zeil.jpg",
   "imgAlt": "Dak tijdelijk waterdicht afgedekt met een zeil",
@@ -52,5 +52,6 @@
       "vraag": "Krijg ik garantie op het werk?",
       "antwoord": "Ja, je krijgt 10 jaar garantie op het uitgevoerde werk. Wat er precies onder valt, staat in de offerte."
     }
-  ]
+  ],
+  "heroAlt": "Luchtfoto van een pannendak in de steigers terwijl het wordt vernieuwd"
 }

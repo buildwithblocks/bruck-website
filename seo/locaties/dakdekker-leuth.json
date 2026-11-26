@@ -3,7 +3,7 @@
   "plaats": "Leuth",
   "volgorde": 8,
   "seo": {
-    "title": "Dakdekker Leuth | Brück Dak en Zinkwerk",
+    "title": "Dakdekker Leuth | Dakwerk en zinkwerk | Brück",
     "description": "Dakdekker in Leuth. Brück Dak en Zinkwerk uit het nabije Ooij doet dakwerk, dakpannen, EPDM, zinkwerk en lekkages. Doe de gratis dakscan."
   },
   "h1": "Dakdekker<br>Leuth",
@@ -13,8 +13,8 @@
   "introTitel": "Dakwerk in Leuth",
   "alineas": [
     "Leuth ligt aan de voet van de Duivelsberg, tussen de bossen en de Ooijpolder. Je vindt er dorpswoningen, boerderijen en vrijstaande huizen. Onder de bomen raken goten snel vol, en aan de polderkant waait het hard. Beide zorgen ervoor dat een dak sneller slijt.",
-    "We vervangen <a href=\"dakpannen.html\">dakpannen</a> en nokvorsten, leggen <a href=\"epdm.html\">EPDM</a> op platte daken en vernieuwen goten en boeidelen in <a href=\"zinkwerken.html\">zink</a>. Bij een <a href=\"lekkages.html\">lekkage</a> zoeken we eerst waar het water echt binnenkomt.",
-    "Wordt je dak vernieuwd, isoleer het dan meteen. Met de <a href=\"subsidiecheck.html\">subsidiecheck</a> zie je wat <a href=\"dakisolatie.html\">dakisolatie</a> oplevert. Of doe eerst de gratis <a href=\"dakscan.html\">dakscan</a>."
+    "We vervangen <a href=\"/dakpannen\">dakpannen</a> en nokvorsten, leggen <a href=\"/epdm\">EPDM</a> op platte daken en vernieuwen goten en boeidelen in <a href=\"/zinkwerken\">zink</a>. Bij een <a href=\"/lekkages\">lekkage</a> zoeken we eerst waar het water echt binnenkomt.",
+    "Wordt je dak vernieuwd, isoleer het dan meteen. Met de <a href=\"/subsidiecheck\">subsidiecheck</a> zie je wat <a href=\"/dakisolatie\">dakisolatie</a> oplevert. Of doe eerst de gratis <a href=\"/dakscan\">dakscan</a>."
   ],
   "img": "img/epdm-naast-pannen-2.jpg",
   "imgAlt": "EPDM-dakbedekking strak aangesloten op het pannendak",
@@ -52,5 +52,6 @@
       "vraag": "Hoe snel kunnen jullie in Leuth zijn bij een lekkage?",
       "antwoord": "We proberen zo snel mogelijk te komen; vanuit Ooij zijn we snel in Leuth. App een foto van de vlek of de plek waar het lekt, dan kan Nicky alvast meekijken."
     }
-  ]
+  ],
+  "heroAlt": "Luchtfoto van een woning in de steigers met een nieuw antraciet pannendak"
 }

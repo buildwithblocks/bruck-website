@@ -3,7 +3,7 @@
   "plaats": "Nijmegen",
   "volgorde": 4,
   "seo": {
-    "title": "Dakdekker Nijmegen | Brück Dak en Zinkwerk",
+    "title": "Dakdekker Nijmegen | Dakwerk en zinkwerk | Brück",
     "description": "Dakdekker in Nijmegen nodig? Brück Dak en Zinkwerk uit Ooij doet dakwerk, dakpannen, EPDM, zinkwerk en lekkages. Doe de gratis dakscan."
   },
   "h1": "Dakdekker<br>Nijmegen",
@@ -12,9 +12,9 @@
   "label": "Dakdekker Nijmegen",
   "introTitel": "Dakwerk in Nijmegen",
   "alineas": [
-    "In Nijmegen staan veel woningen uit de jaren twintig en dertig, met pannendaken, dakkapellen en zinken goten. Na tientallen jaren zijn de pannen vaak poreus, de folie eronder is versleten en het zinkwerk lekt bij de naden. We vervangen <a href=\"dakpannen.html\">dakpannen</a>, folie en panlatten, en maken nieuw <a href=\"zinkwerken.html\">zinkwerk</a> op maat.",
-    "Bij rijtjeshuizen uit de jaren zestig en zeventig liggen vaak platte daken op de aanbouw, de garage of de dakkapel. Die vervangen we door nieuwe <a href=\"dakwerken.html\">dakbedekking</a> of <a href=\"epdm.html\">EPDM</a>. Heb je al last van vocht of druppels, laat dan snel de <a href=\"lekkages.html\">lekkage</a> opsporen.",
-    "Wordt je dak toch vernieuwd, isoleer het dan meteen. Met de <a href=\"subsidiecheck.html\">subsidiecheck</a> zie je wat <a href=\"dakisolatie.html\">dakisolatie</a> je oplevert. Of doe eerst de gratis <a href=\"dakscan.html\">dakscan</a>."
+    "In Nijmegen staan veel woningen uit de jaren twintig en dertig, met pannendaken, dakkapellen en zinken goten. Na tientallen jaren zijn de pannen vaak poreus, de folie eronder is versleten en het zinkwerk lekt bij de naden. We vervangen <a href=\"/dakpannen\">dakpannen</a>, folie en panlatten, en maken nieuw <a href=\"/zinkwerken\">zinkwerk</a> op maat.",
+    "Bij rijtjeshuizen uit de jaren zestig en zeventig liggen vaak platte daken op de aanbouw, de garage of de dakkapel. Die vervangen we door nieuwe <a href=\"/dakwerken\">dakbedekking</a> of <a href=\"/epdm\">EPDM</a>. Heb je al last van vocht of druppels, laat dan snel de <a href=\"/lekkages\">lekkage</a> opsporen.",
+    "Wordt je dak toch vernieuwd, isoleer het dan meteen. Met de <a href=\"/subsidiecheck\">subsidiecheck</a> zie je wat <a href=\"/dakisolatie\">dakisolatie</a> je oplevert. Of doe eerst de gratis <a href=\"/dakscan\">dakscan</a>."
   ],
   "img": "img/dakkapel-nieuwe-zwarte-pannen.jpg",
   "imgAlt": "Nieuw antraciet pannendak rond een dakkapel en dakraam",
@@ -52,5 +52,6 @@
       "vraag": "Krijg ik garantie op het werk?",
       "antwoord": "Ja, je krijgt 10 jaar garantie op het uitgevoerde werk. Wat er precies onder valt, staat in de offerte."
     }
-  ]
+  ],
+  "heroAlt": "Luchtfoto van een nieuw grijs pannendak in de steigers, in het avondlicht"
 }

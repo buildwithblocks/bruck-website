@@ -3,7 +3,7 @@
   "plaats": "Ubbergen",
   "volgorde": 6,
   "seo": {
-    "title": "Dakdekker Ubbergen | Brück Dak en Zinkwerk",
+    "title": "Dakdekker Ubbergen | Dakwerk en zinkwerk | Brück",
     "description": "Dakdekker in Ubbergen. Brück Dak en Zinkwerk zit in buurdorp Ooij en doet dakwerk, zinkwerk, dakpannen, EPDM en lekkages. Doe de dakscan."
   },
   "h1": "Dakdekker<br>Ubbergen",
@@ -12,9 +12,9 @@
   "label": "Dakdekker Ubbergen",
   "introTitel": "Dakwerk in Ubbergen",
   "alineas": [
-    "Ubbergen ligt tussen Nijmegen en Beek, aan de rand van de stuwwal. Je vindt er oudere woningen, villa's en boerderijen, vaak met een pannendak en zinken goten. Bij zulke daken komt het aan op goed <a href=\"zinkwerken.html\">zinkwerk</a> en loodwerk rond schoorstenen en dakkapellen.",
-    "We vervangen versleten <a href=\"dakpannen.html\">dakpannen</a> en folie, leggen <a href=\"epdm.html\">EPDM</a> op platte daken en zoeken bij een <a href=\"lekkages.html\">lekkage</a> uit waar het water echt binnenkomt.",
-    "Laat je je dak vernieuwen, neem dan <a href=\"dakisolatie.html\">dakisolatie</a> mee. Benieuwd naar de staat van je dak? Doe de gratis <a href=\"dakscan.html\">dakscan</a>."
+    "Ubbergen ligt tussen Nijmegen en Beek, aan de rand van de stuwwal. Je vindt er oudere woningen, villa's en boerderijen, vaak met een pannendak en zinken goten. Bij zulke daken komt het aan op goed <a href=\"/zinkwerken\">zinkwerk</a> en loodwerk rond schoorstenen en dakkapellen.",
+    "We vervangen versleten <a href=\"/dakpannen\">dakpannen</a> en folie, leggen <a href=\"/epdm\">EPDM</a> op platte daken en zoeken bij een <a href=\"/lekkages\">lekkage</a> uit waar het water echt binnenkomt.",
+    "Laat je je dak vernieuwen, neem dan <a href=\"/dakisolatie\">dakisolatie</a> mee. Benieuwd naar de staat van je dak? Doe de gratis <a href=\"/dakscan\">dakscan</a>."
   ],
   "img": "img/dakkapel-zijwang.jpg",
   "imgAlt": "Nieuwe dakkapel met strak afgewerkte zijwangen in een pannendak",
@@ -52,5 +52,6 @@
       "vraag": "Krijg ik garantie op het werk?",
       "antwoord": "Ja, je krijgt 10 jaar garantie op het uitgevoerde werk. Wat er precies onder valt, staat in de offerte."
     }
-  ]
+  ],
+  "heroAlt": "Luchtfoto van een woning in de steigers tijdens het vernieuwen van het pannendak"
 }

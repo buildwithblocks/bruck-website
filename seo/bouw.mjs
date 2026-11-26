@@ -23,6 +23,7 @@ const BEDRIJF = {
   logo: BASIS + '/img/2eb862934a76df52611f70dd21ad94cc.png', image: BASIS + '/' + cfg.standaardAfbeelding,
   telephone: '+31619623366', email: 'bruckdakenzinkwerk@outlook.com', founder: { '@type': 'Person', name: 'Nicky van Brück' },
   address: { '@type': 'PostalAddress', streetAddress: 'Goudwindestraat 39', postalCode: '6576 CD', addressLocality: 'Ooij', addressCountry: 'NL' },
+  geo: { '@type': 'GeoCoordinates', latitude: 51.8549581, longitude: 5.93868089 }, // PDOK, Goudwindestraat 39 Ooij
   identifier: { '@type': 'PropertyValue', propertyID: 'KvK', value: '85783439' },
   sameAs: ['https://www.facebook.com/bruckdakenzinkwerk/', 'https://www.instagram.com/bruckdakenzinkwerk/'],
 };
@@ -40,7 +41,7 @@ const jsStr = (t) => JSON.stringify(String(t));
 
 function plaatsenBlok(huidig) {
   const links = locaties.filter((l) => l.slug !== huidig).map((l) =>
-    `<a href="${l.slug}.html" style="display: inline-flex; align-items: center; height: 44px; padding: 0 16px; border: 1px solid rgba(255,255,255,0.18); color: #FFFFFF; text-decoration: none; font-size: 15px; font-weight: 600">${esc(l.plaats)}</a>`).join('');
+    `<a href="/${l.slug}" style="display: inline-flex; align-items: center; height: 44px; padding: 0 16px; border: 1px solid rgba(255,255,255,0.18); color: #FFFFFF; text-decoration: none; font-size: 15px; font-weight: 600">${esc(l.plaats)}</a>`).join('');
   return `<section data-m-onder data-m-boven style="padding: 0 clamp(16px, 3.6vw, 52px)">
   <div style="max-width: 1240px; margin: 0 auto">
     <span style="display: block; font-size: 14px; font-weight: 700; color: #DFA701; text-transform: uppercase">Werkgebied</span>
@@ -54,11 +55,11 @@ function plaatsenBlok(huidig) {
 for (const l of locaties) {
   const intro = l.alineas.map((a, i) => `<p style="${i ? PN : P1}">${a.replace(/<a href=/g, `<a ${LINK} href=`)}</p>`).join('');
   const faq = '[\n      ' + l.faq.map((f) => `{ q: ${jsStr(f.vraag)}, a: ${jsStr(f.antwoord)} }`).join(',\n      ') + '\n    ]';
-  const vul = { TITLE: esc(l.seo.title), H1: l.h1, HERO_INTRO: esc(l.heroIntro), HERO_IMG: l.heroImg, LABEL: esc(l.label), INTRO_TITEL: esc(l.introTitel),
+  const vul = { TITLE: esc(l.seo.title), H1: l.h1, HERO_INTRO: esc(l.heroIntro), HERO_IMG: l.heroImg, HERO_ALT: esc(l.heroAlt || ''), LABEL: esc(l.label), INTRO_TITEL: esc(l.introTitel),
     INTRO_HTML: intro, IMG: l.img, IMG_ALT: esc(l.imgAlt), FAQ_TITEL: l.faqTitel, FAQ_SRC: faq, PLAATSEN: plaatsenBlok(l.slug) };
   const html = sjabloon.replace(/%%([A-Z0-9_]+)%%/g, (m, k) => (k in vul ? vul[k] : m));
   schrijf(l.slug + '.html', html);
-  cfg.paginas[l.slug + '.html'] = { title: l.seo.title, description: l.seo.description, kruimel: 'Dakdekker ' + l.plaats, afbeelding: l.heroImg, locatie: l };
+  cfg.paginas[l.slug + '.html'] = { title: l.seo.title, description: l.seo.description, kruimel: 'Dakdekker ' + l.plaats, afbeelding: l.heroImg, afbeeldingAlt: l.heroAlt, locatie: l };
 }
 
 /* ---------- SEO-blok in elke pagina ---------- */
@@ -80,7 +81,7 @@ function seoBlok(bestand, html) {
   const p = cfg.paginas[bestand]; if (!p) return null;
   const u = url(bestand), img = BASIS + '/' + (p.afbeelding || cfg.standaardAfbeelding);
   const graph = [bestand === 'index.html' ? BEDRIJF : { '@type': 'RoofingContractor', '@id': BEDRIJF['@id'], name: BEDRIJF.name, url: BEDRIJF.url, telephone: BEDRIJF.telephone, address: BEDRIJF.address }];
-  graph.push({ '@type': 'WebPage', '@id': u + '#pagina', url: u, name: p.title, description: p.description, inLanguage: 'nl-NL', isPartOf: { '@type': 'WebSite', '@id': BASIS + '/#site', url: BASIS + '/', name: 'Brück Dak en Zinkwerk' }, about: { '@id': BEDRIJF['@id'] } });
+  graph.push({ '@type': 'WebPage', '@id': u + '#pagina', url: u, name: p.title, description: p.description, inLanguage: 'nl-NL', isPartOf: { '@type': 'WebSite', '@id': BASIS + '/#site', url: BASIS + '/', name: 'Brück Dak en Zinkwerk' }, about: { '@id': BEDRIJF['@id'] }, primaryImageOfPage: { '@type': 'ImageObject', url: img } });
   if (p.kruimel) graph.push({ '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: BASIS + '/' }, { '@type': 'ListItem', position: 2, name: p.kruimel, item: u }] });
   if (p.locatie) graph.push({ '@type': 'Service', name: 'Dakdekker ' + p.locatie.plaats, serviceType: 'Dakdekker', provider: { '@id': BEDRIJF['@id'] }, areaServed: { '@type': 'City', name: p.locatie.plaats }, url: u });
   const faqs = faqsVan(html, bestand);
@@ -93,6 +94,7 @@ function seoBlok(bestand, html) {
     '<meta property="og:locale" content="nl_NL">', '<meta property="og:type" content="website">', '<meta property="og:site_name" content="Brück Dak en Zinkwerk">',
     `<meta property="og:title" content="${esc(p.title)}">`, `<meta property="og:description" content="${esc(p.description)}">`,
     `<meta property="og:url" content="${u}">`, `<meta property="og:image" content="${img}">`,
+    ...(p.afbeeldingAlt ? [`<meta property="og:image:alt" content="${esc(p.afbeeldingAlt)}">`] : []),
     '<meta name="twitter:card" content="summary_large_image">',
     `<script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', '@graph': graph })}</script>`,
     '<!-- SEO:end -->'].join('\n');

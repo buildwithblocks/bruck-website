@@ -3,7 +3,7 @@
   "plaats": "Groesbeek",
   "volgorde": 5,
   "seo": {
-    "title": "Dakdekker Groesbeek | Brück Dak en Zinkwerk",
+    "title": "Dakdekker Groesbeek | Dakwerk en zinkwerk | Brück",
     "description": "Dakdekker in Groesbeek. Brück Dak en Zinkwerk uit Ooij vervangt dakpannen, legt EPDM, maakt zinkwerk en isoleert daken. Doe de gratis dakscan."
   },
   "h1": "Dakdekker<br>Groesbeek",
@@ -12,9 +12,9 @@
   "label": "Dakdekker Groesbeek",
   "introTitel": "Dakwerk in Groesbeek",
   "alineas": [
-    "Groesbeek is de grootste kern van de gemeente Berg en Dal. Er staan veel eengezinswoningen uit de jaren zestig en zeventig. De <a href=\"dakpannen.html\">pannendaken</a> van die huizen zijn nu vaak aan vervanging toe: de pannen zijn poreus, de folie is versleten en er is nauwelijks isolatie.",
-    "Dat maakt het een goed moment om het dak in één keer te vernieuwen en te isoleren. Voor <a href=\"dakisolatie.html\">dakisolatie</a> krijg je vaak subsidie terug; met de <a href=\"subsidiecheck.html\">subsidiecheck</a> zie je hoeveel.",
-    "Op aanbouwen en garages leggen we <a href=\"epdm.html\">EPDM</a> of nieuwe <a href=\"dakwerken.html\">dakbedekking</a>, en we vervangen goten en boeidelen in <a href=\"zinkwerken.html\">zink</a>. Wil je eerst weten hoe je dak ervoor staat? Doe de gratis <a href=\"dakscan.html\">dakscan</a>."
+    "Groesbeek is de grootste kern van de gemeente Berg en Dal. Er staan veel eengezinswoningen uit de jaren zestig en zeventig. De <a href=\"/dakpannen\">pannendaken</a> van die huizen zijn nu vaak aan vervanging toe: de pannen zijn poreus, de folie is versleten en er is nauwelijks isolatie.",
+    "Dat maakt het een goed moment om het dak in één keer te vernieuwen en te isoleren. Voor <a href=\"/dakisolatie\">dakisolatie</a> krijg je vaak subsidie terug; met de <a href=\"/subsidiecheck\">subsidiecheck</a> zie je hoeveel.",
+    "Op aanbouwen en garages leggen we <a href=\"/epdm\">EPDM</a> of nieuwe <a href=\"/dakwerken\">dakbedekking</a>, en we vervangen goten en boeidelen in <a href=\"/zinkwerken\">zink</a>. Wil je eerst weten hoe je dak ervoor staat? Doe de gratis <a href=\"/dakscan\">dakscan</a>."
   ],
   "img": "img/oranje-nok-boeidelen.jpg",
   "imgAlt": "Woning met een nieuw oranje pannendak en strak afgewerkte boeidelen",
@@ -52,5 +52,6 @@
       "vraag": "Krijg ik garantie op het werk?",
       "antwoord": "Ja, je krijgt 10 jaar garantie op het uitgevoerde werk. Wat er precies onder valt, staat in de offerte."
     }
-  ]
+  ],
+  "heroAlt": "Bovenaanzicht van een pannendak met zonnepanelen, gemaakt met een drone"
 }

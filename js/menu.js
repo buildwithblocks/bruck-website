@@ -7,8 +7,8 @@
 (function () {
   var BP = 1200;
   var WA_URL = 'https://wa.me/31619623366';
-  var DIENSTEN = [['Dakwerken', 'dakwerken.html'], ['Zinkwerken', 'zinkwerken.html'], ['Dakpannen', 'dakpannen.html'], ['EPDM', 'epdm.html'], ['Dakisolatie', 'dakisolatie.html'], ['Lekkages', 'lekkages.html']];
-  var HOOFD = [['Projecten', 'projecten.html'], ['Over ons', 'over-ons.html'], ['FAQ', 'faq.html'], ['Contact', 'contact.html']];
+  var DIENSTEN = [['Dakwerken', '/dakwerken'], ['Zinkwerken', '/zinkwerken'], ['Dakpannen', '/dakpannen'], ['EPDM', '/epdm'], ['Dakisolatie', '/dakisolatie'], ['Lekkages', '/lekkages']];
+  var HOOFD = [['Projecten', '/projecten'], ['Over ons', '/over-ons'], ['FAQ', '/faq'], ['Contact', '/contact']];
 
   var PIJL = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>';
   var PLUS = '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>';
@@ -99,8 +99,8 @@
     '@media (prefers-reduced-motion:reduce){#mm,#mm *,.mm-ham i{transition-duration:.01ms !important;transition-delay:0s !important;animation:none !important}}',
   ].join('\n');
 
-  var hier = (location.pathname.split('/').pop() || 'index.html').replace(/\.html$/, '') || 'index';
-  var isHier = function (href) { return href.replace(/\.html$/, '') === hier; };
+  var hier = (location.pathname.split('/').pop() || 'index').replace(/\.html$/, '') || 'index';
+  var isHier = function (href) { return (href.replace(/^\//, '').replace(/\.html$/, '') || 'index') === hier; };
   var st = function (t) { return '<span class="mm-st" aria-hidden="true">' + t.split('').map(function (c, k) { return '<span class="mm-ch" style="--c:' + k + '">' + c + '</span>'; }).join('') + '</span>'; };
 
   function bouw() {
@@ -114,8 +114,8 @@
       }).join('') + '</div></div>' +
       HOOFD.map(function (h) { return regel('<a class="mm-groot' + (isHier(h[1]) ? ' mm-actief" aria-current="page' : '') + '" href="' + h[1] + '">' + h[0] + '</a>'); }).join('') +
       '</nav>' +
-      '<div class="mm-cta"><a class="mm-btn p mm-rv" style="--i:' + (i++) + '" href="dakscan.html" aria-label="Start dakscan">' + st('Start dakscan') + '<span class="mm-ar">' + PIJL + '</span></a>' +
-      '<a class="mm-btn s mm-rv" style="--i:' + (i++) + '" href="subsidiecheck.html" aria-label="Subsidiecheck">' + st('Subsidiecheck') + '</a></div>' +
+      '<div class="mm-cta"><a class="mm-btn p mm-rv" style="--i:' + (i++) + '" href="/dakscan" aria-label="Start dakscan">' + st('Start dakscan') + '<span class="mm-ar">' + PIJL + '</span></a>' +
+      '<a class="mm-btn s mm-rv" style="--i:' + (i++) + '" href="/subsidiecheck" aria-label="Subsidiecheck">' + st('Subsidiecheck') + '</a></div>' +
       '<div class="mm-contact"><span class="mm-label mm-rv" style="--i:' + (i++) + '">Contact</span>' +
       '<h2 class="mm-rv" style="--i:' + (i++) + '">Vragen? Vraag het aan Nicky</h2>' +
       '<div class="mm-rijen">' +

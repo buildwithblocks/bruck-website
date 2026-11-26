@@ -3,7 +3,7 @@
   "plaats": "Ooij",
   "volgorde": 1,
   "seo": {
-    "title": "Dakdekker Ooij | Brück Dak en Zinkwerk",
+    "title": "Dakdekker Ooij | Dakwerk en zinkwerk | Brück",
     "description": "Dakdekker in Ooij nodig? Brück Dak en Zinkwerk zit zelf in Ooij. Dakwerk, zinkwerk, dakpannen, EPDM en lekkages. Doe de gratis dakscan."
   },
   "h1": "Dakdekker<br>Ooij",
@@ -12,9 +12,9 @@
   "label": "Dakdekker Ooij",
   "introTitel": "Je dakdekker uit het dorp",
   "alineas": [
-    "Ooij ligt tussen de Waal en de stuwwal, met dijkwoningen, oude boerderijen en straten met rijtjeshuizen en twee-onder-een-kappers. Omdat Brück hier zelf zit, is Nicky snel ter plaatse, ook als er na een storm pannen los liggen of er een <a href=\"lekkages.html\">lekkage</a> is.",
-    "In de polder waait het hard. Pannen en nokvorsten schuiven dan sneller, en oude <a href=\"dakpannen.html\">pannendaken</a> krijgen het zwaar. Op veel aanbouwen en garages ligt een plat dak met bitumen dat na twintig jaar aan vervanging toe is. Dat vervangen we door nieuwe <a href=\"dakwerken.html\">dakbedekking</a> of <a href=\"epdm.html\">EPDM</a>.",
-    "Ook voor <a href=\"zinkwerken.html\">zinkwerk</a> zoals goten en boeidelen, en voor <a href=\"dakisolatie.html\">dakisolatie</a>, kun je bij ons terecht. Wil je eerst zelf zien hoe je dak ervoor staat? Doe de gratis <a href=\"dakscan.html\">dakscan</a>."
+    "Ooij ligt tussen de Waal en de stuwwal, met dijkwoningen, oude boerderijen en straten met rijtjeshuizen en twee-onder-een-kappers. Omdat Brück hier zelf zit, is Nicky snel ter plaatse, ook als er na een storm pannen los liggen of er een <a href=\"/lekkages\">lekkage</a> is.",
+    "In de polder waait het hard. Pannen en nokvorsten schuiven dan sneller, en oude <a href=\"/dakpannen\">pannendaken</a> krijgen het zwaar. Op veel aanbouwen en garages ligt een plat dak met bitumen dat na twintig jaar aan vervanging toe is. Dat vervangen we door nieuwe <a href=\"/dakwerken\">dakbedekking</a> of <a href=\"/epdm\">EPDM</a>.",
+    "Ook voor <a href=\"/zinkwerken\">zinkwerk</a> zoals goten en boeidelen, en voor <a href=\"/dakisolatie\">dakisolatie</a>, kun je bij ons terecht. Wil je eerst zelf zien hoe je dak ervoor staat? Doe de gratis <a href=\"/dakscan\">dakscan</a>."
   ],
   "img": "img/f37f3d8d76b2755a489976a4f48672d5.jpg",
   "imgAlt": "Steiger met het bord van Brück Dak en Zinkwerk voor een nieuw pannendak",
@@ -52,5 +52,6 @@
       "vraag": "Krijg ik garantie op het werk?",
       "antwoord": "Ja, je krijgt 10 jaar garantie op het uitgevoerde werk. Wat er precies onder valt, staat in de offerte."
     }
-  ]
+  ],
+  "heroAlt": "Twee woningen met een nieuw oranje pannendak en zonnepanelen"
 }

@@ -3,7 +3,7 @@
   "plaats": "Heilig Landstichting",
   "volgorde": 9,
   "seo": {
-    "title": "Dakdekker Heilig Landstichting | Brück Dak en Zinkwerk",
+    "title": "Dakdekker Heilig Landstichting | Dakwerk en zinkwerk | Brück",
     "description": "Dakdekker in Heilig Landstichting. Brück Dak en Zinkwerk uit Ooij doet dakwerk, dakpannen, zinkwerk, EPDM en lekkages. Doe de gratis dakscan."
   },
   "h1": "Dakdekker<br>Heilig Landstichting",
@@ -12,9 +12,9 @@
   "label": "Dakdekker Heilig Landstichting",
   "introTitel": "Dakwerk in Heilig Landstichting",
   "alineas": [
-    "Heilig Landstichting ligt tussen Nijmegen en Groesbeek, midden in het groen. Veel woningen staan vrij, tussen hoge bomen. Bladeren en naalden belanden in de goten, en op de pannen groeit sneller mos. Dat kan op den duur leiden tot <a href=\"lekkages.html\">lekkage</a>.",
-    "We maken goten en afvoeren weer in orde, vervangen <a href=\"zinkwerken.html\">zinkwerk</a> en leggen nieuwe <a href=\"dakpannen.html\">dakpannen</a> waar de oude poreus zijn. Op platte daken van aanbouwen leggen we <a href=\"epdm.html\">EPDM</a> of nieuwe <a href=\"dakwerken.html\">dakbedekking</a>.",
-    "Laat je je dak vernieuwen, neem dan <a href=\"dakisolatie.html\">dakisolatie</a> mee. Wil je eerst zien hoe je dak ervoor staat? Doe de gratis <a href=\"dakscan.html\">dakscan</a>."
+    "Heilig Landstichting ligt tussen Nijmegen en Groesbeek, midden in het groen. Veel woningen staan vrij, tussen hoge bomen. Bladeren en naalden belanden in de goten, en op de pannen groeit sneller mos. Dat kan op den duur leiden tot <a href=\"/lekkages\">lekkage</a>.",
+    "We maken goten en afvoeren weer in orde, vervangen <a href=\"/zinkwerken\">zinkwerk</a> en leggen nieuwe <a href=\"/dakpannen\">dakpannen</a> waar de oude poreus zijn. Op platte daken van aanbouwen leggen we <a href=\"/epdm\">EPDM</a> of nieuwe <a href=\"/dakwerken\">dakbedekking</a>.",
+    "Laat je je dak vernieuwen, neem dan <a href=\"/dakisolatie\">dakisolatie</a> mee. Wil je eerst zien hoe je dak ervoor staat? Doe de gratis <a href=\"/dakscan\">dakscan</a>."
   ],
   "img": "img/dakkapel-nieuwe-pannen.jpg",
   "imgAlt": "Dakkapel met nieuwe antraciet dakpannen, vanaf de steiger",
@@ -52,5 +52,6 @@
       "vraag": "Krijg ik garantie op het werk?",
       "antwoord": "Ja, je krijgt 10 jaar garantie op het uitgevoerde werk. Wat er precies onder valt, staat in de offerte."
     }
-  ]
+  ],
+  "heroAlt": "Luchtfoto van een woning in de steigers, met nieuwe folie en panlatten op het dak"
 }
