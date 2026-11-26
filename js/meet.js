@@ -13,11 +13,44 @@
     try { window.va('event', data ? { name: naam, data: data } : { name: naam }); } catch (e) { /* niets */ }
   };
 
-  // Klikken op bellen, mailen en WhatsApp, op elke pagina.
+  // Waar op de pagina staat de knop? header, menu, hero, footer of pagina.
+  function plek(el) {
+    if (el.closest('.mm-ikoon')) return 'header';
+    if (el.closest('.mm-scroll, .mm-in, [class^="mm-"]')) return 'menu';
+    if (el.closest('[data-floating-nav]')) return 'header';
+    if (el.closest('footer')) return 'footer';
+    var sec = el.closest('section');
+    if (sec && sec === document.querySelector('section')) return 'hero';
+    return 'pagina';
+  }
+
+  // Welke knop is het? Bellen, mailen, WhatsApp, of een knop naar dakscan, contact of subsidiecheck.
+  function soortVan(href) {
+    if (href.indexOf('tel:') === 0) return 'Contact: bellen';
+    if (href.indexOf('mailto:') === 0) return 'Contact: mailen';
+    if (/wa\.me|whatsapp/i.test(href)) return 'Contact: WhatsApp';
+    var pad = href.replace(/^https?:\/\/[^/]+/, '').replace(/^\//, '').split(/[?#]/)[0].replace(/\.html$/, '');
+    if (pad === 'dakscan') return 'Knop: dakscan';
+    if (pad === 'contact') return 'Knop: contact';
+    if (pad === 'subsidiecheck') return 'Knop: subsidiecheck';
+    return null;
+  }
+
+  // Elke klik op een contactoptie of knop, op elke pagina, met pagina en plek.
   document.addEventListener('click', function (e) {
-    var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
-    var href = a ? a.getAttribute('href') || '' : '';
-    var soort = href.indexOf('tel:') === 0 ? 'Contact: bellen' : href.indexOf('mailto:') === 0 ? 'Contact: mailen' : /wa\.me|whatsapp/i.test(href) ? 'Contact: WhatsApp' : null;
-    if (soort) window.meet(soort, { pagina: location.pathname });
+    try {
+      var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+      if (!a) return;
+      var soort = soortVan(a.getAttribute('href') || '');
+      if (soort) window.meet(soort, { pagina: location.pathname, plek: plek(a) });
+    } catch (err) { /* niets */ }
+  }, true);
+
+  // Dakscan-formulier (homepage-balk of footer) verstuurd met Enter.
+  document.addEventListener('submit', function (e) {
+    try {
+      var f = e.target;
+      if (f && f.closest && (f.id === 'dakscan-balk' || f.closest('.ft-scan'))) window.meet('Knop: dakscan', { pagina: location.pathname, plek: f.id === 'dakscan-balk' ? 'hero' : 'footer' });
+    } catch (err) { /* niets */ }
   }, true);
 })();
