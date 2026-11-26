@@ -162,7 +162,7 @@
       ham.setAttribute('aria-expanded', o ? 'true' : 'false');
       ham.setAttribute('aria-label', o ? 'Menu sluiten' : 'Menu openen');
       menu.setAttribute('aria-hidden', o ? 'false' : 'true');
-      if (o) { scroll.scrollTop = 0; window.meet && window.meet('Menu: geopend'); }
+      if (o) { scroll.scrollTop = 0; }
       else {
         sluitTimer = setTimeout(function () { klap(false); }, 700);
         if (focusTerug) ham.focus();
