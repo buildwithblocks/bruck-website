@@ -109,8 +109,9 @@ Klantsite van Build with Blocks (Tim) voor Brück Dak en Zinkwerk (Nicky, Ooij).
   A @ 216.150.1.1 + 216.150.16.1, CNAME www → Vercel (www stuurt 308 door naar het hoofddomein), geen AAAA.
   MX/SPF (Hostinger-mail) en de Resend-records (`send.`, `resend._domainkey`) nooit aanraken.
 - Sitemap ingediend in Google Search Console (26 nov 2026, 23 pagina's).
-- Meten: Vercel Web Analytics + custom events via `js/meet.js` (klikken op bellen/mailen/WhatsApp en knoppen naar
-  dakscan/contact/subsidiecheck, met pagina en plek; leads als "Lead - …").
+- Meten: Vercel Web Analytics + custom events via `js/meet.js`. Tim wil alleen meten: contact (klikken op bellen,
+  mailen, WhatsApp, met pagina en plek), aanvragen ("Lead - …") en de stappen van dakscan en subsidiecheck
+  ("Dakscan 1 - geopend" … via `window.meetStap`, één keer per bezoek). Geen knop- of menu-events.
 
 ## Stijlregels
 - Donker (#161616, vlakken #1F1F1F, formulieren #0B0B0B), accent #DFA701 (hover #C99600), rechte hoeken,
