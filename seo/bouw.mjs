@@ -25,7 +25,9 @@ const BEDRIJF = {
   address: { '@type': 'PostalAddress', streetAddress: 'Goudwindestraat 39', postalCode: '6576 CD', addressLocality: 'Ooij', addressCountry: 'NL' },
   geo: { '@type': 'GeoCoordinates', latitude: 51.8549581, longitude: 5.93868089 }, // PDOK, Goudwindestraat 39 Ooij
   identifier: { '@type': 'PropertyValue', propertyID: 'KvK', value: '85783439' },
-  sameAs: ['https://www.facebook.com/bruckdakenzinkwerk/', 'https://www.instagram.com/bruckdakenzinkwerk/'],
+  // Google Bedrijfsprofiel (Knowledge Graph-ID /g/11t0qx58sl), gedeeld door Tim op 26 nov 2026.
+  hasMap: 'https://share.google/7mUppOPvDw3Y99BtH',
+  sameAs: ['https://www.google.com/search?kgmid=/g/11t0qx58sl', 'https://www.facebook.com/bruckdakenzinkwerk/', 'https://www.instagram.com/bruckdakenzinkwerk/'],
 };
 
 /* ---------- lokale pagina's ---------- */
