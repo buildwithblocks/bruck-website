@@ -1,68 +1,59 @@
 {
   "basis": "https://bruckdakwerken.nl",
-  "standaardAfbeelding": "img/drone-pannendak-zonnepanelen.jpg",
+  "standaardAfbeelding": "img/deelafbeelding.jpg",
   "paginas": {
     "index.html": {
-      "title": "Dakdekker Ooij, Nijmegen en omgeving | Brück Dak en Zinkwerk",
-      "description": "Dakdekker uit Ooij voor dakwerk, dakpannen, EPDM, zinkwerk, dakisolatie en lekkages in Nijmegen en omgeving. Nicky komt zelf kijken. Doe de gratis dakscan.",
-      "afbeelding": "img/drone-pannendak-zonnepanelen.jpg",
-      "afbeeldingAlt": "Luchtfoto van een antraciet pannendak met zonnepanelen"
+      "title": "Dakdekker voor dakwerk en zinkwerk | Brück Dak en Zinkwerk",
+      "description": "Brück Dak en Zinkwerk doet dakwerk, dakpannen, EPDM, zinkwerk, dakisolatie en lekkages. Nicky komt zelf kijken en doet het werk. Doe de gratis dakscan.",
+      "afbeelding": "img/drone-pannendak-zonnepanelen.jpg"
     },
     "dakwerken.html": {
       "title": "Dakwerken: platte en hellende daken | Brück Dak en Zinkwerk",
-      "description": "Plat of hellend dak vervangen, repareren of onderhouden in Ooij, Nijmegen en omgeving. Bitumen, EPDM, PVC en dakpannen. Brück komt eerst kijken.",
+      "description": "Plat of hellend dak vervangen of repareren in Ooij, Nijmegen en omgeving. Bitumen, EPDM, PVC en dakpannen. Brück Dak en Zinkwerk komt eerst kijken.",
       "kruimel": "Dakwerken",
-      "afbeelding": "img/pannen-op-steiger.jpg",
-      "afbeeldingAlt": "Steiger langs een woning met een rood pannendak en schoorsteen"
+      "afbeelding": "img/pannen-op-steiger.jpg"
     },
     "zinkwerken.html": {
-      "title": "Zinkwerk: dakgoten, boeidelen en dakkapellen | Brück",
+      "title": "Zinkwerk: dakgoten en dakkapellen | Brück Dak en Zinkwerk",
       "description": "Zinken dakgoten, boeibekleding, regenpijpen en dakkapellen, op maat gemaakt en geplaatst door Brück Dak en Zinkwerk uit Ooij, ook in Nijmegen.",
       "kruimel": "Zinkwerken",
-      "afbeelding": "img/3569059183015df3b752294bc94870af.jpg",
-      "afbeeldingAlt": "Zinken afwerking langs een rood pannendak"
+      "afbeelding": "img/3569059183015df3b752294bc94870af.jpg"
     },
     "dakpannen.html": {
       "title": "Dakpannen vervangen, nieuw pannendak | Brück Dak en Zinkwerk",
       "description": "Losse dakpannen vervangen of een compleet nieuw pannendak met folie, panlatten en nokvorsten. Brück Dak en Zinkwerk uit Ooij, ook in Nijmegen.",
       "kruimel": "Dakpannen",
-      "afbeelding": "img/drone-pannendak-vernieuwen.jpg",
-      "afbeeldingAlt": "Luchtfoto van een woning in de steigers met een nieuw antraciet pannendak"
+      "afbeelding": "img/drone-pannendak-vernieuwen.jpg"
     },
     "epdm.html": {
       "title": "EPDM plat dak laten leggen | Brück Dak en Zinkwerk",
       "description": "EPDM in één stuk op je platte dak, dakkapel of aanbouw. Gaat lang mee en vraagt weinig onderhoud. Brück Dak en Zinkwerk uit Ooij legt het ook in Nijmegen.",
       "kruimel": "EPDM",
-      "afbeelding": "img/8ab1afaf483e5222d1ae1238210eff08.jpg",
-      "afbeeldingAlt": "Plat dak met nieuwe EPDM-dakbedekking in één stuk"
+      "afbeelding": "img/8ab1afaf483e5222d1ae1238210eff08.jpg"
     },
     "dakisolatie.html": {
       "title": "Dakisolatie met ISDE-subsidie | Brück Dak en Zinkwerk",
-      "description": "Je dak laten isoleren in Ooij, Nijmegen en omgeving: minder stookkosten en vaak ISDE-subsidie terug. Brück isoleert en levert alles voor je aanvraag.",
+      "description": "Dak laten isoleren in Ooij, Nijmegen en omgeving: minder stookkosten en vaak ISDE-subsidie terug. Brück Dak en Zinkwerk isoleert en helpt met je aanvraag.",
       "kruimel": "Dakisolatie",
-      "afbeelding": "img/faec84d1814a914d050740c3acfdc01a.jpg",
-      "afbeeldingAlt": "Isolatieplaten op een dak, klaar voor de dakbedekking"
+      "afbeelding": "img/faec84d1814a914d050740c3acfdc01a.jpg"
     },
     "lekkages.html": {
-      "title": "Daklekkage repareren | Brück Dak en Zinkwerk uit Ooij",
+      "title": "Daklekkage opsporen en repareren | Brück Dak en Zinkwerk",
       "description": "Lekt je dak? Brück Dak en Zinkwerk uit Ooij zoekt waar het water binnenkomt en repareert het bij de bron. Bel of app Nicky direct, ook in Nijmegen.",
       "kruimel": "Lekkages",
-      "afbeelding": "img/63d74554af499d31f6ea856655c8c1a4.jpg",
-      "afbeeldingAlt": "Plat dak met grind en oude dakbedekking tijdens het herstel"
+      "afbeelding": "img/63d74554af499d31f6ea856655c8c1a4.jpg"
     },
     "over-ons.html": {
-      "title": "Over ons: dakdekker Nicky van Brück uit Ooij | Brück",
+      "title": "Over ons: wie is Nicky van Brück? | Brück Dak en Zinkwerk",
       "description": "Brück Dak en Zinkwerk is het bedrijf van Nicky van Brück uit Ooij. Hij komt zelf kijken, maakt de offerte en doet het werk ook zelf.",
       "kruimel": "Over ons",
-      "afbeelding": "img/nicky-op-dak.jpg",
-      "afbeeldingAlt": "Nicky van Brück op een plat dak"
+      "afbeelding": "img/nicky-op-dak.jpg"
     },
     "projecten.html": {
       "title": "Projecten: daken voor en na | Brück Dak en Zinkwerk",
       "description": "Daken die Brück Dak en Zinkwerk heeft vernieuwd in Ooij en omgeving: pannendaken, platte daken, dakkapellen en zinkwerk, met foto's van voor en na.",
       "kruimel": "Projecten",
-      "afbeelding": "img/drone-pannendak-avondlicht.jpg",
-      "afbeeldingAlt": "Luchtfoto van een nieuw grijs pannendak in de steigers, in het avondlicht"
+      "afbeelding": "img/drone-pannendak-avondlicht.jpg"
     },
     "contact.html": {
       "title": "Contact | Brück Dak en Zinkwerk uit Ooij",
@@ -80,19 +71,21 @@
       "kruimel": "Subsidiecheck"
     },
     "dakscan.html": {
-      "title": "Gratis dakscan: zie hoe je dak ervoor staat | Brück",
+      "title": "Gratis dakscan: check je dak | Brück Dak en Zinkwerk",
       "description": "Vul je adres in en zie je dak vanuit de lucht, met een dakscore en de belangrijkste gegevens. Het dakrapport komt gratis in je mailbox.",
       "kruimel": "Dakscan"
     },
     "privacy.html": {
       "title": "Privacy policy | Brück Dak en Zinkwerk",
       "description": "Welke gegevens Brück Dak en Zinkwerk via deze website verzamelt, waarvoor we ze gebruiken en wat je rechten zijn.",
-      "kruimel": "Privacy policy"
+      "kruimel": "Privacy policy",
+      "noindex": true
     },
     "bedankt.html": {
       "title": "Bedankt voor je bericht | Brück Dak en Zinkwerk",
       "description": "Je bericht is verstuurd. We nemen binnen 2 werkdagen contact met je op.",
       "noindex": true
     }
-  }
+  },
+  "standaardAfbeeldingAlt": "Luchtfoto van een antraciet pannendak met een dakkapel"
 }

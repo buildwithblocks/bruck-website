@@ -79,7 +79,8 @@ function faqsVan(html, bestand) {
 
 function seoBlok(bestand, html) {
   const p = cfg.paginas[bestand]; if (!p) return null;
-  const u = url(bestand), img = BASIS + '/' + (p.afbeelding || cfg.standaardAfbeelding);
+  // Deelafbeelding (Open Graph) is op elke pagina dezelfde; de hoofdfoto van de pagina zelf gaat in de structured data.
+  const u = url(bestand), og = BASIS + '/' + cfg.standaardAfbeelding, img = BASIS + '/' + (p.afbeelding || cfg.standaardAfbeelding);
   const graph = [bestand === 'index.html' ? BEDRIJF : { '@type': 'RoofingContractor', '@id': BEDRIJF['@id'], name: BEDRIJF.name, url: BEDRIJF.url, telephone: BEDRIJF.telephone, address: BEDRIJF.address }];
   graph.push({ '@type': 'WebPage', '@id': u + '#pagina', url: u, name: p.title, description: p.description, inLanguage: 'nl-NL', isPartOf: { '@type': 'WebSite', '@id': BASIS + '/#site', url: BASIS + '/', name: 'Brück Dak en Zinkwerk' }, about: { '@id': BEDRIJF['@id'] }, primaryImageOfPage: { '@type': 'ImageObject', url: img } });
   if (p.kruimel) graph.push({ '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: BASIS + '/' }, { '@type': 'ListItem', position: 2, name: p.kruimel, item: u }] });
@@ -93,8 +94,8 @@ function seoBlok(bestand, html) {
     `<link rel="canonical" href="${u}">`,
     '<meta property="og:locale" content="nl_NL">', '<meta property="og:type" content="website">', '<meta property="og:site_name" content="Brück Dak en Zinkwerk">',
     `<meta property="og:title" content="${esc(p.title)}">`, `<meta property="og:description" content="${esc(p.description)}">`,
-    `<meta property="og:url" content="${u}">`, `<meta property="og:image" content="${img}">`,
-    ...(p.afbeeldingAlt ? [`<meta property="og:image:alt" content="${esc(p.afbeeldingAlt)}">`] : []),
+    `<meta property="og:url" content="${u}">`, `<meta property="og:image" content="${og}">`, '<meta property="og:image:width" content="1200">', '<meta property="og:image:height" content="630">',
+    `<meta property="og:image:alt" content="${esc(cfg.standaardAfbeeldingAlt)}">`,
     '<meta name="twitter:card" content="summary_large_image">',
     `<script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', '@graph': graph })}</script>`,
     '<!-- SEO:end -->'].join('\n');
