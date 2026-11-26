@@ -22,8 +22,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"RoofingContractor","@id":"https://bruckdakwerken.nl/#bedrijf","name":"Brück Dak en Zinkwerk","url":"https://bruckdakwerken.nl/","telephone":"+31619623366","address":{"@type":"PostalAddress","streetAddress":"Goudwindestraat 39","postalCode":"6576 CD","addressLocality":"Ooij","addressCountry":"NL"}},{"@type":"WebPage","@id":"https://bruckdakwerken.nl/dakscan#pagina","url":"https://bruckdakwerken.nl/dakscan","name":"Gratis dakscan: check je dak | Brück Dak en Zinkwerk","description":"Vul je adres in en zie je dak vanuit de lucht, met een dakscore en de belangrijkste gegevens. Het dakrapport komt gratis in je mailbox.","inLanguage":"nl-NL","isPartOf":{"@type":"WebSite","@id":"https://bruckdakwerken.nl/#site","url":"https://bruckdakwerken.nl/","name":"Brück Dak en Zinkwerk"},"about":{"@id":"https://bruckdakwerken.nl/#bedrijf"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://bruckdakwerken.nl/img/deelafbeelding.jpg"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://bruckdakwerken.nl/"},{"@type":"ListItem","position":2,"name":"Dakscan","item":"https://bruckdakwerken.nl/dakscan"}]}]}</script>
 <!-- SEO:end -->
 <link rel="icon" href="/favicon.ico?v=2" sizes="48x48"><link rel="icon" type="image/png" href="/img/favicon-96.png?v=2" sizes="96x96"><link rel="icon" type="image/png" href="/img/favicon-192.png" sizes="192x192"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<script src="/js/meet.js?v=2"></script>
-<script>/* Dakscan geopend: via de balk op de homepage of direct. */ (function(){ var b = "direct"; try { if (sessionStorage.getItem("bruck-dakscan")) b = "homepage"; } catch (e) {} window.meet("Dakscan geopend", { bron: b }); })();</script>
+<script src="/js/meet.js?v=3"></script>
+<script>/* Dakscan geopend: via de balk op de homepage of direct. */ (function(){ var b = "direct"; try { if (sessionStorage.getItem("bruck-dakscan")) b = "homepage"; } catch (e) {} window.__dsBron = b; window.meetStap("Dakscan", 1, "geopend", { bron: b }); })();</script>
 <link rel="stylesheet" href="css/ritme.css?v=11">
 </head>
 <body>
@@ -181,7 +181,6 @@ class Component extends DCLogic {
       }
       this.setState({ laadAdres: r.adres.straat + ' ' + r.adres.huis + ', ' + r.adres.plaats });
       const [scan] = await Promise.all([window.BruckScan.scanDak(r.adres), minTijd]);
-      window.meet && window.meet('Dakscan: adres gevonden');
       this._laadStop({ scan: scan, step: 2 });
       try { window.scrollTo(0, 0); } catch (e) {}
     } catch (e) {
@@ -196,7 +195,6 @@ class Component extends DCLogic {
     const minTijd = this._laadStart(2000);
     try {
       const [scan] = await Promise.all([window.BruckScan.scanDak(adres), minTijd]);
-      window.meet && window.meet('Dakscan: adres gevonden', { via: 'toevoeging' });
       this._laadStop({ scan: scan, step: 2 });
       try { window.scrollTo(0, 0); } catch (e) {}
     } catch (e) {
@@ -269,6 +267,10 @@ class Component extends DCLogic {
       };
     });
     const step = st.step || 1;
+    // Stap-meting (stap 1 bij openen, stap 3 bij de knop met de uitkomst; de rest hier). Telt één keer per bezoek.
+    if (window.meetStap && step === 2) window.meetStap('Dakscan', 2, 'vragen', { bron: window.__dsBron || 'direct' });
+    if (window.meetStap && step === 4) window.meetStap('Dakscan', 4, 'gegevens', { bron: window.__dsBron || 'direct' });
+    if (window.meetStap && step === 5) window.meetStap('Dakscan', 5, 'verstuurd', { bron: window.__dsBron || 'direct' });
     const pcRaw = (st.pc || '').trim(), nrRaw = (st.nr || '').trim(), toevRaw = (st.toev || '').trim();
     const v1 = /^\d{4}\s?[A-Za-z]{2}$/.test(pcRaw) && /^\d+/.test(nrRaw);
     const v2 = !!st.q1 && !!st.q2;
@@ -395,7 +397,7 @@ class Component extends DCLogic {
       foto: scan ? scan.luchtfoto : 'img/524566cc159fcafb4eb93343bafd91ef.jpg', punten: scan ? scan.punten : '',
       daktypeTxt: DAKTYPE_TXT[DAKTYPE], oppTxt: oppTxt,
       gegevensRegel: [BOUWJAAR ? 'Bouwjaar ' + BOUWJAAR : 'Bouwjaar onbekend', DAKTYPE_TXT[DAKTYPE].toLowerCase(), scan && scan.oppervlak ? 'ca. ' + scan.oppervlak.toLocaleString('nl-NL') + ' m² dak' + (gedeeld ? ' (hele gebouw)' : '') : ''].filter(Boolean).join(' · '),
-      next2: v2 ? () => { window.meet && window.meet('Dakscan: score bekeken', { uitkomst: band[0] }); go(3)(); } : () => this.setState({ tried: 2 }),
+      next2: v2 ? () => { window.meetStap && window.meetStap('Dakscan', 3, 'score', { uitkomst: band[0] }); go(3)(); } : () => this.setState({ tried: 2 }),
       next4: v4 ? submit : () => this.setState({ tried: 4 }),
       err4Tekst: fout4, errSendTekst: st.sendErrTekst || 'Versturen mislukt. Probeer het opnieuw of bel ons.',
       nm: st.nm || '', set_nm: (e) => this.setState({ nm: e.target.value }), vraag: st.vraag || '', set_vraag: (e) => this.setState({ vraag: e.target.value }),
@@ -519,6 +521,12 @@ class Component extends DCLogic {
 })();
 </script>
 <script>
+/* Stap-meting: eerste keer dat iemand in stap 4 een veld aanklikt (begonnen met invullen). */
+document.addEventListener('focusin', function (e) {
+  var c = window.__comp;
+  if (c && c.state && c.state.step === 4 && e.target && /^(INPUT|TEXTAREA)$/.test(e.target.tagName) && window.meetStap)
+    window.meetStap('Dakscan', '4b', 'gegevens begonnen', { bron: window.__dsBron || 'direct' });
+});
 /* Enter in de adresvelden van stap 1 start de scan. */
 document.addEventListener('keydown', function (e) {
   if (e.key !== 'Enter' || !window.__comp) return;

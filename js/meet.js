@@ -13,6 +13,16 @@
     try { window.va('event', data ? { name: naam, data: data } : { name: naam }); } catch (e) { /* niets */ }
   };
 
+  // Stappen van de dakscan en subsidiecheck: "<Flow> <nr> - <naam>". Elke stap telt één keer per bezoek (sessie),
+  // ook bij terugklikken of herladen. Leg in Vercel de stappen naast elkaar om te zien waar mensen afhaken.
+  window.meetStap = function (flow, nr, naam, data) {
+    var sleutel = 'bruck-stap-' + flow + '-' + nr, gezien = window.__stappen || (window.__stappen = {});
+    try { if (sessionStorage.getItem(sleutel)) return; sessionStorage.setItem(sleutel, '1'); }
+    catch (e) { if (gezien[sleutel]) return; }
+    gezien[sleutel] = 1;
+    window.meet(flow + ' ' + nr + ' - ' + naam, data);
+  };
+
   // Waar op de pagina staat de knop? header, menu, hero, footer of pagina.
   function plek(el) {
     if (el.closest('.mm-ikoon')) return 'header';
